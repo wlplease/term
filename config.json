@@ -33,7 +33,7 @@
     "cursor": "#FFCC80",       // Light pastel orange for the cursor
     "selection": "#80CBC4"     // Light pastel teal for selection
   }
-}
+},
 
   "commands": [
     {
