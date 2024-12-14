@@ -39,3 +39,43 @@ div#__next > div {
 ::-webkit-scrollbar-thumb:hover {
   background: #ff8037;
 }
+
+/* Terminal Typing Styles */
+.terminal {
+  font-family: 'Hack', monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #000;
+  color: #0f0;
+  padding: 20px;
+  border-radius: 5px;
+  overflow-y: auto;
+  height: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.terminal-line {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 0.05s steps(30, end) forwards, blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-right: 2px solid #0f0;
+  }
+  100% {
+    border-right: 2px solid transparent;
+  }
+}

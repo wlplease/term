@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import config from '../../config.json';
 import { Input } from '../components/input';
 import { useHistory } from '../components/history/hook';
@@ -23,51 +23,47 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     setLastCommandIndex,
   } = useHistory([]);
 
-  const [currentInput, setCurrentInput] = useState(''); // Separate state for the current input
+  const init = useCallback(() => {
+    setHistory(banner());
+  }, [setHistory]);
 
-  const init = React.useCallback(() => setHistory(banner()), []);
-
-  React.useEffect(() => {
+  useEffect(() => {
     init();
   }, [init]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inputRef.current) {
       inputRef.current.scrollIntoView();
       inputRef.current.focus({ preventScroll: true });
     }
-  }, [history]);
+  }, [history, inputRef]);
 
   const handleCommand = (cmd: string) => {
+    if (!cmd.trim()) return;
+
+    // Match against commands from config.json
     const availableCommands = config.commands;
+    const foundCommand = availableCommands.find((command) => command.name === cmd);
 
     if (cmd === 'help') {
+      // Display the list of available commands dynamically
       const helpList = availableCommands
         .map((command) => `- ${command.name}: ${command.description}`)
         .join('\n');
-      setHistory(`${history}\n\nAvailable commands:\n${helpList}`);
+      setHistory((prev) => `${prev}\n\nAvailable commands:\n${helpList}`);
     } else if (cmd === 'clear') {
-      setHistory(''); // Clears the terminal screen
+      // Clear terminal history
+      setHistory('');
+    } else if (cmd === 'dashboard') {
+      // Display a dashboard summary (example content)
+      setHistory((prev) => `${prev}\n\nDashboard Summary:\nWelcome to Jeff's dashboard! Here you'll find insights, analytics, and project updates.`);
+    } else if (foundCommand) {
+      // Display the matched command's details or description
+      setHistory((prev) => `${prev}\n\n${foundCommand.details || foundCommand.description}`);
     } else {
-      const foundCommand = availableCommands.find((command) => command.name === cmd);
-      if (foundCommand) {
-        setHistory(`${history}\n\n${foundCommand.details || foundCommand.description}`);
-      } else {
-        setHistory(`${history}\n\nCommand '${cmd}' not recognized. Type 'help' for a list of commands.`);
-      }
+      // Handle unknown commands
+      setHistory((prev) => `${prev}\n\nCommand '${cmd}' not recognized. Type 'help' for a list of commands.`);
     }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (currentInput.trim() === '') return;
-
-    // Process the command
-    setHistory(`${history}\n\n> ${currentInput}`);
-    handleCommand(currentInput.trim());
-
-    // Clear the current input
-    setCurrentInput('');
   };
 
   return (
@@ -85,7 +81,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 
         {/* Right Button */}
         <Link
-          href="/page"
+          href="/connect"
           className="bg-light-yellow dark:bg-dark-yellow text-black py-2 px-4 rounded hover:bg-yellow-600 transition"
         >
           Connect
@@ -97,16 +93,20 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
         <div ref={containerRef} className="overflow-y-auto h-full">
           <History history={history} />
 
-          <form onSubmit={handleSubmit}>
-            <span>visitor@nullshift:$ ~ </span>
-            <input
-              type="text"
-              value={currentInput}
-              onChange={(e) => setCurrentInput(e.target.value)}
-              className="bg-black text-green-400 border-none focus:outline-none"
-              autoFocus
-            />
-          </form>
+          <Input
+            inputRef={inputRef}
+            containerRef={containerRef}
+            command={command}
+            history={history}
+            lastCommandIndex={lastCommandIndex}
+            setCommand={(cmd) => {
+              setCommand(cmd);
+              handleCommand(cmd);
+            }}
+            setHistory={setHistory}
+            setLastCommandIndex={setLastCommandIndex}
+            clearHistory={clearHistory}
+          />
         </div>
       </main>
 
