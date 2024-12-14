@@ -1,7 +1,7 @@
 {
-  "readmeUrl": "https://github.com/itjeff/README.md", // create a Github README and link it here!
-  "title": "Jeff's NullShift", // title of the website
-  "name": "JeffAI", // your name, included in 'about' command
+  "readmeUrl": "https://github.com/wlplease/nullshift/README.md",
+  "title": "Jeff's NullShift",
+  "name": "JeffAI",
   "ascii": """ 
    +---------------------------------------------------------------------------+
 | _   _         _    _    ___    _           ___  _                         |
@@ -9,7 +9,7 @@
 || `\| | _   _  | |  | | | (_(_)| |__  (_)| (__  | ,_)          _   _  ____ |
 || , ` |( ) ( ) | |  | | `\__ \ |  _ `\| || ,__) | |     (`\/')( ) ( )(_  ,)|
 || |`\ || (_) | | |  | | ( )_) || | | || || |    | |_  _  >  < | (_) | /'/_ |
-|(_) (_)`\___/'(___)(___)`\____)(_) (_)(_)(_)    `\__)(_)(_/\_)`\__, |(____)|
+|(_) (_)`\___/'(___)(___)`\____)(_) (_)(_)(_)    `\__)(_)(_\/_)`\__, |(____)|
 |                                                              ( )_| |      |
 |                                                              `\___/'      |
 +---------------------------------------------------------------------------+
@@ -18,15 +18,15 @@
        A hub for tech, crypto, and finance enthusiasts.
        Type 'help' for a list of commands.
        Discover, innovate, and connect!
-  """, // ascii art to display
+  """,
   "social": {
-    "github": "itjeff", // your handle
-    "twitter": "itjeff" // your handle
+    "github": "wlplease",
+    "twitter": "itjeff"
   },
-  "email": "jeff@nullshift.xyz", // your email
-  "ps1_hostname": "nullshift", // hostname in prompt
-  "ps1_username": "visitor", // username in prompt
-  "resume_url": "../resume.pdf", // path to your resume
+  "email": "jeff@nullshift.xyz",
+  "ps1_hostname": "nullshift",
+  "ps1_username": "visitor",
+  "resume_url": "../resume.pdf",
   "non_terminal_url": "W",
   "colors": {
     "light": {
