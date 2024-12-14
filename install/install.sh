@@ -34,11 +34,16 @@ fi
 cat <<-'EOM'
 
 
-███    ██ ██    ██ ██      ██      ███    ██ ██      ██ ███████ ████████ 
-████   ██ ██    ██ ██      ██      ████   ██ ██      ██ ██         ██    
-██ ██  ██ ██    ██ ██      ██      ██ ██  ██ ██      ██ █████      ██    
-██  ██ ██ ██    ██ ██      ██      ██  ██ ██ ██      ██ ██         ██    
-██   ████  ██████  ███████ ███████ ██   ████ ███████ ██ ███████    ██    
+ \ | | | | | |   | |   / ___|| | | |_ _|  ___|_   _|
+|  \| | | | | |   | |   \___ \| |_| || || |_    | |  
+| |\  | |_| | |___| |___ ___) |  _  || ||  _|   | |  
+|_| \_|\___/|_____|_____|____/|_| |_|___|_|     |_|  
+  
+  Type 'help' to see the list of available commands.
+  Type 'dashboard' to display a summary.
+  Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="\${config.repo}" target="_blank">here</a></u> for the Github repository.
+  `;
+  };
 
 NullShift has been downloaded to the current directory.
 You can start developing it with:
