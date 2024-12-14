@@ -36,6 +36,28 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     }
   }, [history]);
 
+  const handleCommand = (command: string) => {
+    const availableCommands = config.commands;
+
+    if (command === 'help') {
+      // Dynamically generate help list from config.json
+      const helpList = availableCommands
+        .map((cmd) => `- ${cmd.name}: ${cmd.description}`)
+        .join('\n');
+      setHistory((prev) => [...prev, `Available commands:\n${helpList}`]);
+    } else if (command === 'clear') {
+      setHistory([]);
+    } else {
+      // Match command from config.json
+      const foundCommand = availableCommands.find((cmd) => cmd.name === command);
+      if (foundCommand) {
+        setHistory((prev) => [...prev, foundCommand.details || foundCommand.description]);
+      } else {
+        setHistory((prev) => [...prev, `Command '${command}' not recognized. Type 'help' for a list of commands.`]);
+      }
+    }
+  };
+
   return (
     <>
       <Head>
@@ -54,7 +76,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
           href="/page"
           className="bg-light-yellow dark:bg-dark-yellow text-black py-2 px-4 rounded hover:bg-yellow-600 transition"
         >
-          Mint Connect
+          Connect
         </Link>
       </header>
 
@@ -69,7 +91,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
             command={command}
             history={history}
             lastCommandIndex={lastCommandIndex}
-            setCommand={setCommand}
+            setCommand={(cmd) => {
+              setCommand(cmd);
+              handleCommand(cmd);
+            }}
             setHistory={setHistory}
             setLastCommandIndex={setLastCommandIndex}
             clearHistory={clearHistory}
