@@ -18,7 +18,7 @@ export const help = async (args: string[]): Promise<string> => {
 \n${c}\n
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
-Type 'sumfetch' to display summary.
+Type 'dashboard' to display summary.
 `;
 };
 
@@ -33,7 +33,7 @@ export const about = async (args: string[]): Promise<string> => {
   return `Hi, I am ${config.name}. 
 Welcome to my website!
 More about me:
-'sumfetch' - short summary.
+'dashboard' - short summary.
 'resume' - my latest resume.
 'readme' - my github readme.`;
 };
@@ -135,23 +135,22 @@ export const emacs = async (args?: string[]): Promise<string> => {
 
 export const sudo = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
-  return `Permission denied: with little power comes... no responsibility? `;
+  
+return `Permission denied: with little power comes... no responsibility? `;
 };
-
-// Banner
+// Banne
 export const banner = (args?: string[]): string => {
-  return `
-█████        ███                       ███████████                                   
-░░███        ░░░                       ░█░░░███░░░█                                   
- ░███        ████  █████ █████  ██████ ░   ░███  ░   ██████  ████████  █████████████  
- ░███       ░░███ ░░███ ░░███  ███░░███    ░███     ███░░███░░███░░███░░███░░███░░███ 
- ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███ 
- ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███ 
- ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
-░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
 
-Type 'help' to see the list of available commands.
-Type 'sumfetch' to display summary.
-Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
-`;
-};
+  return `
+ _   _ _   _ _     _     ____  _   _ ___ _____ _____ 
+| \ | | | | | |   | |   / ___|| | | |_ _|  ___|_   _|
+|  \| | | | | |   | |   \___ \| |_| || || |_    | |  
+| |\  | |_| | |___| |___ ___) |  _  || ||  _|   | |  
+|_| \_|\___/|_____|_____|____/|_| |_|___|_|     |_|  
+  
+  Type 'help' to see the list of available commands.
+  Type 'dashboard' to display a summary.
+  Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="\${config.repo}" target="_blank">here</a></u> for the Github repository.
+  `;
+  };
+  
