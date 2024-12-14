@@ -45,17 +45,17 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
         .map((cmd) => `- ${cmd.name}: ${cmd.description}`)
         .join('\n');
 
-      // Append the help list to the terminal history
-      setHistory((prev: string) => `${prev}\n\nAvailable commands:\n${helpList}`);
+      // Concatenate help list with the current history and update
+      setHistory(`${history}\n\nAvailable commands:\n${helpList}`);
     } else if (command === 'clear') {
-      setHistory('');
+      setHistory(''); // Clear the terminal
     } else {
       // Match command from config.json
       const foundCommand = availableCommands.find((cmd) => cmd.name === command);
       if (foundCommand) {
-        setHistory((prev: string) => `${prev}\n\n${foundCommand.details || foundCommand.description}`);
+        setHistory(`${history}\n\n${foundCommand.details || foundCommand.description}`);
       } else {
-        setHistory((prev: string) => `${prev}\n\nCommand '${command}' not recognized. Type 'help' for a list of commands.`);
+        setHistory(`${history}\n\nCommand '${command}' not recognized. Type 'help' for a list of commands.`);
       }
     }
   };
