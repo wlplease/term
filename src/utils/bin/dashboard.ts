@@ -1,7 +1,7 @@
 import config from '../../../config.json';
 
 const dashboard = async (args: string[]): Promise<string> => {
-  if (config.ascii === 'cveinnt') {
+  if (config.ascii === 'nullshift') {
     return `                                                  
              @@@@@@@@@@@@@                   dashboard: dashboard summary display
         @@@@               @@@@             -----------
