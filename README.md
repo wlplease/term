@@ -1,131 +1,70 @@
-# [💻 LiveTerm - build terminal styled websites in minutes!](https://liveterm.vercel.app)
+✨ Jeff's NullShift - A Terminal Experience for Innovators!
+A futuristic, highly customizable, and user-friendly terminal-inspired website template. Perfect for showcasing portfolios, projects, or crafting unique interactive experiences. Powered by Next.js and styled for tech, crypto, and finance enthusiasts.
 
-Highly customizable, easy-to-use, and minimal terminal styled website template, powered by Next.js.
+Setting up your NullShift Terminal is quick and easy. Modify just one file: config.json. Once you clone the repository, get started with:
 
-Building a simple website with LiveTerm only takes **minutes**, and you only need to work with **one** file: `config.json`. After you cloned this repository, simply run `yarn install && yarn dev` and start editing `config.json` to build your website!
-
-LiveTerm can be used to build a variety of websites:
-
-- [personal website](https://cveinnt.com)
-- [browser startpage](https://livetermstart.vercel.app/)
-- [project page](https://liveterm.vercel.app/)
-- or maybe just a cool browser music player...be creative!
-
-Feel free to play with the web demo above!
-
-## 📸 Showcase
-
-<p align="center">
-<img src="./demo/demo.gif" width="600"><br>
-<strong>LiveTerm with different themes</strong>
-</p>
-
-<p align="center">
-<img src="./demo/cveinnt.png" width="600"><br>
-<strong><a href="https://cveinnt.com" target=_blank>my personal website</a></strong>
-</p>
-
-## 🚀 Ship your LiveTerm site in less than 5 minutes
-
-LiveTerm requires the `yarn` package manager. You can install `yarn` [here](https://classic.yarnpkg.com/lang/en/docs/install/).
-
-Simply run the following commmand in your terminal:
-
-```bash
-sh -c "$(curl -fsSL https://raw.github.com/Cveinnt/LiveTerm/main/install/install.sh)"
-```
-
-This will install LiveTerm to the current directory. You can start building your website with:
-
-```bash
-cd LiveTerm && yarn dev
-```
-
-Start editing `config.json` and try saving and see the updated changes!
-
-Alternatively, you can clone this repository to a location of your choosing
-
-```bash
-git clone https://github.com/Cveinnt/LiveTerm.git && cd LiveTerm
-```
-
-Then install dependencies and start developing there:
-
-```bash
+bash
+Copy code
 yarn install && yarn dev
-```
+Why NullShift?
+With NullShift, you can build:
 
-### Docker Usage
+A personal website: Showcase your expertise in technology, finance, or crypto.
+Interactive project pages: Highlight your work, such as blockchain applications or AI tools.
+Browser dashboards: Create a tech-forward startpage for your browser.
+Custom experiences: Use NullShift as a foundation for creative tools or concepts.
+Feel free to explore the live demo and let your imagination run wild!
 
-First, clone the project and edit `config.json` to your liking. Then run the following to start the container in the background:
+📸 Features
+Dynamic Commands: Includes about, social, projects, resume, tech-stack, experience, and more!
+Light and Dark Themes: Switch between modes effortlessly.
+Custom ASCII Art: Personalize the banner to reflect your brand or style.
+Config-driven Customization: Modify config.json for instant updates.
+Vercel Deployment Ready: Easily deploy with a single click.
+Docker Support: Build and run with Docker for advanced use cases.
+🚀 How to Get Started
+One-line Installer:
+bash
+Copy code
+sh -c "$(curl -fsSL https://raw.github.com/itjeff/NullShift/main/install/install.sh)"
+This installs NullShift in the current directory. To start developing, run:
 
-```shell
-docker-compose up -d
-```
+bash
+Copy code
+cd NullShift && yarn dev
+Manual Installation:
+bash
+Copy code
+git clone https://github.com/itjeff/NullShift.git && cd NullShift
+yarn install && yarn dev
+Start customizing config.json and watch changes in real time.
 
-If you **know** what you were doing, you can also try changing `Dockerfile` & `docker-compose.yml`!
-Learn more about Docker [here](https://docs.docker.com/get-started/overview/ 'here').
+⚙️ Configuration
+Quick Setup with config.json:
+Here's an example of the core structure:
 
-## 📄 Configuration
-
-### Basic Configuration
-
-90% of LiveTerm's configurations are done through the `config.json` file.
-
-```javascript
+json
+Copy code
 {
-  "readmeUrl": // create a Github README and link it here!
-  "title": // title of the website
-  "name": // your name, included in 'about' command
-  "ascii": // ascii art to display
+  "title": "Jeff's NullShift",
+  "ascii": "YOUR ASCII ART",
   "social": {
-    "github": // your handle
-    "linkedin": // your handle
+    "github": "itjeff",
+    "twitter": "itjeff"
   },
-  "email": // your email
-  "ps1_hostname": "liveterm" // hostname in prompt
-  "ps1_username": "visitor", // username in prompt
-  "resume_url": "../resume.pdf", // path to your resume
-  "non_terminal_url": "W",
-  "colors": {
-    "light": {
-      ...
-    },
-    "dark": {
-      ... // you can use existing templates in themes.json or use your own!
-    }
-  }
+  "email": "jeff@nullshift.xyz",
+  "commands": [
+    { "name": "about", "description": "Displays details about the site." },
+    { "name": "tech-stack", "description": "Lists technologies Jeff specializes in." }
+  ],
+  "colors": { "dark": { "background": "#000", "foreground": "#00ff00" } }
 }
-```
+Modify values like your social links, ASCII art, and color themes to make NullShift uniquely yours.
 
-Feel free to change it as you see fit!
+🌐 Deployment
+Deploying to Vercel is a breeze. Use the Vercel CLI or connect your GitHub repository to Vercel for automated builds.
 
-### Themes
-
-You can find several pre-configured themes in `themes.json`, and you can replace the colors in `config.json` with the theme color you like! The themes are based on the themes on [this website](https://glitchbone.github.io/vscode-base16-term/#/).
-
-For a better preview of the themes, checkout the images in the `demo` folder.
-
-### Favicons
-
-Favicons are located in `public/`, along with the other files you may want to upload to your website. I used this [website](https://www.favicon-generator.org/) to generate favicons.
-
-### Banner
-
-You may also want to change the output of the `banner` command. To do that, simply paste your generated banner in `src/utils/bin/commands.ts`. I used this [website](https://manytools.org/hacker-tools/ascii-banner/) to generate my banner.
-
-### Advanced Configuration
-
-If you want to further customize your page, feel free to change the source code to your liking!
-
-## 🌐 Deploy on Vercel
-
-The easiest way to deploy a Next.js app is to use the [Vercel Platform](https://vercel.com/) from the creators of Next.js.
-
-You can install `vercel` cli and follow the instruction [here](https://vercel.com/docs/concepts/deployments/overview).
-
-You can also connect your github account to vercel and have vercel automatically deploy the github repository for you.
-
-## Credit
-
-Based on M4TT72's awesome [Terminal](https://github.com/m4tt72/terminal).
+👨‍💻 Advanced Features
+Theming: Swap themes via themes.json or create your own color schemes.
+Dockerized Builds: Simplify production environments using docker-compose.
+Banner Customization: Add personalized banners or ASCII art in the commands.ts file.
