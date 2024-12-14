@@ -43,22 +43,6 @@ Start customizing config.json and watch changes in real time.
 Quick Setup with config.json:
 Here's an example of the core structure:
 
-json
-Copy code
-{
-  "title": "Jeff's NullShift",
-  "ascii": "YOUR ASCII ART",
-  "social": {
-    "github": "itjeff",
-    "twitter": "itjeff"
-  },
-  "email": "jeff@nullshift.xyz",
-  "commands": [
-    { "name": "about", "description": "Displays details about the site." },
-    { "name": "tech-stack", "description": "Lists technologies Jeff specializes in." }
-  ],
-  "colors": { "dark": { "background": "#000", "foreground": "#00ff00" } }
-}
 Modify values like your social links, ASCII art, and color themes to make NullShift uniquely yours.
 
 🌐 Deployment
