@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useState } from 'react';
 import config from '../../config.json';
 import { Input } from '../components/input';
 import { useHistory } from '../components/history/hook';
@@ -23,6 +23,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     setLastCommandIndex,
   } = useHistory([]);
 
+  const [currentInput, setCurrentInput] = useState(''); // Separate state for the current input
+
   const init = React.useCallback(() => setHistory(banner()), []);
 
   React.useEffect(() => {
@@ -36,28 +38,36 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     }
   }, [history]);
 
-  const handleCommand = (command: string) => {
+  const handleCommand = (cmd: string) => {
     const availableCommands = config.commands;
 
-    if (command === 'help') {
-      // Dynamically generate help list from config.json
+    if (cmd === 'help') {
       const helpList = availableCommands
-        .map((cmd) => `- ${cmd.name}: ${cmd.description}`)
+        .map((command) => `- ${command.name}: ${command.description}`)
         .join('\n');
-
-      // Concatenate help list with the current history and update
       setHistory(`${history}\n\nAvailable commands:\n${helpList}`);
-    } else if (command === 'clear') {
-      setHistory(''); // Clear the terminal
+    } else if (cmd === 'clear') {
+      setHistory(''); // Clears the terminal screen
     } else {
-      // Match command from config.json
-      const foundCommand = availableCommands.find((cmd) => cmd.name === command);
+      const foundCommand = availableCommands.find((command) => command.name === cmd);
       if (foundCommand) {
         setHistory(`${history}\n\n${foundCommand.details || foundCommand.description}`);
       } else {
-        setHistory(`${history}\n\nCommand '${command}' not recognized. Type 'help' for a list of commands.`);
+        setHistory(`${history}\n\nCommand '${cmd}' not recognized. Type 'help' for a list of commands.`);
       }
     }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (currentInput.trim() === '') return;
+
+    // Process the command
+    setHistory(`${history}\n\n> ${currentInput}`);
+    handleCommand(currentInput.trim());
+
+    // Clear the current input
+    setCurrentInput('');
   };
 
   return (
@@ -87,20 +97,16 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
         <div ref={containerRef} className="overflow-y-auto h-full">
           <History history={history} />
 
-          <Input
-            inputRef={inputRef}
-            containerRef={containerRef}
-            command={command}
-            history={history}
-            lastCommandIndex={lastCommandIndex}
-            setCommand={(cmd) => {
-              setCommand(cmd);
-              handleCommand(cmd);
-            }}
-            setHistory={setHistory}
-            setLastCommandIndex={setLastCommandIndex}
-            clearHistory={clearHistory}
-          />
+          <form onSubmit={handleSubmit}>
+            <span>visitor@nullshift:$ ~ </span>
+            <input
+              type="text"
+              value={currentInput}
+              onChange={(e) => setCurrentInput(e.target.value)}
+              className="bg-black text-green-400 border-none focus:outline-none"
+              autoFocus
+            />
+          </form>
         </div>
       </main>
 
