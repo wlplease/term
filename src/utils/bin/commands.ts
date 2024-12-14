@@ -6,7 +6,7 @@ import config from '../../../config.json';
 // Help
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join(', ');
-  var c = '';
+  let c = '';
   for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
     if (i % 7 === 0) {
       c += Object.keys(bin).sort()[i - 1] + '\n';
@@ -45,10 +45,11 @@ export const resume = async (args: string[]): Promise<string> => {
 
 // Donate
 export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest. 
-here are the ways you can support my work:
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
+  return `Thank you for your interest in supporting my work. Here are some options:
+- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">Paypal</a></u>
+- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">Patreon</a></u>
+- CashApp: ${config.donate_urls.cashapp}
+- Ethereum: ${config.donate_urls.ethereum}
 `;
 };
 
@@ -60,38 +61,41 @@ export const email = async (args: string[]): Promise<string> => {
 
 export const github = async (args: string[]): Promise<string> => {
   window.open(`https://github.com/${config.social.github}/`);
-
-  return 'Opening github...';
+  return 'Opening Github...';
 };
 
 export const linkedin = async (args: string[]): Promise<string> => {
   window.open(`https://www.linkedin.com/in/${config.social.linkedin}/`);
+  return 'Opening LinkedIn...';
+};
 
-  return 'Opening linkedin...';
+export const twitter = async (args: string[]): Promise<string> => {
+  window.open(`https://twitter.com/${config.social.twitter}/`);
+  return 'Opening Twitter...';
 };
 
 // Search
 export const google = async (args: string[]): Promise<string> => {
   window.open(`https://google.com/search?q=${args.join(' ')}`);
-  return `Searching google for ${args.join(' ')}...`;
+  return `Searching Google for ${args.join(' ')}...`;
 };
 
 export const duckduckgo = async (args: string[]): Promise<string> => {
-  window.open(`https://duckduckgo.com/?q=BASE BLOCKCHAIN${args.join(' ')}`);
-  return `Searching duckduckgo for ${args.join(' ')}...`;
+  window.open(`https://duckduckgo.com/?q=${args.join(' ')}`);
+  return `Searching DuckDuckGo for ${args.join(' ')}...`;
 };
 
 export const bing = async (args: string[]): Promise<string> => {
-  window.open(`https://bing.com/search?q=Base Blockchain${args.join(' ')}`);
-  return `Wow, really? You are using bing for ${args.join(' ')}?`;
+  window.open(`https://bing.com/search?q=${args.join(' ')}`);
+  return `Searching Bing for ${args.join(' ')}...`;
 };
 
 export const reddit = async (args: string[]): Promise<string> => {
   window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
-  return `Searching reddit for ${args.join(' ')}...`;
+  return `Searching Reddit for ${args.join(' ')}...`;
 };
 
-// Typical linux commands
+// Typical Linux commands
 export const echo = async (args: string[]): Promise<string> => {
   return args.join(' ');
 };
@@ -109,8 +113,8 @@ directories`;
 };
 
 export const cd = async (args: string[]): Promise<string> => {
-  return `unfortunately, i cannot afford more directories.
-if you want to help, you can type 'donate'.`;
+  return `Unfortunately, I cannot afford more directories.
+If you want to help, type 'donate'.`;
 };
 
 export const date = async (args: string[]): Promise<string> => {
@@ -118,40 +122,37 @@ export const date = async (args: string[]): Promise<string> => {
 };
 
 export const vi = async (args: string[]): Promise<string> => {
-  return `woah, you still use 'vi'? just try 'vim'.`;
+  return `Woah, you still use 'vi'? Just try 'vim'.`;
 };
 
 export const vim = async (args: string[]): Promise<string> => {
-  return `'vim' is so outdated. how about 'nvim'?`;
+  return `'vim' is so outdated. How about 'nvim'?`;
 };
 
 export const nvim = async (args: string[]): Promise<string> => {
-  return `'nvim'? too fancy. why not 'emacs'?`;
+  return `'nvim'? Too fancy. Why not 'emacs'?`;
 };
 
 export const emacs = async (args?: string[]): Promise<string> => {
-  return `you know what? just use vscode sers.`;
+  return `You know what? Just use VSCode sers.`;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
-  window.open('https://www.youtube.com/watch?v=V3iBBnApeZA', '_blank'); // …LMAO I'm sorry
-  
-
-return `Permission denied: with little power comes... no responsibility? `;
+  window.open('https://www.youtube.com/watch?v=V3iBBnApeZA', '_blank'); // LMAO I'm sorry
+  return `Permission denied: with little power comes... no responsibility? `;
 };
-// Banne
-export const banner = (args?: string[]): string => {
 
+// Banner
+export const banner = (args?: string[]): string => {
   return `
  _   _ _   _ _     _     ____  _   _ ___ _____ _____ 
-| \ | | | | | |   | |   / ___|| | | |_ _|  ___|_   _|
-|  \| | | | | |   | |   \___ \| |_| || || |_    | |  
-| |\  | |_| | |___| |___ ___) |  _  || ||  _|   | |  
-|_| \_|\___/|_____|_____|____/|_| |_|___|_|     |_|  
+| \\ | | | | | |   | |   / ___|| | | |_ _|  ___|_   _|
+|  \\| | | | | |   | |   \\___ \\| |_| || || |_    | |  
+| |\\  | |_| | |___| |___ ___) |  _  || ||  _|   | |  
+|_| \\_|\\___/|_____|_____|____/|_| |_|___|_|     |_|  
   
   Type 'help' to see the list of available commands.
   Type 'dashboard' to display a summary.
-  Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="\${config.repo}" target="_blank">here</a></u> for the Github repository.
+  Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
   `;
-  };
-  
+};
