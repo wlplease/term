@@ -43,7 +43,7 @@ const TermsPage: React.FC = () => {
           </p>
           <h2 className="text-xl font-semibold mb-2">5. Contact</h2>
           <p className="mb-4">
-            If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:support@nullshift.xyz" className="text-blue-500 underline">jeff@nullshift.xyz</a>.
+            If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:nullshiftxyz@gmail.com" className="text-blue-500 underline">nullshiftxyz@gmail.com</a>.
           </p>
         </main>
 
