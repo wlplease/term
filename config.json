@@ -1,16 +1,16 @@
 {
-  "readmeUrl": "https://github.com/wlplease/nullshift/README.md",
+  "readmeUrl": "https://github.com/itjeff/nullshift/README.md",
   "title": "Jeff's NullShift",
   "name": "JeffAI",
   "ascii": "   +---------------------------------------------------------------------------+\n | _   _         _    _    ___    _           ___  _                         |\n |( ) ( )       (_ ) (_ ) (  _`\ ( )     _  /'___)( )_                       |\n || `\| | _   _  | |  | | | (_(_)| |__  (_)| (__  | ,_)          _   _  ____ |\n || , ` |( ) ( ) | |  | | `\__ \ |  _ `\| || ,__) | |     (`\/')( ) ( )(_  ,)|\n || |`\ || (_) | | |  | | ( )_) || | | || || |    | |_  _  >  < | (_) | /'/_ |\n |(_) (_)`\___/'(___)(___)`\____)(_) (_)(_)(_)    `\__)(_)(_\/_)`\__, |(____)|\n |                                                              ( )_| |      |\n |                                                              `\___/'      |\n   +---------------------------------------------------------------------------+\n\n       ~ Welcome to Jeff's NullShift Terminal ~\n       A hub for tech, crypto, and finance enthusiasts.\n       Type 'help' for a list of commands.\n       Discover, innovate, and connect!",
-  "repo": "https://github.com/wlplease/nullshift",
+  "repo": "https://github.com/itjeff/nullshift",
   "donate_urls": {
     "cashapp": "$itjeff",
     "ethereum": "0x0D60a455Da54750769400A32204A539703b2D89A",
     "paypal": "https://paypal.com/itjeff"
   },
   "social": {
-    "github": "wlplease",
+    "github": "itjeff",
     "twitter": "itjeff"
   },
   "email": "jeff@nullshift.xyz",
