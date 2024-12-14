@@ -68,7 +68,3 @@ Deploying to Vercel is a breeze. Use the Vercel CLI or connect your GitHub repos
 Theming: Swap themes via themes.json or create your own color schemes.
 Dockerized Builds: Simplify production environments using docker-compose.
 Banner Customization: Add personalized banners or ASCII art in the commands.ts file.
-👨‍💻 Advanced Features
-git add .
-git commit -m "Reconnecting and pushing changes"
-
