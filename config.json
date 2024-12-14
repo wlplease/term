@@ -20,20 +20,21 @@
   "ps1_username": "visitor",
   "resume_url": "../resume.pdf",
   "non_terminal_url": "W",
-  "colors": {
-    "light": {
-      "background": "#8ef5ee",
-      "foreground": "#92EAEB",
-      "cursor": "#f5abe9",
-      "selection": "#ACBEFC"
-    },
-    "dark": {
-      "background": "#000000",
-      "foreground": "#f5abe9",
-      "cursor": "#8ef5ee",
-      "selection": "#ACBEFC"
-    }
+"colors": {
+  "light": {
+    "background": "#FCE4EC",   // Soft pastel pink
+    "foreground": "#212121",   // Dark grey for readable text
+    "cursor": "#FF80AB",       // Vibrant pastel pink for the cursor
+    "selection": "#80DEEA"     // Light pastel cyan for selection
   },
+  "dark": {
+    "background": "#212121",   // Dark grey (not pure black for less strain)
+    "foreground": "#F8BBD0",   // Soft pastel pink for readable text
+    "cursor": "#FFCC80",       // Light pastel orange for the cursor
+    "selection": "#80CBC4"     // Light pastel teal for selection
+  }
+}
+
   "commands": [
     {
       "name": "about",
