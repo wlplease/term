@@ -1,45 +1,20 @@
 import Head from 'next/head';
 import React from 'react';
-import config from '../../config.json';
-import { Input } from '../components/input';
-import { useHistory } from '../components/history/hook';
-import { History } from '../components/history/History';
-import { banner } from '../utils/bin';
 import Link from 'next/link';
 
-interface IndexPageProps {
-  inputRef: React.MutableRefObject<HTMLInputElement>;
-}
-
-const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
-  const containerRef = React.useRef(null);
-  const {
-    history,
-    command,
-    lastCommandIndex,
-    setCommand,
-    setHistory,
-    clearHistory,
-    setLastCommandIndex,
-  } = useHistory([]);
-
-  const init = React.useCallback(() => setHistory(banner()), []);
-
-  React.useEffect(() => {
-    init();
-  }, [init]);
-
-  React.useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.scrollIntoView();
-      inputRef.current.focus({ preventScroll: true });
-    }
-  }, [history]);
+const LinksPage: React.FC = () => {
+  const links = [
+    { name: 'NullShift', url: 'https://nullshift.xyz' },
+    { name: 'GitHub', url: 'https://github.com/wlplease/term' },
+    { name: 'Next.js Documentation', url: 'https://nextjs.org/docs' },
+    { name: 'React Official Website', url: 'https://reactjs.org/' },
+    { name: 'TailwindCSS Documentation', url: 'https://tailwindcss.com/' },
+  ];
 
   return (
     <>
       <Head>
-        <title>{config.title}</title>
+        <title>Links - NullShift</title>
       </Head>
 
       {/* Header */}
@@ -60,21 +35,21 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 
       {/* Main Content */}
       <main className="p-8 overflow-hidden h-full border-2 rounded border-light-yellow dark:border-dark-yellow">
-        <div ref={containerRef} className="overflow-y-auto h-full">
-          <History history={history} />
-
-          <Input
-            inputRef={inputRef}
-            containerRef={containerRef}
-            command={command}
-            history={history}
-            lastCommandIndex={lastCommandIndex}
-            setCommand={setCommand}
-            setHistory={setHistory}
-            setLastCommandIndex={setLastCommandIndex}
-            clearHistory={clearHistory}
-          />
-        </div>
+        <h1 className="text-2xl font-bold mb-4">Useful Links</h1>
+        <ul className="list-disc pl-5 space-y-2">
+          {links.map((link) => (
+            <li key={link.url}>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 underline hover:text-blue-700"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </main>
 
       {/* Footer */}
@@ -88,4 +63,4 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
   );
 };
 
-export default IndexPage;
+export default LinksPage;
