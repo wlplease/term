@@ -18,7 +18,7 @@ export const help = async (args: string[]): Promise<string> => {
 \n${c}\n
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
-Type 'dashboard' to display summary.
+Type 'dashboard' to display a summary.
 `;
 };
 
@@ -35,7 +35,8 @@ Welcome to my website!
 More about me:
 'dashboard' - short summary.
 'resume' - my latest resume.
-'readme' - my github readme.`;
+'readme' - my Github readme.
+'contact' - my contact information.`;
 };
 
 export const resume = async (args: string[]): Promise<string> => {
@@ -48,9 +49,8 @@ export const donate = async (args: string[]): Promise<string> => {
   return `Thank you for your interest in supporting my work. Here are some options:
 - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">Paypal</a></u>
 - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">Patreon</a></u>
-- CashApp: ${config.donate_urls.cashapp}
-- Ethereum: ${config.donate_urls.ethereum}
-`;
+- <u><a class="text-light-blue dark:text-dark-blue underline" href="https://cash.app/${config.donate_urls.cashapp}" target="_blank">CashApp</a></u>
+- <u><a class="text-light-blue dark:text-dark-blue underline" href="https://etherscan.io/address/${config.donate_urls.ethereum}" target="_blank">Ethereum</a></u>`;
 };
 
 // Contact
