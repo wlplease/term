@@ -22,15 +22,15 @@
   "non_terminal_url": "W",
   "colors": {
     "light": {
-      "background": "#f7e1f4",
+      "background": "#8ef5ee",
       "foreground": "#92EAEB",
-      "cursor": "#95F0C5",
+      "cursor": "#f5abe9",
       "selection": "#ACBEFC"
     },
     "dark": {
       "background": "#000000",
-      "foreground": "#95F0C5",
-      "cursor": "#f7e1f4",
+      "foreground": "#f5abe9",
+      "cursor": "#8ef5ee",
       "selection": "#ACBEFC"
     }
   },
