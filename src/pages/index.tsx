@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useEffect, useCallback } from 'react';
+import React from 'react';
 import config from '../../config.json';
 import { Input } from '../components/input';
 import { useHistory } from '../components/history/hook';
@@ -23,48 +23,18 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     setLastCommandIndex,
   } = useHistory([]);
 
-  const init = useCallback(() => {
-    setHistory(banner());
-  }, [setHistory]);
+  const init = React.useCallback(() => setHistory(banner()), []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     init();
   }, [init]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (inputRef.current) {
       inputRef.current.scrollIntoView();
       inputRef.current.focus({ preventScroll: true });
     }
-  }, [history, inputRef]);
-
-  const handleCommand = (cmd: string) => {
-    if (!cmd.trim()) return;
-
-    // Match against commands from config.json
-    const availableCommands = config.commands;
-    const foundCommand = availableCommands.find((command) => command.name === cmd);
-
-    if (cmd === 'help') {
-      // Display the list of available commands dynamically
-      const helpList = availableCommands
-        .map((command) => `- ${command.name}: ${command.description}`)
-        .join('\n');
-      setHistory((prev) => `${prev}\n\nAvailable commands:\n${helpList}`);
-    } else if (cmd === 'clear') {
-      // Clear terminal history
-      setHistory('');
-    } else if (cmd === 'dashboard') {
-      // Display a dashboard summary (example content)
-      setHistory((prev) => `${prev}\n\nDashboard Summary:\nWelcome to Jeff's dashboard! Here you'll find insights, analytics, and project updates.`);
-    } else if (foundCommand) {
-      // Display the matched command's details or description
-      setHistory((prev) => `${prev}\n\n${foundCommand.details || foundCommand.description}`);
-    } else {
-      // Handle unknown commands
-      setHistory((prev) => `${prev}\n\nCommand '${cmd}' not recognized. Type 'help' for a list of commands.`);
-    }
-  };
+  }, [history]);
 
   return (
     <>
@@ -99,10 +69,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
             command={command}
             history={history}
             lastCommandIndex={lastCommandIndex}
-            setCommand={(cmd) => {
-              setCommand(cmd);
-              handleCommand(cmd);
-            }}
+            setCommand={setCommand}
             setHistory={setHistory}
             setLastCommandIndex={setLastCommandIndex}
             clearHistory={clearHistory}

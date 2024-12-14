@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 
-const ConnectPage: React.FC = () => {
+const Connect: React.FC = () => {
   const [terminalOutput, setTerminalOutput] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [currentLevel, setCurrentLevel] = useState(1);
   const [isGameOver, setIsGameOver] = useState(false);
+
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   const commands = {
     1: {
@@ -53,7 +55,7 @@ const ConnectPage: React.FC = () => {
       setTerminalOutput([]);
     } else if (command === levelCommands.nextLevelCommand) {
       addOutput(levelCommands.response);
-      if (levelCommands.nextLevelCommand === null) {
+      if (currentLevel === 6) {
         setIsGameOver(true);
       } else {
         setCurrentLevel((prev) => prev + 1);
@@ -67,7 +69,7 @@ const ConnectPage: React.FC = () => {
     e.preventDefault();
     if (inputValue.trim() === '') return;
 
-    addOutput(`> ${inputValue}`);
+    addOutput(`$ ${inputValue}`);
     handleCommand(inputValue.trim());
     setInputValue('');
   };
@@ -75,6 +77,12 @@ const ConnectPage: React.FC = () => {
   useEffect(() => {
     addOutput(commands[currentLevel].prompt);
   }, [currentLevel]);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isGameOver]);
 
   return (
     <>
@@ -100,11 +108,11 @@ const ConnectPage: React.FC = () => {
             <form onSubmit={handleInput} className="mt-4">
               <span>$ </span>
               <input
+                ref={inputRef}
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 className="bg-black text-green-400 border-none focus:outline-none"
-                autoFocus
               />
             </form>
           )}
@@ -121,4 +129,4 @@ const ConnectPage: React.FC = () => {
   );
 };
 
-export default ConnectPage;
+export default Connect;
