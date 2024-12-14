@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const Connect: React.FC = () => {
   const [terminalOutput, setTerminalOutput] = useState<string[]>([]);
@@ -90,14 +91,18 @@ const Connect: React.FC = () => {
         <title>Connect - NullShift Terminal</title>
       </Head>
 
-      <div className="min-h-screen bg-black text-green-400 font-mono flex flex-col">
-        {/* Terminal Header */}
-        <header className="bg-gray-900 text-white p-4 text-center text-xl">
-          NullShift Terminal Interface
+      <div className="min-h-screen flex flex-col">
+        {/* Header */}
+        <header className="bg-gray-800 text-white p-4">
+          <div className="container mx-auto flex justify-between items-center">
+            <Link href="/" className="text-lg font-bold">
+              nullshift.xyz
+            </Link>
+          </div>
         </header>
 
         {/* Terminal Body */}
-        <main className="flex-grow p-4 overflow-y-auto">
+        <main className="flex-grow container mx-auto p-8 bg-black text-green-400 font-mono">
           {terminalOutput.map((line, index) => (
             <div key={index} className="whitespace-pre-wrap">
               {line}
@@ -121,8 +126,11 @@ const Connect: React.FC = () => {
         </main>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white p-4 text-center">
-          &copy; 2025 NullShift. All Rights Reserved.
+        <footer className="bg-gray-800 text-white p-4 text-center">
+          <p>&copy; 2025 NullShift. All Rights Reserved.</p>
+          <Link href="/terms" className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600">
+            Terms & Conditions
+          </Link>
         </footer>
       </div>
     </>
