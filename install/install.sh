@@ -5,7 +5,7 @@
 
 set -e -u
 
-eval "git clone 'https://github.com/itjeff/nullshift.git'"
+eval "git clone 'https://github.com/wlplease/nullshift.git'"
 
 cd nullshift
 
