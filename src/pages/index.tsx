@@ -45,7 +45,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
       {/* Header */}
       <header className="bg-gray-800 text-white p-4 flex items-center justify-between">
         {/* Left Link */}
-        <Link href="/" className="text-white text-lg font-bold">
+        <Link href="https://nullshift.xyz" className="text-white text-lg font-bold hover:underline">
           nullshift.xyz
         </Link>
 
@@ -54,7 +54,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
           href="/page"
           className="bg-light-yellow dark:bg-dark-yellow text-black py-2 px-4 rounded hover:bg-yellow-600 transition"
         >
-          Go to Page
+          Mint Connect
         </Link>
       </header>
 
@@ -78,7 +78,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white p-4 text-center">
+      <footer className="bg-[#FF80AB] text-white p-4 text-center">
         <p>&copy; 2025 NullShift. All Rights Reserved.</p>
         <Link href="/terms" className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600">
           Terms & Conditions
