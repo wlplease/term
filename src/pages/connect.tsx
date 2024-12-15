@@ -54,12 +54,12 @@ const Connect: React.FC = () => {
           {/* Footer */}
           <footer className="bg-gray-800 text-white p-4 rounded-b-lg text-center">
             <p className="text-sm">
-              Need help? Email us at{' '}
+              Need help? Speak with us at{' '}
               <a
-                href="mailto:nullshiftxyz@gmail.com"
+                href="https://discord.gg/ay29JtN9"
                 className="text-blue-400 underline hover:text-blue-600"
               >
-                nullshiftxyz@gmail.com
+                https://discord.gg/ay29JtN9
               </a>
             </p>
             <p className="mt-2">
@@ -108,4 +108,4 @@ const Connect: React.FC = () => {
   );
 };
 
-export default Connect;
+export default Connect; 
