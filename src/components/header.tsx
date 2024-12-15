@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaTwitter } from 'react-icons/fa';
+import { FaTwitter, FaDiscord } from 'react-icons/fa';
 
 const Header: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -33,6 +33,11 @@ const Header: React.FC = () => {
           <Link href="https://x.com/itjeff" target="_blank" rel="noopener noreferrer">
             <span className="social-link flex items-center">
               <FaTwitter size={20} />
+            </span>
+          </Link>
+          <Link href="https://discord.gg/nbnyfzqq" target="_blank" rel="noopener noreferrer">
+            <span className="social-link flex items-center">
+              <FaDiscord size={20} />
             </span>
           </Link>
           <Link href="/connect">
@@ -102,7 +107,7 @@ const Header: React.FC = () => {
         }
 
         .social-link:hover {
-          color: #1da1f2;
+          color: #5865f2; /* Discord color */
         }
 
         .connect-button {
