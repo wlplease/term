@@ -96,7 +96,9 @@ const Connect: React.FC = () => {
           {/* Terminal Header */}
           <div className="bg-gray-800 text-white p-4 rounded-t-lg">
             <div className="text-center text-lg font-bold">
-              NullShift Terminal Interface
+              <Link href="/index" className="hover:underline">
+                NullShift Terminal Interface
+              </Link>
             </div>
           </div>
 
@@ -123,7 +125,18 @@ const Connect: React.FC = () => {
             )}
 
             {isGameOver && (
-              <div className="mt-4 text-green-400">Congratulations! You have completed the game!</div>
+              <div className="mt-4 text-green-400">
+                Congratulations! You have completed the game!
+                <br />
+                <a
+                  href="https://opensea.io/collection/mookee/overview"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 underline hover:text-blue-700"
+                >
+                  View the final clue on OpenSea
+                </a>
+              </div>
             )}
           </div>
         </div>
