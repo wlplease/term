@@ -14,8 +14,8 @@ const Disclaimer: React.FC = () => {
 
       <Header />
 
-      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-8">
-        <div className="max-w-4xl bg-black text-green-400 font-mono p-6 rounded-lg shadow-lg">
+      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-x-hidden">
+        <div className="w-full max-w-4xl bg-black text-green-400 font-mono p-6 md:p-8 rounded-lg shadow-lg mx-4">
           <h1 className="text-3xl font-bold mb-4">Disclaimer</h1>
           <p className="mb-4">
             Welcome to NullShift, a platform for blockchain enthusiasts and
@@ -25,9 +25,7 @@ const Disclaimer: React.FC = () => {
             NFTs, you acknowledge and agree to the following terms:
           </p>
 
-          <h2 className="text-2xl font-semibold mb-3">
-            1. NFT and Token Disclaimer
-          </h2>
+          <h2 className="text-2xl font-semibold mb-3">1. NFT and Token Disclaimer</h2>
           <p className="mb-4">
             NFTs and tokens distributed within the NullShift ecosystem do not
             represent investment vehicles, securities, or financial instruments
@@ -48,9 +46,7 @@ const Disclaimer: React.FC = () => {
             terminal, unlocking hidden features and experiences.
           </p>
 
-          <h2 className="text-2xl font-semibold mb-3">
-            2. Website Usage Disclaimer
-          </h2>
+          <h2 className="text-2xl font-semibold mb-3">2. Website Usage Disclaimer</h2>
           <p className="mb-4">
             NullShift is a community-focused platform designed for learning,
             experimentation, and community-building purposes. All content on
@@ -67,9 +63,7 @@ const Disclaimer: React.FC = () => {
             blockchain platforms.
           </p>
 
-          <h2 className="text-2xl font-semibold mb-3">
-            3. Limitation of Liability
-          </h2>
+          <h2 className="text-2xl font-semibold mb-3">3. Limitation of Liability</h2>
           <p className="mb-4">
             The software, NFTs, and tokens are provided &quot;as is,&quot;
             without warranty of any kind, express or implied, including but not
@@ -80,9 +74,7 @@ const Disclaimer: React.FC = () => {
             NFTs, tokens, or the use or other dealings on this platform.
           </p>
 
-          <h2 className="text-2xl font-semibold mb-3">
-            4. Joining the NullShift Crew
-          </h2>
+          <h2 className="text-2xl font-semibold mb-3">4. Joining the NullShift Crew</h2>
           <p className="mb-4">
             Joining the NullShift Crew is an opportunity to be part of an
             innovative and dynamic community of explorers. Minting your NFT
