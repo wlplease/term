@@ -88,14 +88,14 @@ const Connect: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Connect - NullShift Terminal</title>
+        <title>Connect to the NullShift Terminal</title>
       </Head>
 
       <div className="min-h-screen flex flex-col">
         {/* Header */}
         <header className="bg-gray-800 text-white p-4">
           <div className="container mx-auto flex justify-between items-center">
-            <Link href="/" className="text-lg font-bold">
+            <Link href="/index" className="text-lg font-bold">
               nullshift.xyz
             </Link>
           </div>
