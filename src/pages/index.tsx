@@ -23,16 +23,17 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     setLastCommandIndex,
   } = useHistory([]);
 
-  // Initialize history with the banner
   const init = useCallback(() => setHistory(banner()), [setHistory]);
 
   useEffect(() => {
-    init();
-  }, [init]);
+    if (history.length === 0) {
+      init();
+    }
+  }, [init, history]);
 
   useEffect(() => {
     if (inputRef.current) {
-      inputRef.current.scrollIntoView();
+      inputRef.current.scrollIntoView({ behavior: 'smooth' });
       inputRef.current.focus({ preventScroll: true });
     }
   }, [history, inputRef]);
@@ -45,13 +46,13 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 
       {/* Header */}
       <header className="bg-gray-800 text-white p-4 flex items-center justify-between">
-        <Link href="https://nullshift.xyz">
-          <span className="text-white text-lg font-bold hover:underline">
+        <Link href="https://nullshift.xyz" passHref>
+          <span className="text-white text-lg font-bold hover:underline cursor-pointer">
             nullshift.xyz
           </span>
         </Link>
-        <Link href="/connect">
-          <span className="bg-light-yellow dark:bg-dark-yellow text-black py-2 px-4 rounded hover:bg-yellow-600 transition">
+        <Link href="/connect" passHref>
+          <span className="bg-light-yellow dark:bg-dark-yellow text-black py-2 px-4 rounded hover:bg-yellow-600 transition cursor-pointer">
             Connect
           </span>
         </Link>
@@ -73,25 +74,27 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
             clearHistory={clearHistory}
           />
         </div>
-
-        {/* Game Link */}
-        <div className="mt-4 text-center">
-          <p>Want to play a game and gain root access to the terminal?</p>
-          <Link href="/game">
-            <span className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600">
-              Game
-            </span>
-          </Link>
-        </div>
       </main>
+
+      {/* Game Link */}
+      <div className="mt-4 text-center">
+        <p>Want to play a game and gain root access to the terminal?</p>
+        <Link
+          href="/game"
+          className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600"
+        >
+          Game
+        </Link>
+      </div>
 
       {/* Footer */}
       <footer className="bg-[#FF80AB] text-white p-4 text-center">
         <p>&copy; 2025 NullShift. All Rights Reserved.</p>
-        <Link href="/terms">
-          <span className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600">
-            Terms & Conditions
-          </span>
+        <Link
+          href="/terms"
+          className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600"
+        >
+          Terms & Conditions
         </Link>
       </footer>
     </>

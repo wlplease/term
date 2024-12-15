@@ -11,11 +11,13 @@ const NotFoundPage: React.FC = () => {
 
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
         <h1 className="text-6xl font-bold mb-4">404</h1>
-        <h2 className="text-2xl mb-8">Oops! The page you&apos;re looking for doesn&apos;t exist.</h2>
+        <h2 className="text-2xl mb-8">
+          Oops! The page you&apos;re looking for doesn&apos;t exist.
+        </h2>
         <Link href="/">
-          <a className="bg-light-yellow text-black py-2 px-4 rounded hover:bg-yellow-600 transition">
+          <span className="bg-light-yellow text-black py-2 px-4 rounded hover:bg-yellow-600 transition cursor-pointer">
             Go Back to Home
-          </a>
+          </span>
         </Link>
       </div>
     </>
