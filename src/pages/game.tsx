@@ -125,7 +125,7 @@ const Game: React.FC = () => {
               <div className="mt-4 text-green-400">
                 Congratulations! You have completed the game!
                 <br />
-                <Link href="https://tokentool.bitbond.com/asset/0x6B8c1d59816185DC2CeA83Eb2750b1C1592a3D54?chainId=8453">
+                <Link href="https://opensea.io/assets/base/0xce441226b56d6386d0230e6041f79c8a06d2785b/1/">
                   <span className="text-blue-500 underline hover:text-blue-700 cursor-pointer">
                     View the final clue on Jeffer NFT Mint
                   </span>
