@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 const Game: React.FC = () => {
   const [terminalOutput, setTerminalOutput] = useState<string[]>([]);
@@ -100,20 +102,23 @@ const Game: React.FC = () => {
     <>
       <Head>
         <title>Connect to the NullShift Terminal</title>
+        <link rel="icon" href="/assets/favicon.ico" />
       </Head>
+
+      <Header />
 
       <div className="min-h-screen flex items-center justify-center bg-gray-900">
         <div className="w-[90%] max-w-2xl bg-black text-green-400 font-mono p-6 rounded-lg shadow-lg">
-          {/* Terminal Header */}
           <div className="bg-gray-800 text-white p-4 rounded-t-lg">
             <div className="text-center text-lg font-bold">
-              <Link href="/index" className="hover:underline">
-                NullShift Terminal Interface
+              <Link href="/index">
+                <span className="hover:underline cursor-pointer">
+                  NullShift Terminal Interface
+                </span>
               </Link>
             </div>
           </div>
 
-          {/* Terminal Body */}
           <div className="p-4 overflow-y-auto h-96 border-2 border-gray-800 rounded-b-lg">
             {terminalOutput.map((line, index) => (
               <div key={index} className="whitespace-pre-wrap">
@@ -139,19 +144,18 @@ const Game: React.FC = () => {
               <div className="mt-4 text-green-400">
                 Congratulations! You have completed the game!
                 <br />
-                <a
-                  href="https://tokentool.bitbond.com/asset/0x6B8c1d59816185DC2CeA83Eb2750b1C1592a3D54?chainId=8453"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 underline hover:text-blue-700"
-                >
-                  View the final clue on Jeffer NFT Mint
-                </a>
+                <Link href="https://tokentool.bitbond.com/asset/0x6B8c1d59816185DC2CeA83Eb2750b1C1592a3D54?chainId=8453">
+                  <span className="text-blue-500 underline hover:text-blue-700 cursor-pointer">
+                    View the final clue on Jeffer NFT Mint
+                  </span>
+                </Link>
               </div>
             )}
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

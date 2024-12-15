@@ -1,12 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 const Disclaimer: React.FC = () => {
   return (
     <>
       <Head>
         <title>Disclaimer - NullShift</title>
+        <link rel="icon" href="/assets/favicon.ico" />
       </Head>
+
+      <Header />
 
       <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-8">
         <div className="max-w-4xl bg-black text-green-400 font-mono p-6 rounded-lg shadow-lg">
@@ -82,18 +88,19 @@ const Disclaimer: React.FC = () => {
             innovative and dynamic community of explorers. Minting your NFT
             unlocks exclusive on-chain experiences and access to upcoming
             features. Ready to join? Click{' '}
-            <a
+            <Link
               href="https://tokentool.bitbond.com/asset/0x6B8c1d59816185DC2CeA83Eb2750b1C1592a3D54?chainId=8453"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 underline hover:text-blue-600"
             >
-              here
-            </a>{' '}
+              <span className="text-blue-400 underline hover:text-blue-600 cursor-pointer">
+                here
+              </span>
+            </Link>{' '}
             to mint your NFT and embark on this exciting journey!
           </p>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

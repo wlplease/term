@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 const Connect: React.FC = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [agreedToDisclaimer, setAgreedToDisclaimer] = useState(false);
 
   useEffect(() => {
-    // Add a slight delay for the fun effect
     const timer = setTimeout(() => setShowMessage(true), 2000);
     return () => clearTimeout(timer);
   }, []);
@@ -20,18 +21,19 @@ const Connect: React.FC = () => {
     <>
       <Head>
         <title>Airdrop $J3ff3R - Join the Crew</title>
+        <link rel="icon" href="/assets/favicon.ico" />
       </Head>
+
+      <Header />
 
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 via-black to-gray-900">
         <div className="w-[90%] max-w-lg bg-black text-green-400 font-mono p-8 rounded-lg shadow-2xl animate-fade-in">
-          {/* Header */}
-          <div className="bg-gray-800 text-white p-4 rounded-t-lg text-center">
-            <h1 className="text-2xl font-bold tracking-wide">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold tracking-wide text-yellow-400 mb-6">
               Welcome to the $J3ff3R Airdrop
             </h1>
           </div>
 
-          {/* Content */}
           <div className="p-6 text-center">
             <p className="text-lg mb-4">
               Join the NullShift Crew and claim your exclusive{' '}
@@ -66,56 +68,39 @@ const Connect: React.FC = () => {
               </>
             ) : (
               <>
-                {/* NFT Minting Link */}
                 <p className="text-sm mb-4 text-yellow-400">
                   To qualify for the Solana Chain `$Jeffer` airdrop, you need to hold a Base
                   Chain `$J3FF3R` NFT. Mint yours below:
                 </p>
-                <a
+                <Link
                   href="https://tokentool.bitbond.com/asset/0x6B8c1d59816185DC2CeA83Eb2750b1C1592a3D54?chainId=8453"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300 mb-6"
                 >
-                  Mint $J3FF3R NFT
-                </a>
+                  <span
+                    className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300 mb-6 cursor-pointer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Mint $J3FF3R NFT
+                  </span>
+                </Link>
 
-                {/* Airdrop Claim Link */}
-                <a
+                <Link
                   href="https://cform.coinlist.co/forms/dfe96034-09ed-4ca4-afa6-438305522df5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-500 hover:bg-green-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300"
                 >
-                  Claim $J3ff3R Tokens
-                </a>
+                  <span
+                    className="bg-green-500 hover:bg-green-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300 cursor-pointer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Claim $J3ff3R Tokens
+                  </span>
+                </Link>
               </>
             )}
           </div>
-
-          {/* Footer */}
-          <footer className="bg-gray-800 text-white p-4 rounded-b-lg text-center">
-            <p className="text-sm">
-              Need help? Speak with us at{' '}
-              <a
-                href="https://discord.gg/ay29JtN9"
-                className="text-blue-400 underline hover:text-blue-600"
-              >
-                https://discord.gg/ay29JtN9
-              </a>
-            </p>
-            <p className="mt-2">
-              <Link href="/index">
-                <span className="text-yellow-400 underline hover:text-yellow-600 cursor-pointer">
-                  Return to Terminal
-                </span>
-              </Link>
-            </p>
-          </footer>
         </div>
       </div>
 
-      {/* Animations */}
+      <Footer />
+
       <style jsx>{`
         @keyframes fade-in {
           from {

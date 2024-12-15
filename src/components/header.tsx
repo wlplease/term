@@ -7,17 +7,17 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-left">
         <Link href="https://nullshift.xyz">
-          <a className="logo">NullShift</a>
+          <span className="logo">NullShift</span>
         </Link>
       </div>
       <div className="header-right">
-        <Link href="https://x.com/itjeff">
-          <a className="social-link">
+        <Link href="https://x.com/itjeff" target="_blank" rel="noopener noreferrer">
+          <span className="social-link flex items-center">
             <FaTwitter size={20} />
-          </a>
+          </span>
         </Link>
         <Link href="/connect">
-          <a className="connect-button">Connect</a>
+          <span className="connect-button">Mint $J3ff3R</span>
         </Link>
       </div>
       <style jsx>{`
