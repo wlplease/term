@@ -14,9 +14,9 @@ const Terms: React.FC = () => {
 
       <Header />
 
-      <div className="min-h-screen bg-gray-100 flex flex-col">
-        <main className="flex-grow container mx-auto p-8 bg-white shadow-md rounded-md">
-          <h1 className="text-3xl font-bold mb-6">Terms and Conditions</h1>
+      <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center text-white">
+        <main className="w-full max-w-4xl bg-black text-green-400 font-mono p-6 md:p-8 rounded-lg shadow-lg">
+          <h1 className="text-3xl font-bold mb-6 text-center">Terms and Conditions</h1>
           <p className="mb-6">
             Welcome to NullShift! These Terms and Conditions govern your use of our website
             and services. By accessing or using our site, you agree to comply with these terms.
@@ -109,6 +109,28 @@ const Terms: React.FC = () => {
       </div>
 
       <Footer />
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .text-3xl {
+            font-size: 1.75rem;
+          }
+
+          .p-6 {
+            padding: 1.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .text-3xl {
+            font-size: 1.5rem;
+          }
+
+          .p-6 {
+            padding: 1rem;
+          }
+        }
+      `}</style>
     </>
   );
 };

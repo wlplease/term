@@ -90,14 +90,14 @@ const Game: React.FC = () => {
     <>
       <Header />
 
-      <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center px-4">
-        <div className="w-full max-w-2xl bg-black text-green-400 font-mono p-6 rounded-lg shadow-lg">
+      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-x-hidden px-4">
+        <div className="w-full max-w-2xl bg-black text-green-400 font-mono p-6 md:p-8 rounded-lg shadow-lg">
           <div className="bg-gray-800 text-white p-4 rounded-t-lg">
-            <div className="text-center text-lg font-bold">
-              <Link href="/index">
+            <h1 className="text-center text-lg font-bold">
+              <Link href="/">
                 <span className="hover:underline cursor-pointer">NullShift Terminal Interface</span>
               </Link>
-            </div>
+            </h1>
           </div>
 
           <div className="p-4 overflow-y-auto h-96 border-2 border-gray-800 rounded-b-lg">
@@ -122,7 +122,7 @@ const Game: React.FC = () => {
             )}
 
             {isGameOver && (
-              <div className="mt-4 text-green-400">
+              <div className="mt-4 text-center text-green-400">
                 Congratulations! You have completed the game!
                 <br />
                 <Link href="https://opensea.io/assets/base/0xca6dbfdb25a2d24247c89b4d79010753d193a0c5/1/">
@@ -137,6 +137,36 @@ const Game: React.FC = () => {
       </div>
 
       <Footer />
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .text-lg {
+            font-size: 1rem;
+          }
+
+          .p-6 {
+            padding: 1rem;
+          }
+
+          .h-96 {
+            height: 75vh;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .text-lg {
+            font-size: 0.875rem;
+          }
+
+          .p-6 {
+            padding: 0.75rem;
+          }
+
+          .h-96 {
+            height: 60vh;
+          }
+        }
+      `}</style>
     </>
   );
 };

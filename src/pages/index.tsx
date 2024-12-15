@@ -49,34 +49,64 @@ const Index: React.FC<IndexPageProps> = ({ inputRef }) => {
 
       <Header />
 
-      <main className="p-8 overflow-hidden h-full border-2 rounded border-light-yellow dark:border-dark-yellow">
-        <div ref={containerRef} className="overflow-y-auto h-full">
-          <History history={history} />
-          <Input
-            inputRef={inputRef}
-            containerRef={containerRef}
-            command={command}
-            history={history}
-            lastCommandIndex={lastCommandIndex}
-            setCommand={setCommand}
-            setHistory={setHistory}
-            setLastCommandIndex={setLastCommandIndex}
-            clearHistory={clearHistory}
-          />
+      <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center px-4">
+        <div className="w-full max-w-2xl bg-black text-green-400 font-mono p-6 md:p-8 rounded-lg shadow-lg">
+          <div ref={containerRef} className="overflow-y-auto h-96 border-2 border-gray-800 rounded-lg p-4">
+            <History history={history} />
+            <Input
+              inputRef={inputRef}
+              containerRef={containerRef}
+              command={command}
+              history={history}
+              lastCommandIndex={lastCommandIndex}
+              setCommand={setCommand}
+              setHistory={setHistory}
+              setLastCommandIndex={setLastCommandIndex}
+              clearHistory={clearHistory}
+            />
+          </div>
+          <div className="mt-4 text-center">
+            <p>Want to play a game and gain root access to the terminal?</p>
+            <Link href="/game">
+              <span className="text-yellow-400 underline hover:text-yellow-600 cursor-pointer">
+                Terminal Root Access Game
+              </span>
+            </Link>
+          </div>
         </div>
-      </main>
-
-      <div className="mt-4 text-center">
-        <p>Want to play a game and gain root access to the terminal?</p>
-        <Link
-          href="/game"
-          className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600 cursor-pointer"
-        >
-          Terminal Root Access Game
-        </Link>
       </div>
 
       <Footer />
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .text-lg {
+            font-size: 1rem;
+          }
+
+          .p-6 {
+            padding: 1rem;
+          }
+
+          .h-96 {
+            height: 75vh;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .text-lg {
+            font-size: 0.875rem;
+          }
+
+          .p-6 {
+            padding: 0.75rem;
+          }
+
+          .h-96 {
+            height: 60vh;
+          }
+        }
+      `}</style>
     </>
   );
 };

@@ -53,22 +53,22 @@ const Header: React.FC = () => {
         .header {
           background-color: #1e252e;
           color: white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           padding: 10px 20px;
           border-bottom: 2px solid #ff8037;
           position: sticky;
           top: 0;
           z-index: 1000;
+          overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         .header-content {
           display: flex;
-          width: 100%;
-          max-width: 1200px;
+          flex-direction: row;
           justify-content: space-between;
           align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 15px;
         }
 
         .logo {
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
           font-weight: bold;
           color: white;
           text-decoration: none;
-          transition: color 0.2s ease;
+          transition: color 0.3s ease;
         }
 
         .logo:hover {
@@ -87,23 +87,18 @@ const Header: React.FC = () => {
           display: flex;
           align-items: center;
           gap: 15px;
+          flex-wrap: wrap; /* Wrap items on small screens */
         }
 
-        .about-link {
+        .about-link, .social-link {
           color: white;
           font-size: 1rem;
           text-decoration: none;
-          font-weight: bold;
-          transition: color 0.2s ease;
+          transition: color 0.3s ease;
         }
 
         .about-link:hover {
           color: #ffa726;
-        }
-
-        .social-link {
-          color: white;
-          transition: color 0.2s ease;
         }
 
         .social-link:hover {
@@ -115,9 +110,8 @@ const Header: React.FC = () => {
           color: black;
           padding: 8px 16px;
           border-radius: 4px;
-          text-decoration: none;
           font-weight: bold;
-          transition: background-color 0.2s ease, transform 0.2s ease;
+          transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .connect-button:hover {
@@ -134,7 +128,6 @@ const Header: React.FC = () => {
           background-color: ${darkMode ? '#333' : '#ddd'};
           border-radius: 10px;
           cursor: pointer;
-          position: relative;
           padding: 2px;
           transition: background-color 0.3s ease;
         }
@@ -156,25 +149,41 @@ const Header: React.FC = () => {
           .header-content {
             flex-direction: column;
             gap: 10px;
+            text-align: center;
+          }
+
+          .header-right {
+            justify-content: center;
+            gap: 10px;
           }
 
           .logo {
             font-size: 1.25rem;
           }
 
-          .header-right {
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-          }
-
           .connect-button {
             padding: 6px 12px;
             font-size: 0.875rem;
           }
+        }
 
-          .about-link {
+        @media (max-width: 480px) {
+          .header-right {
+            flex-direction: column;
+            gap: 8px;
+          }
+
+          .about-link, .social-link {
             font-size: 0.875rem;
+          }
+
+          .connect-button {
+            font-size: 0.75rem;
+          }
+
+          .toggle-switch {
+            width: 35px;
+            height: 18px;
           }
         }
       `}</style>
