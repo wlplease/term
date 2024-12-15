@@ -31,12 +31,13 @@ export const repo = async (args: string[]): Promise<string> => {
 // About
 export const about = async (args: string[]): Promise<string> => {
   return `Hi, I am ${config.name}. 
-Welcome to my website!
+Welcome to my AI website!
 More about me:
 'dashboard' - short summary.
 'resume' - my latest resume.
 'readme' - my Github readme.
-'contact' - my contact information.`;
+'twitter' - my X.
+'email' - message me.`;
 };
 
 export const resume = async (args: string[]): Promise<string> => {
@@ -152,6 +153,7 @@ export const banner = (args?: string[]): string => {
 |_| \\_|\\___/|_____|_____|____/|_| |_|___|_|     |_|  
   
   Type 'help' to see the list of available commands.
+  Type 'about' to understand more.
   Type 'dashboard' to display a summary.
   Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
   `;
