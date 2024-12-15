@@ -91,47 +91,42 @@ const Connect: React.FC = () => {
         <title>Connect to the NullShift Terminal</title>
       </Head>
 
-      <div className="min-h-screen flex flex-col">
-        {/* Header */}
-        <header className="bg-gray-800 text-white p-4">
-          <div className="container mx-auto flex justify-between items-center">
-            <Link href="/index" className="text-lg font-bold">
-              nullshift.xyz
-            </Link>
-          </div>
-        </header>
-
-        {/* Terminal Body */}
-        <main className="flex-grow container mx-auto p-8 bg-black text-green-400 font-mono">
-          {terminalOutput.map((line, index) => (
-            <div key={index} className="whitespace-pre-wrap">
-              {line}
+      <div className="min-h-screen flex items-center justify-center bg-gray-900">
+        <div className="w-[90%] max-w-2xl bg-black text-green-400 font-mono p-6 rounded-lg shadow-lg">
+          {/* Terminal Header */}
+          <div className="bg-gray-800 text-white p-4 rounded-t-lg">
+            <div className="text-center text-lg font-bold">
+              NullShift Terminal Interface
             </div>
-          ))}
+          </div>
 
-          {!isGameOver && (
-            <form onSubmit={handleInput} className="mt-4">
-              <span>$ </span>
-              <input
-                ref={inputRef}
-                type="text"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                className="bg-black text-green-400 border-none focus:outline-none"
-              />
-            </form>
-          )}
+          {/* Terminal Body */}
+          <div className="p-4 overflow-y-auto h-96 border-2 border-gray-800 rounded-b-lg">
+            {terminalOutput.map((line, index) => (
+              <div key={index} className="whitespace-pre-wrap">
+                {line}
+              </div>
+            ))}
 
-          {isGameOver && <div className="mt-4">Congratulations! You have completed the game!</div>}
-        </main>
+            {!isGameOver && (
+              <form onSubmit={handleInput} className="mt-4 flex">
+                <span className="text-green-400">$</span>
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  className="bg-black text-green-400 border-none flex-1 focus:outline-none ml-2"
+                  placeholder="Enter command"
+                />
+              </form>
+            )}
 
-        {/* Footer */}
-        <footer className="bg-gray-800 text-white p-4 text-center">
-          <p>&copy; 2025 NullShift. All Rights Reserved.</p>
-          <Link href="/terms" className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600">
-            Terms & Conditions
-          </Link>
-        </footer>
+            {isGameOver && (
+              <div className="mt-4 text-green-400">Congratulations! You have completed the game!</div>
+            )}
+          </div>
+        </div>
       </div>
     </>
   );
