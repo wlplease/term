@@ -4,12 +4,17 @@ import Link from 'next/link';
 
 const Connect: React.FC = () => {
   const [showMessage, setShowMessage] = useState(false);
+  const [agreedToDisclaimer, setAgreedToDisclaimer] = useState(false);
 
   useEffect(() => {
     // Add a slight delay for the fun effect
     const timer = setTimeout(() => setShowMessage(true), 2000);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleDisclaimerAgree = () => {
+    setAgreedToDisclaimer(true);
+  };
 
   return (
     <>
@@ -41,28 +46,51 @@ const Connect: React.FC = () => {
               <p className="mb-6">Loading your mission brief...</p>
             )}
 
-            {/* NFT Minting Link */}
-            <p className="text-sm mb-4 text-yellow-400">
-              To qualify for the Solana Chain `$Jeffer` airdrop, you need to hold a Base Chain `$J3FF3R` NFT. Mint yours below:
-            </p>
-            <a
-              href="https://tokentool.bitbond.com/asset/0x6B8c1d59816185DC2CeA83Eb2750b1C1592a3D54?chainId=8453"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300 mb-6"
-            >
-              Mint $J3FF3R NFT
-            </a>
+            {!agreedToDisclaimer ? (
+              <>
+                <p className="text-sm mb-4 text-yellow-400">
+                  Before proceeding, please review and agree to the{' '}
+                  <Link href="/disclaimer">
+                    <span className="text-blue-500 underline hover:text-blue-700 cursor-pointer">
+                      Disclaimer
+                    </span>
+                  </Link>{' '}
+                  regarding NFTs and token usage.
+                </p>
+                <button
+                  onClick={handleDisclaimerAgree}
+                  className="bg-yellow-500 hover:bg-yellow-700 text-black font-bold py-2 px-4 rounded-full transition-all duration-300"
+                >
+                  I Agree
+                </button>
+              </>
+            ) : (
+              <>
+                {/* NFT Minting Link */}
+                <p className="text-sm mb-4 text-yellow-400">
+                  To qualify for the Solana Chain `$Jeffer` airdrop, you need to hold a Base
+                  Chain `$J3FF3R` NFT. Mint yours below:
+                </p>
+                <a
+                  href="https://tokentool.bitbond.com/asset/0x6B8c1d59816185DC2CeA83Eb2750b1C1592a3D54?chainId=8453"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300 mb-6"
+                >
+                  Mint $J3FF3R NFT
+                </a>
 
-            {/* Airdrop Claim Link */}
-            <a
-              href="https://cform.coinlist.co/forms/dfe96034-09ed-4ca4-afa6-438305522df5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-500 hover:bg-green-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300"
-            >
-              Claim $J3ff3R Tokens
-            </a>
+                {/* Airdrop Claim Link */}
+                <a
+                  href="https://cform.coinlist.co/forms/dfe96034-09ed-4ca4-afa6-438305522df5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 hover:bg-green-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300"
+                >
+                  Claim $J3ff3R Tokens
+                </a>
+              </>
+            )}
           </div>
 
           {/* Footer */}
