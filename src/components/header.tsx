@@ -11,6 +11,9 @@ const Header: React.FC = () => {
         </Link>
       </div>
       <div className="header-right">
+        <Link href="/about">
+          <span className="about-link">About</span>
+        </Link>
         <Link href="https://x.com/itjeff" target="_blank" rel="noopener noreferrer">
           <span className="social-link flex items-center">
             <FaTwitter size={20} />
@@ -47,6 +50,18 @@ const Header: React.FC = () => {
           display: flex;
           align-items: center;
           gap: 15px;
+        }
+
+        .about-link {
+          color: white;
+          font-size: 1rem;
+          text-decoration: none;
+          font-weight: bold;
+          transition: color 0.2s ease;
+        }
+
+        .about-link:hover {
+          color: #ffa726;
         }
 
         .social-link {
