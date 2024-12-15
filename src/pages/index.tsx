@@ -11,7 +11,7 @@ interface IndexPageProps {
   inputRef: React.MutableRefObject<HTMLInputElement>;
 }
 
-const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
+const Index: React.FC<IndexPageProps> = ({ inputRef }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const {
     history,
@@ -46,12 +46,12 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 
       {/* Header */}
       <header className="bg-gray-800 text-white p-4 flex items-center justify-between">
-        <Link href="https://nullshift.xyz" passHref>
+        <Link href="https://nullshift.xyz">
           <span className="text-white text-lg font-bold hover:underline cursor-pointer">
             nullshift.xyz
           </span>
         </Link>
-        <Link href="/connect" passHref>
+        <Link href="/connect">
           <span className="bg-light-yellow dark:bg-dark-yellow text-black py-2 px-4 rounded hover:bg-yellow-600 transition cursor-pointer">
             Connect
           </span>
@@ -79,26 +79,24 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
       {/* Game Link */}
       <div className="mt-4 text-center">
         <p>Want to play a game and gain root access to the terminal?</p>
-        <Link
-          href="/game"
-          className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600"
-        >
-          Game
+        <Link href="/game">
+          <span className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600 cursor-pointer">
+            Game
+          </span>
         </Link>
       </div>
 
       {/* Footer */}
       <footer className="bg-[#FF80AB] text-white p-4 text-center">
         <p>&copy; 2025 NullShift. All Rights Reserved.</p>
-        <Link
-          href="/terms"
-          className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600"
-        >
-          Terms & Conditions
+        <Link href="/terms">
+          <span className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600 cursor-pointer">
+            Terms & Conditions
+          </span>
         </Link>
       </footer>
     </>
   );
 };
 
-export default IndexPage;
+export default Index;

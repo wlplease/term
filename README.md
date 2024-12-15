@@ -5,6 +5,7 @@ Welcome to NullShift, a futuristic, terminal-inspired experience designed for te
 ---
 
 ## Why NullShift? 💡
+
 NullShift is more than just a website; it’s a **journey**. Use it to:
 
 - 🚀 **Showcase Expertise**: Display your knowledge in technology, crypto, or finance.
@@ -18,7 +19,7 @@ NullShift is more than just a website; it’s a **journey**. Use it to:
 
 Getting started is easy! Clone the repository and run:
 
-```bash
+````bash
 yarn install && yarn dev
 
 Updated NullShift README with Cryptic Code Story ✨
@@ -106,3 +107,4 @@ Follow the White Rabbit:
 Solve cryptic riddles and Easter eggs to join Jeff in his mission.
 Interactive Password Input 🕶️
 To experience the full NullShift adventure, enter the secret key:
+````

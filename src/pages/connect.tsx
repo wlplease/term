@@ -34,7 +34,9 @@ const Connect: React.FC = () => {
             </p>
 
             {showMessage ? (
-              <p className="mb-6 animate-blink">🚀 Ready to embark on the NullShift mission?</p>
+              <p className="mb-6 animate-blink">
+                🚀 Ready to embark on the NullShift mission?
+              </p>
             ) : (
               <p className="mb-6">Loading your mission brief...</p>
             )}

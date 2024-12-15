@@ -14,7 +14,7 @@ const NotFoundPage: React.FC = () => {
         <h2 className="text-2xl mb-8">
           Oops! The page you&apos;re looking for doesn&apos;t exist.
         </h2>
-        <Link href="/">
+        <Link href="/index">
           <span className="bg-light-yellow text-black py-2 px-4 rounded hover:bg-yellow-600 transition cursor-pointer">
             Go Back to Home
           </span>

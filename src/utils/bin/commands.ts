@@ -87,7 +87,9 @@ export const duckduckgo = async (args: string[]): Promise<string> => {
 };
 
 export const bing = async (args: string[]): Promise<string> => {
-  window.open(`https://bing.com/search?q=whyusebinginsteadofgoogle${args.join(' ')}`);
+  window.open(
+    `https://bing.com/search?q=whyusebinginsteadofgoogle${args.join(' ')}`,
+  );
   return `Searching Bing for ${args.join(' ')}...`;
 };
 

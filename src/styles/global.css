@@ -92,7 +92,8 @@ div#__next > div {
   }
 
   .terminal-line {
-    animation: typing 0.07s steps(20, end) forwards, blink 0.8s step-end infinite;
+    animation: typing 0.07s steps(20, end) forwards,
+      blink 0.8s step-end infinite;
   }
 
   ::-webkit-scrollbar {

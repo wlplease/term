@@ -9,48 +9,143 @@ const TermsPage: React.FC = () => {
         <title>Terms and Conditions - NullShift</title>
       </Head>
 
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-gray-100">
         {/* Header */}
         <header className="bg-gray-800 text-white p-4">
           <div className="container mx-auto flex justify-between items-center">
-            <Link href="/" className="text-lg font-bold">
+            <Link href="/" className="text-lg font-bold hover:underline">
               nullshift.xyz
             </Link>
           </div>
         </header>
 
         {/* Main Content */}
-        <main className="flex-grow container mx-auto p-8">
-          <h1 className="text-2xl font-bold mb-4">Terms and Conditions</h1>
-          <p className="mb-4">
-            Welcome to NullShift! These terms and conditions outline the rules and regulations for the use of our website.
+        <main className="flex-grow container mx-auto p-8 bg-white shadow-md rounded-md">
+          <h1 className="text-3xl font-bold mb-6">Terms and Conditions</h1>
+          <p className="mb-6">
+            Welcome to NullShift! These Terms and Conditions govern your use of
+            our website and services. By accessing or using our site, you agree
+            to comply with these terms. If you do not agree with any part of
+            these terms, please do not use our website.
           </p>
-          <h2 className="text-xl font-semibold mb-2">1. Introduction</h2>
+
+          <h2 className="text-2xl font-semibold mb-4">
+            1. General Information
+          </h2>
           <p className="mb-4">
-            By accessing this website, you agree to comply with these terms and conditions. If you disagree with any part of these terms, please do not use our website.
+            NullShift is a technology-focused platform designed for
+            informational and entertainment purposes. Content provided on this
+            website is not intended as financial advice, investment advice, or
+            professional consultation of any kind. Use the information at your
+            own discretion.
           </p>
-          <h2 className="text-xl font-semibold mb-2">2. Usage</h2>
           <p className="mb-4">
-            The content on this website is for general information and use only. It is subject to change without notice.
+            Access to our site is intended for individuals aged 18 years and
+            older. NullShift does not knowingly collect or process information
+            from individuals under the age of 18. If you are under 18, please do
+            not use this site.
           </p>
-          <h2 className="text-xl font-semibold mb-2">3. Intellectual Property</h2>
+
+          <h2 className="text-2xl font-semibold mb-4">2. Prohibited Uses</h2>
           <p className="mb-4">
-            The website and its content are owned by NullShift and protected by intellectual property laws.
+            You agree not to use our website for any unlawful or unauthorized
+            purposes, including but not limited to:
           </p>
-          <h2 className="text-xl font-semibold mb-2">4. Liability</h2>
+          <ul className="list-disc list-inside mb-4">
+            <li>
+              Engaging in activities that violate any applicable laws or
+              regulations.
+            </li>
+            <li>
+              Attempting to hack, disrupt, or exploit the website or its
+              services.
+            </li>
+            <li>
+              Distributing harmful or malicious content, including viruses or
+              spam.
+            </li>
+            <li>
+              Posting content that is offensive, defamatory, or infringes on
+              intellectual property rights.
+            </li>
+          </ul>
+
+          <h2 className="text-2xl font-semibold mb-4">
+            3. No Financial or Investment Advice
+          </h2>
           <p className="mb-4">
-            NullShift is not responsible for any errors or omissions, or for the results obtained from the use of this information.
+            All content provided on NullShift is for informational and
+            entertainment purposes only. It is not intended as financial or
+            investment advice. NullShift makes no guarantees about the accuracy
+            or completeness of the information provided. Consult with a licensed
+            professional before making any financial decisions.
           </p>
-          <h2 className="text-xl font-semibold mb-2">5. Contact</h2>
+
+          <h2 className="text-2xl font-semibold mb-4">
+            4. Intellectual Property
+          </h2>
           <p className="mb-4">
-            If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:nullshiftxyz@gmail.com" className="text-blue-500 underline">nullshiftxyz@gmail.com</a>.
+            All content, design elements, and intellectual property on this
+            website are owned by NullShift or its licensors. Unauthorized use,
+            reproduction, or distribution of our content is strictly prohibited.
+          </p>
+
+          <h2 className="text-2xl font-semibold mb-4">
+            5. Limitation of Liability
+          </h2>
+          <p className="mb-4">
+            NullShift is not responsible for any direct, indirect, incidental,
+            or consequential damages arising from your use of the website or its
+            content. The site and its content are provided &quot;as is,&quot;
+            without warranties of any kind.
+          </p>
+
+          <h2 className="text-2xl font-semibold mb-4">6. External Links</h2>
+          <p className="mb-4">
+            Our website may contain links to third-party websites. NullShift is
+            not responsible for the content, privacy policies, or practices of
+            these third-party sites. Access external links at your own risk.
+          </p>
+
+          <h2 className="text-2xl font-semibold mb-4">7. Changes to Terms</h2>
+          <p className="mb-4">
+            NullShift reserves the right to update these Terms and Conditions at
+            any time without prior notice. It is your responsibility to review
+            these terms periodically. Continued use of the site constitutes
+            acceptance of any changes.
+          </p>
+
+          <h2 className="text-2xl font-semibold mb-4">8. Governing Law</h2>
+          <p className="mb-4">
+            These Terms and Conditions are governed by and construed in
+            accordance with the laws of [Your Jurisdiction]. Any disputes
+            arising under these terms shall be resolved in the courts of [Your
+            Jurisdiction].
+          </p>
+
+          <h2 className="text-2xl font-semibold mb-4">
+            9. Contact Information
+          </h2>
+          <p className="mb-4">
+            If you have any questions or concerns about these Terms and
+            Conditions, please contact us at:{' '}
+            <a
+              href="mailto:nullshiftxyz@gmail.com"
+              className="text-blue-500 underline hover:text-blue-700"
+            >
+              nullshiftxyz@gmail.com
+            </a>
+            .
           </p>
         </main>
 
         {/* Footer */}
         <footer className="bg-gray-800 text-white p-4 text-center">
           <p>&copy; 2025 NullShift. All Rights Reserved.</p>
-          <Link href="/terms" className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600">
+          <Link
+            href="/terms"
+            className="text-light-yellow dark:text-dark-yellow underline hover:text-yellow-600"
+          >
             Terms & Conditions
           </Link>
         </footer>
