@@ -13,108 +13,20 @@
   box-sizing: border-box; /* Ensure padding and borders are included */
 }
 
-/* Full Height for Terminal View */
+/* Full Height Layout */
 html,
-body,
-body > div:first-child,
-div#__next,
-div#__next > div {
+body {
   height: 100%;
-  overflow: auto;
+  margin: 0;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+#__next {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-::-webkit-scrollbar-track {
-  background: #1e252e;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ebdbb2;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #ff8037;
-}
-
-/* Terminal Styles */
-.terminal {
-  font-family: 'Hack', monospace;
-  font-size: 16px;
-  line-height: 1.6;
-  background-color: #000;
-  color: #0f0;
-  padding: 20px;
-  border-radius: 8px;
-  overflow-y: auto;
-  height: 90vh;
-  width: 100%;
-  max-width: 100%; /* Ensure it doesn't overflow */
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  margin: 0 auto; /* Center the terminal */
-}
-
-/* Terminal Line Typing Effect */
-.terminal-line {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 0.05s steps(30, end) forwards, blink 0.8s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-right: 2px solid #0f0;
-  }
-  100% {
-    border-right: 2px solid transparent;
-  }
-}
-
-/* Mobile Optimizations */
-@media (max-width: 768px) {
-  .terminal {
-    font-size: 14px;
-    padding: 15px;
-    height: 85vh;
-  }
-
-  .terminal-line {
-    animation: typing 0.07s steps(20, end) forwards,
-      blink 0.8s step-end infinite;
-  }
-
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-}
-
-/* Extra Small Mobile Screens (max-width: 480px) */
-@media (max-width: 480px) {
-  .terminal {
-    font-size: 12px;
-    padding: 10px;
-    height: 80vh;
-  }
-}
-
-/* Header Styling */
+/* Main Layout Sections */
 header {
   background-color: #1e252e;
   color: #ffffff;
@@ -125,13 +37,39 @@ header {
   font-weight: bold;
 }
 
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  padding: 1rem; /* Add padding around the terminal */
+}
+
+.terminal {
+  font-family: 'Hack', monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #000;
+  color: #0f0;
+  border-radius: 8px;
+  max-height: 90vh; /* Limit height for desktop scrolling */
+  width: 100%;
+  max-width: 700px; /* Restrict max width for desktop */
+  overflow-y: auto; /* Enable vertical scrolling */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
 /* Footer Styling */
 footer {
   background-color: #1e252e;
   color: #ffffff;
   padding: 10px;
-  text-align: center;
   border-top: 2px solid #ff8037;
+  text-align: center;
   font-size: 0.875rem;
 }
 
@@ -143,4 +81,23 @@ footer a {
 
 footer a:hover {
   color: #ff8037;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0.5rem;
+  }
+
+  .terminal {
+    font-size: 14px;
+    max-height: 85vh; /* Limit max height for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal {
+    font-size: 12px;
+    max-height: 80vh; /* Further reduce height for small screens */
+  }
 }
