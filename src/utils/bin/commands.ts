@@ -37,6 +37,7 @@ More about me:
 'resume' - my latest resume.
 'readme' - my Github readme.
 'twitter' - my X.
+‘Discord’ - join the crew.
 'email' - message me.`;
 };
 
@@ -73,6 +74,11 @@ export const linkedin = async (args: string[]): Promise<string> => {
 export const twitter = async (args: string[]): Promise<string> => {
   window.open(`https://twitter.com/${config.social.twitter}/`);
   return 'Opening Twitter...';
+};
+
+export const discord = async (args: string[]): Promise<string> => {
+  window.open(`https://discord.gg/ay29JtN9${config.social.discord}/`);
+  return 'Opening Discord...';
 };
 
 // Search

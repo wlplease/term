@@ -2,7 +2,7 @@
   "readmeUrl": "https://raw.githubusercontent.com/wlplease/term/main/README.md",
   "title": "NullShift",
   "name": "Jeff's AI Terminal",
-  "ascii": "   +---------------------------------------------------------------------------+\\n | _   _         _    _    ___    _           ___  _                         |\\n |( ) ( )       (_ ) (_ ) (  _`\\ ( )     _  /'___)( )_                       |\\n || `\\| | _   _  | |  | | | (_(_)| |__  (_)| (__  | ,_)          _   _  ____ |\\n || , ` |( ) ( ) | |  | | `\\__ \\ |  _ `\\| || ,__) | |     (`\\/')( ) ( )(_  ,)|\\n || |`\\ || (_) | | |  | | ( )_) || | | || || |    | |_  _  >  < | (_) | /'/_ |\\n |(_) (_)`\\___/'(___)(___)`\\____)(_) (_)(_)(_)    `\\__)(_)(_\\/_)`\\__, |(____)|\\n |                                                              ( )_| |      |\\n |                                                              `\\___/'      |\\n   +---------------------------------------------------------------------------+\\n\\n       ~ Welcome to Jeff's NullShift Terminal ~\\n       A hub for tech, crypto, and finance enthusiasts.\\n       Type 'help' for a list of commands.\\n       Discover, innovate, and connect!",
+  "ascii": "   +---------------------------------------------------------------------------+\n | _   _         _    _    ___    _           ___  _                         |\n |( ) ( )       (_ ) (_ ) (  _`\\ ( )     _  /'___)( )_                       |\n || `\\| | _   _  | |  | | | (_(_)| |__  (_)| (__  | ,_)          _   _  ____ |\n || , ` |( ) ( ) | |  | | `\\__ \\ |  _ `\\| || ,__) | |     (`\\/')( ) ( )(_  ,)|\n || |`\\ || (_) | | |  | | ( )_) || | | || || |    | |_  _  >  < | (_) | /'/_ |\n |(_) (_)`\\___/'(___)(___)`\\____)(_) (_)(_)(_)    `\\__)(_)(_\\/_)`\\__, |(____)|\n |                                                              ( )_| |      |\n |                                                              `\\___/'      |\n   +---------------------------------------------------------------------------+\n\n       ~ Welcome to Jeff's NullShift Terminal ~\n       A hub for tech, crypto, and finance enthusiasts.\n       Type 'help' for a list of commands.\n       Discover, innovate, and connect!",
   "repo": "https://github.com/itjeff/",
   "donate_urls": {
     "cashapp": "$itjeff",
@@ -13,6 +13,7 @@
   "social": {
     "github": "itjeff/",
     "twitter": "itjeff",
+    "discord": "https://discord.gg/ay29JtN9",
     "linkedin": "itjeff"
   },
   "email": "nullshiftxyz@gmail.com",
