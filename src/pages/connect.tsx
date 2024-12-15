@@ -1,146 +1,107 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
 const Connect: React.FC = () => {
-  const [terminalOutput, setTerminalOutput] = useState<string[]>([]);
-  const [inputValue, setInputValue] = useState('');
-  const [currentLevel, setCurrentLevel] = useState(1);
-  const [isGameOver, setIsGameOver] = useState(false);
-
-  const inputRef = useRef<HTMLInputElement | null>(null);
-
-  const commands = {
-    1: {
-      prompt: "Level 1: Hack into the server by typing 'connect'.",
-      response: "You are now connected to the server! Proceed to level 2 by typing 'next'.",
-      nextLevelCommand: 'next',
-    },
-    2: {
-      prompt: "Level 2: Decrypt the message by typing 'decrypt'.",
-      response: "Message decrypted: 'NullShift is awesome!' Proceed to level 3 by typing 'advance'.",
-      nextLevelCommand: 'advance',
-    },
-    3: {
-      prompt: "Level 3: Gain root access by typing 'sudo root'.",
-      response: "Access granted. A clue appears: 'Follow the white rabbit'. Type 'rabbit' to proceed.",
-      nextLevelCommand: 'rabbit',
-    },
-    4: {
-      prompt: "Level 4: A mysterious message appears. Type 'unlock' to reveal the next clue.",
-      response: "The clue says: '42 is the answer to everything'. Solve the equation: '6 x 7'.",
-      nextLevelCommand: '42',
-    },
-    5: {
-      prompt: "Level 5: You've reached a digital labyrinth. Decode 'Y29ubmVjdA==' (Base64).",
-      response: "Decoded: 'connect'. Type 'connect' to escape.",
-      nextLevelCommand: 'connect',
-    },
-    6: {
-      prompt: "Level 6: You've found the Easter Egg! Type 'celebrate' to complete the game.",
-      response: "Congratulations! You have uncovered the Easter Egg and completed the game!",
-      nextLevelCommand: 'celebrate',
-    },
-  };
-
-  const addOutput = (output: string) => {
-    setTerminalOutput((prev) => [...prev, output]);
-  };
-
-  const handleCommand = (command: string) => {
-    const levelCommands = commands[currentLevel];
-
-    if (command === 'help') {
-      addOutput('Available commands: help, clear, ' + (levelCommands.nextLevelCommand || 'none'));
-    } else if (command === 'clear') {
-      setTerminalOutput([]);
-    } else if (command === levelCommands.nextLevelCommand) {
-      addOutput(levelCommands.response);
-      if (currentLevel === 6) {
-        setIsGameOver(true);
-      } else {
-        setCurrentLevel((prev) => prev + 1);
-      }
-    } else {
-      addOutput(`Command not recognized. Try 'help'.`);
-    }
-  };
-
-  const handleInput = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (inputValue.trim() === '') return;
-
-    addOutput(`$ ${inputValue}`);
-    handleCommand(inputValue.trim());
-    setInputValue('');
-  };
+  const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
-    addOutput(commands[currentLevel].prompt);
-  }, [currentLevel]);
-
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [isGameOver]);
+    // Add a slight delay for the fun effect
+    const timer = setTimeout(() => setShowMessage(true), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
       <Head>
-        <title>Connect to the NullShift Terminal</title>
+        <title>Airdrop $J3ff3R - Join the Crew</title>
       </Head>
 
-      <div className="min-h-screen flex items-center justify-center bg-gray-900">
-        <div className="w-[90%] max-w-2xl bg-black text-green-400 font-mono p-6 rounded-lg shadow-lg">
-          {/* Terminal Header */}
-          <div className="bg-gray-800 text-white p-4 rounded-t-lg">
-            <div className="text-center text-lg font-bold">
-              <Link href="/index" className="hover:underline">
-                NullShift Terminal Interface
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 via-black to-gray-900">
+        <div className="w-[90%] max-w-lg bg-black text-green-400 font-mono p-8 rounded-lg shadow-2xl animate-fade-in">
+          {/* Header */}
+          <div className="bg-gray-800 text-white p-4 rounded-t-lg text-center">
+            <h1 className="text-2xl font-bold tracking-wide">
+              Welcome to the $J3ff3R Airdrop
+            </h1>
+          </div>
+
+          {/* Content */}
+          <div className="p-6 text-center">
+            <p className="text-lg mb-4">
+              Join the NullShift Crew and claim your exclusive{' '}
+              <span className="text-yellow-400">$J3ff3R</span> tokens!
+            </p>
+
+            {showMessage ? (
+              <p className="mb-6 animate-blink">🚀 Ready to embark on the NullShift mission?</p>
+            ) : (
+              <p className="mb-6">Loading your mission brief...</p>
+            )}
+
+            <a
+              href="https://cform.coinlist.co/forms/dfe96034-09ed-4ca4-afa6-438305522df5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 hover:bg-green-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300"
+            >
+              Claim $J3ff3R Tokens
+            </a>
+          </div>
+
+          {/* Footer */}
+          <footer className="bg-gray-800 text-white p-4 rounded-b-lg text-center">
+            <p className="text-sm">
+              Need help? Email us at{' '}
+              <a
+                href="mailto:nullshiftxyz@gmail.com"
+                className="text-blue-400 underline hover:text-blue-600"
+              >
+                nullshiftxyz@gmail.com
+              </a>
+            </p>
+            <p className="mt-2">
+              <Link href="/index">
+                <span className="text-yellow-400 underline hover:text-yellow-600 cursor-pointer">
+                  Return to Terminal
+                </span>
               </Link>
-            </div>
-          </div>
-
-          {/* Terminal Body */}
-          <div className="p-4 overflow-y-auto h-96 border-2 border-gray-800 rounded-b-lg">
-            {terminalOutput.map((line, index) => (
-              <div key={index} className="whitespace-pre-wrap">
-                {line}
-              </div>
-            ))}
-
-            {!isGameOver && (
-              <form onSubmit={handleInput} className="mt-4 flex">
-                <span className="text-green-400">$</span>
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  className="bg-black text-green-400 border-none flex-1 focus:outline-none ml-2"
-                  placeholder="Enter command"
-                />
-              </form>
-            )}
-
-            {isGameOver && (
-              <div className="mt-4 text-green-400">
-                Congratulations! You have completed the game!
-                <br />
-                <a
-                  href="https://opensea.io/collection/mookee/overview"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 underline hover:text-blue-700"
-                >
-                  View the final clue on OpenSea
-                </a>
-              </div>
-            )}
-          </div>
+            </p>
+          </footer>
         </div>
       </div>
+
+      {/* Animations */}
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes blink {
+          0%,
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+
+        .animate-fade-in {
+          animation: fade-in 1s ease-out;
+        }
+
+        .animate-blink {
+          animation: blink 1s infinite;
+        }
+      `}</style>
     </>
   );
 };
