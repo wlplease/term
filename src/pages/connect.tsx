@@ -72,7 +72,7 @@ const Connect: React.FC = () => {
                   To qualify for the Solana Chain `$Jeffer` airdrop, you need to hold a Base
                   Chain `$J3FF3R` NFT. Mint yours below:
                 </p>
-                <Link href="https://opensea.io/assets/base/0xce441226b56d6386d0230e6041f79c8a06d2785b/1/">
+                <Link href="https://opensea.io/assets/base/0xca6dbfdb25a2d24247c89b4d79010753d193a0c5/1/">
                   <span
                     className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300 mb-6 cursor-pointer"
                   >
