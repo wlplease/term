@@ -14,7 +14,7 @@ export const help = async (args: string[]): Promise<string> => {
       c += Object.keys(bin).sort()[i - 1] + ' ';
     }
   }
-  return `Welcome! Here are all the available commands:
+  return `Welcome! Here are some of the available commands for starter users:
 \n${c}\n
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
@@ -77,22 +77,22 @@ export const twitter = async (args: string[]): Promise<string> => {
 
 // Search
 export const google = async (args: string[]): Promise<string> => {
-  window.open(`https://google.com/search?q=${args.join(' ')}`);
+  window.open(`https://google.com/search?q=bitcoin${args.join(' ')}`);
   return `Searching Google for ${args.join(' ')}...`;
 };
 
 export const duckduckgo = async (args: string[]): Promise<string> => {
-  window.open(`https://duckduckgo.com/?q=${args.join(' ')}`);
+  window.open(`https://duckduckgo.com/?q=privacy${args.join(' ')}`);
   return `Searching DuckDuckGo for ${args.join(' ')}...`;
 };
 
 export const bing = async (args: string[]): Promise<string> => {
-  window.open(`https://bing.com/search?q=${args.join(' ')}`);
+  window.open(`https://bing.com/search?q=whyusebinginsteadofgoogle${args.join(' ')}`);
   return `Searching Bing for ${args.join(' ')}...`;
 };
 
 export const reddit = async (args: string[]): Promise<string> => {
-  window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
+  window.open(`https://www.reddit.com/search/?q=doodles${args.join(' ')}`);
   return `Searching Reddit for ${args.join(' ')}...`;
 };
 
