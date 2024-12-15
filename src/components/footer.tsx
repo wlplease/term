@@ -8,9 +8,12 @@ const Footer: React.FC = () => {
         <p className="footer-text">
           &copy; {new Date().getFullYear()} NullShift. All Rights Reserved.
         </p>
+        <p className="footer-disclaimer">
+          * NullShift is for educational and entertainment purposes. No financial advice or guarantees provided. *
+        </p>
         <div className="footer-links">
           <Link href="/terms">
-            <span className="footer-link">Terms & Conditions</span>
+            <span className="footer-link">Terms</span>
           </Link>
           <Link href="/disclaimer">
             <span className="footer-link">Disclaimer</span>
@@ -18,16 +21,13 @@ const Footer: React.FC = () => {
           <Link href="https://nullshift.xyz" target="_blank" rel="noopener noreferrer">
             <span className="footer-link">nullshift.xyz</span>
           </Link>
-          <Link href="https://x.com/itjeff" target="_blank" rel="noopener noreferrer">
-            <span className="footer-link">Twitter</span>
-          </Link>
         </div>
       </div>
       <style jsx>{`
         .footer {
           background-color: #1e252e;
           color: white;
-          padding: 20px 0;
+          padding: 15px 0;
           text-align: center;
           border-top: 2px solid #ff8037;
         }
@@ -39,15 +39,20 @@ const Footer: React.FC = () => {
         }
 
         .footer-text {
-          margin-bottom: 10px;
+          margin-bottom: 5px;
           font-size: 0.875rem;
+        }
+
+        .footer-disclaimer {
+          margin-bottom: 10px;
+          font-size: 0.75rem;
+          color: #ffcc80;
         }
 
         .footer-links {
           display: flex;
-          flex-wrap: wrap;
           justify-content: center;
-          gap: 15px;
+          gap: 12px;
         }
 
         .footer-link {
@@ -68,7 +73,15 @@ const Footer: React.FC = () => {
           }
 
           .footer-link {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
+          }
+
+          .footer-text {
+            font-size: 0.8rem;
+          }
+
+          .footer-disclaimer {
+            font-size: 0.7rem;
           }
         }
 
@@ -77,8 +90,16 @@ const Footer: React.FC = () => {
             font-size: 0.75rem;
           }
 
+          .footer-disclaimer {
+            font-size: 0.65rem;
+          }
+
           .footer-links {
             gap: 8px;
+          }
+
+          .footer-link {
+            font-size: 0.75rem;
           }
         }
       `}</style>

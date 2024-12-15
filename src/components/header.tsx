@@ -35,17 +35,17 @@ const Header: React.FC = () => {
               <FaTwitter size={20} />
             </span>
           </Link>
-          <Link href="https://discord.gg/nbnyfzqq" target="_blank" rel="noopener noreferrer">
+          <Link href="https://discord.com/invite/nbnyfzqq" target="_blank" rel="noopener noreferrer">
             <span className="social-link flex items-center">
               <FaDiscord size={20} />
             </span>
           </Link>
-          <Link href="/connect">
-            <span className="connect-button">Mint $J3ff3R</span>
-          </Link>
           <div className="toggle-switch" onClick={toggleDarkMode}>
             <span className="toggle-thumb">{darkMode ? '🌙' : '☀️'}</span>
           </div>
+          <Link href="/connect">
+            <span className="connect-button">Mint $J3ff3R</span>
+          </Link>
         </div>
       </div>
 
