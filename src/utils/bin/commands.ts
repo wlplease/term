@@ -1,5 +1,3 @@
-// List of commands that do not require API calls
-
 import * as bin from './index';
 import config from '../../../config.json';
 
@@ -37,7 +35,7 @@ More about me:
 'resume' - my latest resume.
 'readme' - my Github readme.
 'twitter' - my X.
-‘Discord’ - join the crew.
+'discord' - join the crew.
 'email' - message me.`;
 };
 
@@ -77,30 +75,28 @@ export const twitter = async (args: string[]): Promise<string> => {
 };
 
 export const discord = async (args: string[]): Promise<string> => {
-  window.open(`https://discord.gg/ay29JtN9${config.social.discord}/`);
+  window.open(`https://discord.com/invite/nbnyfzqq`);
   return 'Opening Discord...';
 };
 
 // Search
 export const google = async (args: string[]): Promise<string> => {
-  window.open(`https://google.com/search?q=bitcoin${args.join(' ')}`);
+  window.open(`https://google.com/search?q=${args.join(' ')}`);
   return `Searching Google for ${args.join(' ')}...`;
 };
 
 export const duckduckgo = async (args: string[]): Promise<string> => {
-  window.open(`https://duckduckgo.com/?q=privacy${args.join(' ')}`);
+  window.open(`https://duckduckgo.com/?q=${args.join(' ')}`);
   return `Searching DuckDuckGo for ${args.join(' ')}...`;
 };
 
 export const bing = async (args: string[]): Promise<string> => {
-  window.open(
-    `https://bing.com/search?q=whyusebinginsteadofgoogle${args.join(' ')}`,
-  );
+  window.open(`https://bing.com/search?q=${args.join(' ')}`);
   return `Searching Bing for ${args.join(' ')}...`;
 };
 
 export const reddit = async (args: string[]): Promise<string> => {
-  window.open(`https://www.reddit.com/search/?q=doodles${args.join(' ')}`);
+  window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
   return `Searching Reddit for ${args.join(' ')}...`;
 };
 
@@ -143,7 +139,7 @@ export const nvim = async (args: string[]): Promise<string> => {
 };
 
 export const emacs = async (args?: string[]): Promise<string> => {
-  return `You know what? Just use VSCode sers.`;
+  return `You know what? Just use VSCode.`;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
