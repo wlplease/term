@@ -10,6 +10,7 @@
 
 * {
   font-family: 'Hack', monospace;
+  box-sizing: border-box; /* Ensure padding and borders are included */
 }
 
 /* Full Height for Terminal View */
@@ -52,9 +53,12 @@ div#__next > div {
   border-radius: 8px;
   overflow-y: auto;
   height: 90vh;
+  width: 100%;
+  max-width: 100%; /* Ensure it doesn't overflow */
   white-space: pre-wrap;
   word-wrap: break-word;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 0 auto; /* Center the terminal */
 }
 
 /* Terminal Line Typing Effect */
@@ -98,6 +102,15 @@ div#__next > div {
 
   ::-webkit-scrollbar {
     width: 8px;
+  }
+}
+
+/* Extra Small Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .terminal {
+    font-size: 12px;
+    padding: 10px;
+    height: 80vh;
   }
 }
 
