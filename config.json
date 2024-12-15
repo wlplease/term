@@ -1,84 +1,83 @@
 {
   "readmeUrl": "https://raw.githubusercontent.com/wlplease/term/main/README.md",
-  
-    "title": "NullShift",
-    "name": "Jeff's AI",
-    "ascii": "   +---------------------------------------------------------------------------+\\n | _   _         _    _    ___    _           ___  _                         |\\n |( ) ( )       (_ ) (_ ) (  _`\\ ( )     _  /'___)( )_                       |\\n || `\\| | _   _  | |  | | | (_(_)| |__  (_)| (__  | ,_)          _   _  ____ |\\n || , ` |( ) ( ) | |  | | `\\__ \\ |  _ `\\| || ,__) | |     (`\\/')( ) ( )(_  ,)|\\n || |`\\ || (_) | | |  | | ( )_) || | | || || |    | |_  _  >  < | (_) | /'/_ |\\n |(_) (_)`\\___/'(___)(___)`\\____)(_) (_)(_)(_)    `\\__)(_)(_\\/_)`\\__, |(____)|\\n |                                                              ( )_| |      |\\n |                                                              `\\___/'      |\\n   +---------------------------------------------------------------------------+\\n\\n       ~ Welcome to Jeff's NullShift Terminal ~\\n       A hub for tech, crypto, and finance enthusiasts.\\n       Type 'help' for a list of commands.\\n       Discover, innovate, and connect!",
-    "repo": "https://github.com/wlplease/",
-    "donate_urls": {
-      "cashapp": "$itjeff",
-      "ethereum": "0x0D60a455Da54750769400A32204A539703b2D89A",
-      "paypal": "https://paypal.com/itjeff",
-      "patreon": "https://patreon.com/itjeff"
+  "title": "NullShift",
+  "name": "Jeff's AI Terminal",
+  "ascii": "   +---------------------------------------------------------------------------+\\n | _   _         _    _    ___    _           ___  _                         |\\n |( ) ( )       (_ ) (_ ) (  _`\\ ( )     _  /'___)( )_                       |\\n || `\\| | _   _  | |  | | | (_(_)| |__  (_)| (__  | ,_)          _   _  ____ |\\n || , ` |( ) ( ) | |  | | `\\__ \\ |  _ `\\| || ,__) | |     (`\\/')( ) ( )(_  ,)|\\n || |`\\ || (_) | | |  | | ( )_) || | | || || |    | |_  _  >  < | (_) | /'/_ |\\n |(_) (_)`\\___/'(___)(___)`\\____)(_) (_)(_)(_)    `\\__)(_)(_\\/_)`\\__, |(____)|\\n |                                                              ( )_| |      |\\n |                                                              `\\___/'      |\\n   +---------------------------------------------------------------------------+\\n\\n       ~ Welcome to Jeff's NullShift Terminal ~\\n       A hub for tech, crypto, and finance enthusiasts.\\n       Type 'help' for a list of commands.\\n       Discover, innovate, and connect!",
+  "repo": "https://github.com/wlplease/term/",
+  "donate_urls": {
+    "cashapp": "$itjeff",
+    "ethereum": "0x0D60a455Da54750769400A32204A539703b2D89A",
+    "paypal": "https://paypal.com/itjeff",
+    "patreon": "https://patreon.com/itjeff"
+  },
+  "social": {
+    "github": "wlplease/",
+    "twitter": "itjeff",
+    "linkedin": "itjeff"
+  },
+  "email": "nullshiftxyz@gmail.com",
+  "ps1_hostname": "nullshift",
+  "ps1_username": "visitor",
+  "resume_url": "../resume",
+  "non_terminal_url": "W",
+  "colors": {
+    "light": {
+      "background": "#FCE4EC",
+      "foreground": "#212121",
+      "cursor": "#FF80AB",
+      "selection": "#80DEEA"
     },
-    "social": {
-      "github": "wlplease/term/",
-      "twitter": "itjeff",
-      "linkedin": "itjeff"
+    "dark": {
+      "background": "#212121",
+      "foreground": "#F8BBD0",
+      "cursor": "#FFCC80",
+      "selection": "#80CBC4"
+    }
+  },
+  "details": [
+    {
+      "name": "about",
+      "description": "Displays information about Jeff and this terminal.",
+      "details": "Jeff is a seasoned developer and finance expert with years of experience in technology, finance, and the crypto space. He has worked on numerous innovative projects that blend tech and finance, making an impact in both industries. This terminal is designed to showcase Jeff's portfolio, skills, and insights."
     },
-    "email": "nullshiftxyz@gmail.com",
-    "ps1_hostname": "nullshift",
-    "ps1_username": "visitor",
-    "resume_url": "../resume.pdf",
-    "non_terminal_url": "W",
-    "colors": {
-      "light": {
-        "background": "#FCE4EC",
-        "foreground": "#212121",
-        "cursor": "#FF80AB",
-        "selection": "#80DEEA"
-      },
-      "dark": {
-        "background": "#212121",
-        "foreground": "#F8BBD0",
-        "cursor": "#FFCC80",
-        "selection": "#80CBC4"
-      }
+    {
+      "name": "social",
+      "description": "Displays links to Jeff's social profiles."
     },
-    "details": [
-      {
-        "name": "about",
-        "description": "Displays information about Jeff and this terminal.",
-        "details": "Jeff is a seasoned developer and finance expert with years of experience in technology, finance, and the crypto space. He has worked on numerous innovative projects that blend tech and finance, making an impact in both industries. This terminal is designed to showcase Jeff's portfolio, skills, and insights."
-      },
-      {
-        "name": "social",
-        "description": "Displays links to Jeff's social profiles."
-      },
-      {
-        "name": "projects",
-        "description": "Shows a list of Jeff's projects.",
-        "details": "Jeff's projects include financial modeling tools, blockchain applications, and AI-driven investment platforms."
-      },
-      {
-        "name": "resume",
-        "description": "Links to Jeff's resume."
-      },
-      {
-        "name": "clear",
-        "description": "Clears the terminal screen."
-      },
-      {
-        "name": "contact",
-        "description": "Provides contact information for Jeff."
-      },
-      {
-        "name": "tech-stack",
-        "description": "Lists the technologies Jeff specializes in.",
-        "details": "Jeff specializes in Python, JavaScript, Solidity, blockchain technologies, and financial modeling tools."
-      },
-      {
-        "name": "experience",
-        "description": "Displays a summary of Jeff's professional experience.",
-        "details": "Jeff has over 10 years of experience in technology, finance, and cryptocurrency. He has held roles as a developer, financial analyst, and blockchain advisor."
-      },
-      {
-        "name": "blog",
-        "description": "Links to Jeff's blog or articles."
-      },
-      {
-        "name": "news",
-        "description": "Shows the latest updates or announcements from Jeff."
-      }
-    ]
-  }
+    {
+      "name": "projects",
+      "description": "Shows a list of Jeff's projects.",
+      "details": "Jeff's projects include financial modeling tools, blockchain applications, and AI-driven investment platforms."
+    },
+    {
+      "name": "resume",
+      "description": "Links to Jeff's resume."
+    },
+    {
+      "name": "clear",
+      "description": "Clears the terminal screen."
+    },
+    {
+      "name": "contact",
+      "description": "Provides contact information for Jeff."
+    },
+    {
+      "name": "tech-stack",
+      "description": "Lists the technologies Jeff specializes in.",
+      "details": "Jeff specializes in Python, JavaScript, Solidity, blockchain technologies, and financial modeling tools."
+    },
+    {
+      "name": "experience",
+      "description": "Displays a summary of Jeff's professional experience.",
+      "details": "Jeff has over 10 years of experience in technology, finance, and cryptocurrency. He has held roles as a developer, financial analyst, and blockchain advisor."
+    },
+    {
+      "name": "blog",
+      "description": "Links to Jeff's blog or articles."
+    },
+    {
+      "name": "news",
+      "description": "Shows the latest updates or announcements from Jeff."
+    }
+  ]
+}
