@@ -41,6 +41,20 @@ const Connect: React.FC = () => {
               <p className="mb-6">Loading your mission brief...</p>
             )}
 
+            {/* NFT Minting Link */}
+            <p className="text-sm mb-4 text-yellow-400">
+              To qualify for the Solana Chain `$Jeffer` airdrop, you need to hold a Base Chain `$J3FF3R` NFT. Mint yours below:
+            </p>
+            <a
+              href="https://tokentool.bitbond.com/asset/0x6B8c1d59816185DC2CeA83Eb2750b1C1592a3D54?chainId=8453"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300 mb-6"
+            >
+              Mint $J3FF3R NFT
+            </a>
+
+            {/* Airdrop Claim Link */}
             <a
               href="https://cform.coinlist.co/forms/dfe96034-09ed-4ca4-afa6-438305522df5"
               target="_blank"
@@ -108,4 +122,4 @@ const Connect: React.FC = () => {
   );
 };
 
-export default Connect; 
+export default Connect;
