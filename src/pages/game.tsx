@@ -140,12 +140,12 @@ const Game: React.FC = () => {
                 Congratulations! You have completed the game!
                 <br />
                 <a
-                  href="https://opensea.io/collection/mookee/overview"
+                  href="https://tokentool.bitbond.com/asset/0x6B8c1d59816185DC2CeA83Eb2750b1C1592a3D54?chainId=8453"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 underline hover:text-blue-700"
                 >
-                  View the final clue on OpenSea
+                  View the final clue on Jeffer NFT Mint
                 </a>
               </div>
             )}
