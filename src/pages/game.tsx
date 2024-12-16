@@ -123,13 +123,24 @@ const Game: React.FC = () => {
 
             {isGameOver && (
               <div className="mt-4 text-center text-green-400">
-                Congratulations! You have completed the game!
-                <br />
+                <p>Congratulations! You have completed the game!</p>
                 <Link href="https://opensea.io/assets/base/0xca6dbfdb25a2d24247c89b4d79010753d193a0c5/1/">
                   <span className="text-blue-500 underline hover:text-blue-700 cursor-pointer">
                     View the final clue on Jeffer NFT Mint
                   </span>
                 </Link>
+                <div className="mt-6">
+                  <h3 className="text-lg font-bold mb-2 text-yellow-400">
+                    ENTER FOR OUR $J3FF3R EGG TEAM ACCESS
+                  </h3>
+                  <Link href="/egg">
+                    <img
+                      src="https://img.freepik.com/premium-vector/cute-angry-half-boiled-egg-character-funny-furious-egg-cartoon-emoticon-flat-style_841552-330.jpg?semt=ais_hybrid"
+                      alt="Easter Egg"
+                      className="w-40 mx-auto hover:scale-105 transition-transform cursor-pointer"
+                    />
+                  </Link>
+                </div>
               </div>
             )}
           </div>
