@@ -1,5 +1,3 @@
-// pages/secretfiles.tsx
-
 import React from 'react';
 import Head from 'next/head';
 import Header from '../components/header';
@@ -84,7 +82,7 @@ const SecretFiles: React.FC = () => {
                   One of the biggest crypto hacks in history. Billions of
                   dollars worth of Bitcoin were lost.
                 </p>
-                <Link href="https://www.coindesk.com/markets/2020/03/10/how-mt-gox-exposed-bitcoin-to-the-world-and-prompted-massive-changes/">
+                <Link href="https://www.investopedia.com/terms/m/mt-gox.asp">
                   <a className="text-blue-400 hover:underline">Learn More</a>
                 </Link>
               </motion.div>
@@ -100,7 +98,7 @@ const SecretFiles: React.FC = () => {
                   Explore how NFTs went from niche interest to global
                   phenomenon.
                 </p>
-                <Link href="https://decrypt.co/resources/what-are-nfts">
+                <Link href="https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq">
                   <a className="text-blue-400 hover:underline">Learn More</a>
                 </Link>
               </motion.div>

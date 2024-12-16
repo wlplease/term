@@ -17,21 +17,19 @@ const About: React.FC = () => {
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Check if the password is "nullshift" spelled backwards
     if (password === 'tfihsllun') {
       setAccessGranted(true);
-      // Redirect to the secret files page
       router.push('/secretfiles');
     } else {
       setErrorMessage('Incorrect password. Please try again.');
-      setPassword(''); // Clear password field after incorrect attempt
+      setPassword('');
     }
   };
 
   return (
     <>
       <Head>
-        <title>About Us - NullShift</title>
+        <title>About Jeff - NullShift.xyz</title>
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
 
@@ -42,51 +40,64 @@ const About: React.FC = () => {
           {!accessGranted ? (
             <>
               <h1 className="text-3xl md:text-4xl font-bold mb-6 text-yellow-400 text-center">
-                Welcome to NullShift.xyz
+                Welcome to Jeff’s World
               </h1>
 
               <p className="mb-6 text-lg leading-relaxed text-justify">
-                NullShift.xyz is the hub for innovation in blockchain,
-                cryptocurrency, NFTs, and decentralized technologies. Our
-                mission is to explore the frontiers of tech, experimenting with
-                decentralized systems and engaging with the latest in digital
-                assets.
+                Hey there! I’m Jeff, a tech enthusiast who’s passionate about
+                living life to the fullest. From coding and 3D printing to flying
+                drones and diving into the world of blockchain, I’m always
+                exploring new adventures. Welcome to my personal corner of the
+                internet—a hub for creativity, innovation, and fun!
               </p>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
-                  Our Passion for Technology
+                  What I’m All About
                 </h2>
                 <p className="mb-4 leading-relaxed">
-                  At NullShift, we love the potential of blockchain technology.
-                  From Bitcoin to Ethereum, and Solana to NFTs, we embrace the
-                  future of decentralized technologies and the communities they
-                  create.
+                  I’m all about blending my love for tech and life’s simple
+                  joys. Whether I’m:
                 </p>
-                <p className="mb-4 leading-relaxed">
-                  Cryptocurrencies like Bitcoin and Ethereum have revolutionized
-                  finance. Solana and other blockchains are pushing the
-                  boundaries of speed, scalability, and interoperability. We&apos;re
-                  passionate about exploring and experimenting with these
-                  technologies in real-time.
-                </p>
-                <p className="mb-4 leading-relaxed">
-                  Whether it&apos;s building decentralized applications (dApps),
-                  creating NFTs, or contributing to the blockchain ecosystem,
-                  NullShift is here to learn and grow with the technology that
-                  is reshaping our world.
+                <ul className="list-disc list-inside space-y-2 pl-4">
+                  <li>Experimenting with blockchain and crypto projects.</li>
+                  <li>Flying drones like a kid with a new toy.</li>
+                  <li>Building cool things with 3D printing tech.</li>
+                  <li>Watching sports (water or ball—you name it!).</li>
+                  <li>Laughing, living, and embracing the adventure.</li>
+                </ul>
+                <p className="mt-4 leading-relaxed">
+                  I believe life is a mix of passions, community, and good
+                  vibes. NullShift.xyz is where all of that comes together!
                 </p>
               </section>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
-                  Enter the Password to Unlock More
+                  A Love for Crypto and Beyond
                 </h2>
-                <p className="mb-4 text-lg leading-relaxed">
-                  To continue exploring the inner workings of NullShift.xyz and
-                  access our secret content, please enter the password below:
+                <p className="mb-4 leading-relaxed">
+                  My journey into the crypto world has been nothing short of
+                  thrilling. From diving into NFTs and decentralized apps to
+                  exploring innovative blockchain projects, I’m constantly in
+                  awe of the limitless possibilities. Crypto is more than tech—
+                  it’s a lifestyle.
                 </p>
+                <p className="leading-relaxed">
+                  Whether you’re here for tech insights or just want to vibe
+                  with a fellow enthusiast, you’ve come to the right place.
+                </p>
+              </section>
 
+              <section className="mb-8">
+                <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
+                  Join the Club
+                </h2>
+                <p className="mb-4 leading-relaxed">
+                  NullShift isn’t just a website—it’s a community. Want to
+                  unlock exclusive content and dive deeper into the adventure?
+                  Enter the password below and join the club:
+                </p>
                 <form
                   onSubmit={handlePasswordSubmit}
                   className="flex flex-col items-center space-y-4"
@@ -114,11 +125,11 @@ const About: React.FC = () => {
           ) : (
             <div className="text-center mt-8">
               <h2 className="text-3xl text-yellow-400">
-                Welcome to the Secret Files Area
+                Welcome to the Secret Club
               </h2>
               <p className="mt-4 text-lg text-gray-400">
-                You have unlocked access to our exclusive content. Explore the
-                secrets of NullShift.xyz.
+                You’ve unlocked exclusive access! Dive into the fun and see
+                what’s next in Jeff’s world.
               </p>
             </div>
           )}
