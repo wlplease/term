@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import { useRouter } from 'next/router';
 
 const About: React.FC = () => {
+  const [password, setPassword] = useState('');
+  const [accessGranted, setAccessGranted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const router = useRouter();
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Check if the password is "nullshift" spelled backwards
+    if (password === 'tfihsllun') {
+      setAccessGranted(true);
+      // Redirect to the secret files page
+      router.push('/secretfiles');
+    } else {
+      setErrorMessage('Incorrect password. Please try again.');
+      setPassword(''); // Clear password field after incorrect attempt
+    }
+  };
+
   return (
     <>
       <Head>
@@ -16,91 +39,89 @@ const About: React.FC = () => {
 
       <div className="min-h-screen flex flex-col bg-gray-900 text-white overflow-x-hidden">
         <main className="flex-grow container mx-auto p-4 md:p-8 bg-black text-green-400 font-mono shadow-lg rounded-md max-w-4xl">
-          <h1 className="text-3xl md:text-4xl font-bold mb-6 text-yellow-400 text-center">
-            About NullShift
-          </h1>
+          {!accessGranted ? (
+            <>
+              <h1 className="text-3xl md:text-4xl font-bold mb-6 text-yellow-400 text-center">
+                Welcome to NullShift.xyz
+              </h1>
 
-          <p className="mb-6 text-lg leading-relaxed text-justify">
-            Welcome to the <span className="text-yellow-400 font-bold">NullShift Crew</span>! Our community thrives on blockchain-powered innovation, learning, and on-chain fun.
-          </p>
+              <p className="mb-6 text-lg leading-relaxed text-justify">
+                NullShift.xyz is the hub for innovation in blockchain,
+                cryptocurrency, NFTs, and decentralized technologies. Our
+                mission is to explore the frontiers of tech, experimenting with
+                decentralized systems and engaging with the latest in digital
+                assets.
+              </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4 text-yellow-400">The $J3FF3R NFT Club</h2>
-            <p className="mb-4 leading-relaxed">
-              The <span className="text-yellow-400 font-bold">$J3FF3R NFT Club</span> is a collection of NFTs designed for blockchain enthusiasts seeking an exclusive on-chain learning and experimental experience. Holding a $J3FF3R NFT grants you access to:
-            </p>
-            <ul className="list-disc list-inside space-y-2 pl-4">
-              <li>Exclusive NullShift Club access.</li>
-              <li>Future airdropped tokens as the club grows.</li>
-              <li>Opportunities to contribute to on-chain experiments.</li>
-            </ul>
-          </section>
+              <section className="mb-8">
+                <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
+                  Our Passion for Technology
+                </h2>
+                <p className="mb-4 leading-relaxed">
+                  At NullShift, we love the potential of blockchain technology.
+                  From Bitcoin to Ethereum, and Solana to NFTs, we embrace the
+                  future of decentralized technologies and the communities they
+                  create.
+                </p>
+                <p className="mb-4 leading-relaxed">
+                  Cryptocurrencies like Bitcoin and Ethereum have revolutionized
+                  finance. Solana and other blockchains are pushing the
+                  boundaries of speed, scalability, and interoperability. We&apos;re
+                  passionate about exploring and experimenting with these
+                  technologies in real-time.
+                </p>
+                <p className="mb-4 leading-relaxed">
+                  Whether it&apos;s building decentralized applications (dApps),
+                  creating NFTs, or contributing to the blockchain ecosystem,
+                  NullShift is here to learn and grow with the technology that
+                  is reshaping our world.
+                </p>
+              </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4 text-yellow-400">No Pools or Speculation</h2>
-            <p className="mb-4 leading-relaxed">
-              The <span className="text-yellow-400 font-bold">$J3FF3R ecosystem</span> is focused entirely on learning, community, and exploration. There are:
-            </p>
-            <ul className="list-disc list-inside space-y-2 pl-4">
-              <li>No value promises or guarantees for NFTs or tokens.</li>
-              <li>No speculative liquidity pools or financial incentives.</li>
-            </ul>
-            <p className="leading-relaxed">
-              This is about learning on-chain principles while having fun in a community setting.
-            </p>
-          </section>
+              <section className="mb-8">
+                <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
+                  Enter the Password to Unlock More
+                </h2>
+                <p className="mb-4 text-lg leading-relaxed">
+                  To continue exploring the inner workings of NullShift.xyz and
+                  access our secret content, please enter the password below:
+                </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4 text-yellow-400">Community Ownership</h2>
-            <p className="mb-4 leading-relaxed">
-              The <span className="text-yellow-400 font-bold">$J3FF3R community</span> collectively owns and controls the future of the ecosystem, including all liquidity, if the community decides to add it. There is:
-            </p>
-            <ul className="list-disc list-inside space-y-2 pl-4">
-              <li>No owner control or creation privileges.</li>
-              <li>Full decentralization from inception, with all decisions left to the community.</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4 text-yellow-400">Our Vision</h2>
-            <p className="leading-relaxed">
-              NullShift and the $J3FF3R ecosystem aim to build a vibrant, innovative, and self-sustaining community. Together, we’ll explore the limits of blockchain technology while ensuring fair and inclusive participation for all.
-            </p>
-          </section>
-
-          <div className="text-center mt-8">
-            <Link href="/connect">
-              <span className="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded transition-all duration-300 cursor-pointer">
-                Join the Crew - Mint Your $J3FF3R NFT
-              </span>
-            </Link>
-          </div>
-
-          <div className="mt-6 text-center space-y-4">
-            <Link href="/disclaimer">
-              <span className="hover:underline text-blue-400 cursor-pointer">
-                Read our Disclaimer
-              </span>
-            </Link>
-            <br />
-            <Link href="/terms">
-              <span className="hover:underline text-blue-400 cursor-pointer">
-                View Terms and Conditions
-              </span>
-            </Link>
-          </div>
-
-          <div className="mt-12 text-center">
-            <h2 className="text-xl font-semibold mb-4 text-yellow-400">Curious About Crypto?</h2>
-            <p className="mb-4 leading-relaxed">
-              Dive deeper into the world of blockchain technology and explore our pages dedicated to Bitcoin, Ethereum, Solana, and more.
-            </p>
-            <Link href="/crypto">
-              <span className="bg-blue-500 hover:bg-blue-600 text-black font-bold py-3 px-6 rounded transition-all duration-300 cursor-pointer">
-                Learn More About Crypto
-              </span>
-            </Link>
-          </div>
+                <form
+                  onSubmit={handlePasswordSubmit}
+                  className="flex flex-col items-center space-y-4"
+                >
+                  <input
+                    type="password"
+                    placeholder="Enter Password"
+                    value={password}
+                    onChange={handlePasswordChange}
+                    className="p-2 bg-gray-800 text-white rounded-md w-1/2 sm:w-1/3"
+                    required
+                  />
+                  {errorMessage && (
+                    <p className="text-red-500 text-sm">{errorMessage}</p>
+                  )}
+                  <button
+                    type="submit"
+                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded transition-all duration-300"
+                  >
+                    Enter
+                  </button>
+                </form>
+              </section>
+            </>
+          ) : (
+            <div className="text-center mt-8">
+              <h2 className="text-3xl text-yellow-400">
+                Welcome to the Secret Files Area
+              </h2>
+              <p className="mt-4 text-lg text-gray-400">
+                You have unlocked access to our exclusive content. Explore the
+                secrets of NullShift.xyz.
+              </p>
+            </div>
+          )}
         </main>
       </div>
 

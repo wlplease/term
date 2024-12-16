@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import Phaser from "phaser";
+import { useEffect } from 'react';
+import Phaser from 'phaser';
 
 const EggGame: React.FC = () => {
   useEffect(() => {
@@ -7,10 +7,10 @@ const EggGame: React.FC = () => {
       type: Phaser.AUTO,
       width: 800,
       height: 600,
-      parent: "game-container",
-      backgroundColor: "#1e252e",
+      parent: 'game-container',
+      backgroundColor: '#1e252e',
       physics: {
-        default: "arcade",
+        default: 'arcade',
         arcade: {
           gravity: { x: 0, y: 0 },
           debug: false,
@@ -32,30 +32,42 @@ const EggGame: React.FC = () => {
     let scoreText: Phaser.GameObjects.Text;
 
     function preload(this: Phaser.Scene) {
-      this.load.image("player", "https://via.placeholder.com/40x40?text=🏃‍♂️");
-      this.load.image("coin", "https://via.placeholder.com/30x30?text=🪙");
-      this.load.image("obstacle", "https://via.placeholder.com/30x30?text=⚠️");
+      this.load.image('player', 'https://via.placeholder.com/40x40?text=🏃‍♂️');
+      this.load.image('coin', 'https://via.placeholder.com/30x30?text=🪙');
+      this.load.image('obstacle', 'https://via.placeholder.com/30x30?text=⚠️');
     }
 
     function create(this: Phaser.Scene) {
-      player = this.physics.add.sprite(400, 300, "player");
+      player = this.physics.add.sprite(400, 300, 'player');
       player.setCollideWorldBounds(true);
 
       coins = this.physics.add.group({
-        key: "coin",
+        key: 'coin',
         repeat: 10,
         setXY: { x: 100, y: 100, stepX: 60, stepY: 50 },
       });
 
       obstacles = this.physics.add.group();
 
-      scoreText = this.add.text(16, 16, "Score: 0", {
-        fontSize: "20px",
-        color: "#fff",
+      scoreText = this.add.text(16, 16, 'Score: 0', {
+        fontSize: '20px',
+        color: '#fff',
       });
 
-      this.physics.add.overlap(player, coins, collectCoin as Phaser.Types.Physics.Arcade.ArcadePhysicsCallback, undefined, this);
-      this.physics.add.collider(player, obstacles, hitObstacle, undefined, this);
+      this.physics.add.overlap(
+        player,
+        coins,
+        collectCoin as Phaser.Types.Physics.Arcade.ArcadePhysicsCallback,
+        undefined,
+        this,
+      );
+      this.physics.add.collider(
+        player,
+        obstacles,
+        hitObstacle,
+        undefined,
+        this,
+      );
 
       this.time.addEvent({
         delay: 2000,
@@ -64,9 +76,9 @@ const EggGame: React.FC = () => {
         loop: true,
       });
 
-      this.input.keyboard.on("keydown", handleMovement);
+      this.input.keyboard.on('keydown', handleMovement);
 
-      this.input.on("pointermove", (pointer: Phaser.Input.Pointer) => {
+      this.input.on('pointermove', (pointer: Phaser.Input.Pointer) => {
         player.setPosition(pointer.x, pointer.y);
       });
     }
@@ -75,16 +87,16 @@ const EggGame: React.FC = () => {
 
     function handleMovement(event: KeyboardEvent) {
       switch (event.key) {
-        case "ArrowUp":
+        case 'ArrowUp':
           player.setVelocityY(-150);
           break;
-        case "ArrowDown":
+        case 'ArrowDown':
           player.setVelocityY(150);
           break;
-        case "ArrowLeft":
+        case 'ArrowLeft':
           player.setVelocityX(-150);
           break;
-        case "ArrowRight":
+        case 'ArrowRight':
           player.setVelocityX(150);
           break;
         default:
@@ -92,30 +104,34 @@ const EggGame: React.FC = () => {
       }
     }
 
+    // Update the type of player and coin to Phaser.Physics.Arcade.Sprite
     function collectCoin(
-      player: Phaser.GameObjects.GameObject,
-      coin: Phaser.GameObjects.GameObject
+      player: Phaser.Physics.Arcade.Sprite,
+      coin: Phaser.Physics.Arcade.Sprite,
     ) {
-      const coinSprite = coin as Phaser.Physics.Arcade.Sprite;
-      coinSprite.disableBody(true, true);
+      coin.disableBody(true, true);
       score += 10;
       scoreText.setText(`Score: ${score}`);
     }
 
     function hitObstacle() {
-      scoreText.setText("Game Over!");
+      scoreText.setText('Game Over!');
       this.physics.pause();
     }
 
     function spawnObstacle(this: Phaser.Scene) {
       const x = Phaser.Math.Between(50, 750);
       const y = Phaser.Math.Between(50, 550);
-      const obstacle = obstacles.create(x, y, "obstacle");
-      obstacle.setVelocity(Phaser.Math.Between(-100, 100), Phaser.Math.Between(-100, 100));
+      const obstacle = obstacles.create(x, y, 'obstacle');
+      obstacle.setVelocity(
+        Phaser.Math.Between(-100, 100),
+        Phaser.Math.Between(-100, 100),
+      );
       obstacle.setCollideWorldBounds(true);
       obstacle.setBounce(1);
     }
 
+    // Cleanup the Phaser game when the component unmounts
     return () => {
       game.destroy(true);
     };
@@ -127,9 +143,15 @@ const EggGame: React.FC = () => {
         An Ode to Jesse Pollak: Base Coin Collector
       </h1>
       <p className="text-lg text-gray-400 mb-6 text-center px-4">
-        Collect as many Base coins as you can while dodging obstacles. Can you set a high score? Move with arrow keys or touch the screen to guide your player.
+        Collect as many Base coins as you can while dodging obstacles. Can you
+        set a high score? Move with arrow keys or touch the screen to guide your
+        player.
       </p>
-      <div id="game-container" className="bg-black w-full max-w-3xl h-[600px] rounded shadow-lg"></div>
+      {/* This is where Phaser will inject the game into the DOM */}
+      <div
+        id="game-container"
+        className="bg-black w-full max-w-3xl h-[600px] rounded shadow-lg"
+      />
     </div>
   );
 };

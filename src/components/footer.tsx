@@ -9,7 +9,8 @@ const Footer: React.FC = () => {
           &copy; {new Date().getFullYear()} NullShift. All Rights Reserved.
         </p>
         <p className="footer-disclaimer">
-          * NullShift is for educational and entertainment purposes. No financial advice or guarantees provided. *
+          * NullShift is for educational and entertainment purposes. No
+          financial advice or guarantees provided. *
         </p>
         <div className="footer-links">
           <Link href="/terms">
@@ -18,8 +19,12 @@ const Footer: React.FC = () => {
           <Link href="/disclaimer">
             <span className="footer-link">Disclaimer</span>
           </Link>
-          <Link href="https://nullshift.xyz" target="_blank" rel="noopener noreferrer">
-            <span className="footer-link">nullshift.xyz</span>
+          <Link
+            href="https://nullshift.xyz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="footer-link">NullShift.xyz</span>
           </Link>
         </div>
       </div>

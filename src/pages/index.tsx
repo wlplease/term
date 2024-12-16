@@ -51,7 +51,10 @@ const Index: React.FC<IndexPageProps> = ({ inputRef }) => {
 
       <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center px-4">
         <div className="w-full max-w-2xl bg-black text-green-400 font-mono p-6 md:p-8 rounded-lg shadow-lg">
-          <div ref={containerRef} className="overflow-y-auto h-96 border-2 border-gray-800 rounded-lg p-4">
+          <div
+            ref={containerRef}
+            className="overflow-y-auto h-96 border-2 border-gray-800 rounded-lg p-4"
+          >
             <History history={history} />
             <Input
               inputRef={inputRef}

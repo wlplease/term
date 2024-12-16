@@ -27,12 +27,20 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div className="header-right">
-          <Link href="https://x.com/itjeff" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://x.com/itjeff"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span className="social-link flex items-center">
               <FaTwitter size={20} />
             </span>
           </Link>
-          <Link href="https://discord.com/invite/nbnyfzqq" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://discord.com/invite/nbnyfzqq"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span className="social-link flex items-center">
               <FaDiscord size={20} />
             </span>
@@ -44,7 +52,7 @@ const Header: React.FC = () => {
             <span className="about-link">About</span>
           </Link>
           <Link href="/connect">
-            <span className="connect-button">Mint $J3ff3R</span>
+            <span className="connect-button">$J3ff3R</span>
           </Link>
         </div>
       </div>

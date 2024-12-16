@@ -16,7 +16,9 @@ const Resume: React.FC = () => {
 
       <div className="min-h-screen flex flex-col bg-gray-900 text-green-400 font-mono px-4">
         <main className="flex-grow container mx-auto p-8 bg-black text-green-400 shadow-lg rounded-lg">
-          <h1 className="text-4xl font-bold mb-6">404: Hacker Talent Not Found</h1>
+          <h1 className="text-4xl font-bold mb-6">
+            404: Hacker Talent Not Found
+          </h1>
           <p className="mb-4">
             It seems like you&apos;re trying to find my resume. Unfortunately,
             it&apos;s currently locked in a quantum safe.
