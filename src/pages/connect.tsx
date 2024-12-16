@@ -174,7 +174,7 @@ const Connect: React.FC = () => {
                     . Mint yours below:
                   </p>
                   <div className="space-y-4">
-                    <Link href="https://opensea.io/assets/base/0xca6dbfdb25a2d24247c89b4d79010753d193a0c5/1/">
+                    <Link href="https://opensea.io/assets/base/0xca6dbfdb25a2d24247c89b4d79010753d193a0c5/2/">
                       <span className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300 cursor-pointer">
                         Mint $J3FF3R NFT
                       </span>
