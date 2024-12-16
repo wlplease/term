@@ -89,6 +89,18 @@ const About: React.FC = () => {
               </span>
             </Link>
           </div>
+
+          <div className="mt-12 text-center">
+            <h2 className="text-xl font-semibold mb-4 text-yellow-400">Curious About Crypto?</h2>
+            <p className="mb-4 leading-relaxed">
+              Dive deeper into the world of blockchain technology and explore our pages dedicated to Bitcoin, Ethereum, Solana, and more.
+            </p>
+            <Link href="/crypto">
+              <span className="bg-blue-500 hover:bg-blue-600 text-black font-bold py-3 px-6 rounded transition-all duration-300 cursor-pointer">
+                Learn More About Crypto
+              </span>
+            </Link>
+          </div>
         </main>
       </div>
 

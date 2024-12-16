@@ -27,9 +27,6 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div className="header-right">
-          <Link href="/about">
-            <span className="about-link">About</span>
-          </Link>
           <Link href="https://x.com/itjeff" target="_blank" rel="noopener noreferrer">
             <span className="social-link flex items-center">
               <FaTwitter size={20} />
@@ -43,6 +40,9 @@ const Header: React.FC = () => {
           <div className="toggle-switch" onClick={toggleDarkMode}>
             <span className="toggle-thumb">{darkMode ? '🌙' : '☀️'}</span>
           </div>
+          <Link href="/about">
+            <span className="about-link">About</span>
+          </Link>
           <Link href="/connect">
             <span className="connect-button">Mint $J3ff3R</span>
           </Link>
@@ -90,7 +90,8 @@ const Header: React.FC = () => {
           flex-wrap: wrap; /* Wrap items on small screens */
         }
 
-        .about-link, .social-link {
+        .about-link,
+        .social-link {
           color: white;
           font-size: 1rem;
           text-decoration: none;
@@ -173,7 +174,8 @@ const Header: React.FC = () => {
             gap: 8px;
           }
 
-          .about-link, .social-link {
+          .about-link,
+          .social-link {
             font-size: 0.875rem;
           }
 
