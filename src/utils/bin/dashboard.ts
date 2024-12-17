@@ -22,46 +22,42 @@ const dashboard = async (): Promise<string> => {
   };
 
   return `
-<span style="color: #00c2ff; font-weight: bold;">
-  ╔═══════════════════════════════════════════════════╗
-  ║                NULLSHIFT AI TERMINAL             ║
-  ║         Innovate | Explore | Connect Today       ║
-  ╚═══════════════════════════════════════════════════╝
-</span>
+╔═══════════════════════════════════════════════════╗
+║                NULLSHIFT AI TERMINAL              ║
+║         Innovate | Explore | Connect Today        ║
+╚═══════════════════════════════════════════════════╝
 
-<strong> ABOUT</strong>
+ ABOUT
     Name: ${userInfo.name}
     Hostname: ${userInfo.hostname}
     Mission: Empowering tech enthusiasts with tools, insights, and innovation.
 
-<strong>🛠️ FEATURES</strong>
+🛠️ FEATURES
    - Real-time Blockchain Insights and Trends.
    - AI-Driven Tools for Developers and Explorers.
    - Personal Projects, Tools, and Future Innovations.
 
-<strong> TERMINAL COMMANDS</strong>
-   - <span style="color: #80dfff;">help</span>: View available commands.
-   - <span style="color: #80dfff;">about</span>: Learn about NullShift.
-   - <span style="color: #80dfff;">dashboard</span>: Display the dashboard summary.
-   - <span style="color: #80dfff;">repo</span>: Visit the GitHub repository.
-   - <span style="color: #80dfff;">resume</span>: Open Jeff's latest resume.
-   - <span style="color: #80dfff;">clear</span>: Clear the terminal screen.
+ TERMINAL COMMANDS
+   - help: View available commands.
+   - about: Learn about NullShift.
+   - dashboard: Display the dashboard summary.
+   - repo: Visit the GitHub repository.
+   - resume: Open Jeff's latest resume.
+   - clear: Clear the terminal screen.
 
-<strong> CONTACT</strong>
+ CONTACT
     Email: ${userInfo.email}
     GitHub: ${userInfo.github}
     LinkedIn: ${userInfo.linkedin}
 
-<strong> DONATE & SUPPORT</strong>
+ DONATE & SUPPORT
     CashApp: ${userInfo.cashapp}
     Ethereum: ${userInfo.ethereum}
 
-<span style="color: #00c2ff; font-weight: bold;">
-  ╔═══════════════════════════════════════════════════╗
-  ║       Stay Curious | Build Boldly | Innovate      ║
-  ║              NullShift.xyz | Explore Now          ║
-  ╚═══════════════════════════════════════════════════╝
-</span>
+╔═══════════════════════════════════════════════════╗
+║       Stay Curious | Build Boldly | Innovate      ║
+║              NullShift.xyz | Explore Now          ║
+╚═══════════════════════════════════════════════════╝
 `;
 };
 
