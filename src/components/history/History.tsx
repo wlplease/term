@@ -5,6 +5,10 @@ import { Ps1 } from '../Ps1';
 export const History: React.FC<{ history: Array<HistoryInterface> }> = ({
   history,
 }) => {
+  const sanitizeOutput = (output: string) => {
+    return output.replace(/<\/?[^>]+(>|$)/g, ''); // Remove all HTML tags
+  };
+
   return (
     <>
       {history.map((entry: HistoryInterface, index: number) => (
@@ -20,7 +24,7 @@ export const History: React.FC<{ history: Array<HistoryInterface> }> = ({
           <p
             className="whitespace-pre-wrap mb-2"
             style={{ lineHeight: 'normal' }}
-            dangerouslySetInnerHTML={{ __html: entry.output }}
+            dangerouslySetInnerHTML={{ __html: sanitizeOutput(entry.output) }}
           />
         </div>
       ))}

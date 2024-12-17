@@ -40,63 +40,100 @@ const About: React.FC = () => {
           {!accessGranted ? (
             <>
               <h1 className="text-3xl md:text-4xl font-bold mb-6 text-yellow-400 text-center">
-                Welcome to Jeff’s World
+                Meet Jeff - Tech Explorer & Creator
               </h1>
 
               <p className="mb-6 text-lg leading-relaxed text-justify">
-                Hey there! I’m Jeff, a tech enthusiast who’s passionate about
-                living life to the fullest. From coding and 3D printing to flying
-                drones and diving into the world of blockchain, I’m always
-                exploring new adventures. Welcome to my personal corner of the
-                internet—a hub for creativity, innovation, and fun!
+                Hi, I’m Jeff—a creator, builder, and lifelong learner in the
+                world of technology, finance, and innovation. My journey is all
+                about exploring new frontiers, from developing interactive
+                software to diving deep into blockchain and crypto.
+                NullShift.xyz is a reflection of my passions and a space to
+                connect with like-minded enthusiasts.
               </p>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
-                  What I’m All About
+                  My Adventures in Tech
                 </h2>
                 <p className="mb-4 leading-relaxed">
-                  I’m all about blending my love for tech and life’s simple
-                  joys. Whether I’m:
+                  My curiosity for technology started early. Over the years,
+                  I’ve honed my skills and explored:
                 </p>
                 <ul className="list-disc list-inside space-y-2 pl-4">
-                  <li>Experimenting with blockchain and crypto projects.</li>
-                  <li>Flying drones like a kid with a new toy.</li>
-                  <li>Building cool things with 3D printing tech.</li>
-                  <li>Watching sports (water or ball—you name it!).</li>
-                  <li>Laughing, living, and embracing the adventure.</li>
+                  <li>
+                    **Coding and Development**: I’ve built everything from web
+                    applications to interactive terminal tools.
+                  </li>
+                  <li>
+                    **Blockchain & Crypto**: Whether analyzing on-chain data,
+                    minting NFTs, or developing decentralized tools, I’m
+                    constantly pushing boundaries.
+                  </li>
+                  <li>
+                    **3D Printing and DIY Projects**: Building physical
+                    creations that bring ideas to life.
+                  </li>
+                  <li>
+                    **Drones and Gadgets**: I’m always finding ways to make tech
+                    fun and experiential.
+                  </li>
                 </ul>
                 <p className="mt-4 leading-relaxed">
-                  I believe life is a mix of passions, community, and good
-                  vibes. NullShift.xyz is where all of that comes together!
+                  I believe technology is about creation, exploration, and
+                  community—it’s the perfect mix of art and science.
                 </p>
               </section>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
-                  A Love for Crypto and Beyond
+                  More Than Tech
                 </h2>
                 <p className="mb-4 leading-relaxed">
-                  My journey into the crypto world has been nothing short of
-                  thrilling. From diving into NFTs and decentralized apps to
-                  exploring innovative blockchain projects, I’m constantly in
-                  awe of the limitless possibilities. Crypto is more than tech—
-                  it’s a lifestyle.
+                  Outside of building and coding, I’m a big advocate of
+                  balancing work with life’s joys:
+                </p>
+                <ul className="list-disc list-inside space-y-2 pl-4">
+                  <li>Exploring the outdoors and flying drones.</li>
+                  <li>
+                    Watching and playing sports (tennis, water sports—you name
+                    it!).
+                  </li>
+                  <li>Traveling and experiencing different cultures.</li>
+                  <li>
+                    Sharing laughs and good times with friends and family.
+                  </li>
+                </ul>
+                <p className="mt-4 leading-relaxed">
+                  Life is all about finding the right balance between building,
+                  creating, and enjoying the moment.
+                </p>
+              </section>
+
+              <section className="mb-8">
+                <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
+                  Why NullShift.xyz?
+                </h2>
+                <p className="mb-4 leading-relaxed">
+                  NullShift isn’t just another tech site. It’s a space where I
+                  share my journey, projects, and ideas. Whether you’re here to
+                  explore the latest blockchain tools, learn something new, or
+                  just vibe with me—this place is for you.
                 </p>
                 <p className="leading-relaxed">
-                  Whether you’re here for tech insights or just want to vibe
-                  with a fellow enthusiast, you’ve come to the right place.
+                  I believe in creating with purpose, innovating boldly, and
+                  sharing knowledge to inspire others.
                 </p>
               </section>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4 text-yellow-400">
-                  Join the Club
+                  Join the Journey
                 </h2>
                 <p className="mb-4 leading-relaxed">
-                  NullShift isn’t just a website—it’s a community. Want to
-                  unlock exclusive content and dive deeper into the adventure?
-                  Enter the password below and join the club:
+                  Want to unlock exclusive content and dive deeper into what
+                  makes NullShift.xyz special? Enter the password below to join
+                  the club:
                 </p>
                 <form
                   onSubmit={handlePasswordSubmit}

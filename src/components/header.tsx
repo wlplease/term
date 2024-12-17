@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaTwitter, FaDiscord } from 'react-icons/fa';
+import { FaTwitter, FaDiscord, FaBars } from 'react-icons/fa';
 
 const Header: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -18,39 +19,57 @@ const Header: React.FC = () => {
     setDarkMode((prevMode) => !prevMode);
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
   return (
     <header className="header">
       <div className="header-content">
+        {/* Dark Mode Toggle on the Far Left */}
         <div className="header-left">
-          <Link href="https://nullshift.xyz">
-            <span className="logo">NullShift</span>
-          </Link>
-        </div>
-        <div className="header-right">
-          <Link
-            href="https://x.com/itjeff"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="social-link flex items-center">
-              <FaTwitter size={20} />
-            </span>
-          </Link>
-          <Link
-            href="https://discord.com/invite/nbnyfzqq"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="social-link flex items-center">
-              <FaDiscord size={20} />
-            </span>
-          </Link>
           <div className="toggle-switch" onClick={toggleDarkMode}>
             <span className="toggle-thumb">{darkMode ? '🌙' : '☀️'}</span>
           </div>
-          <Link href="/about">
-            <span className="about-link">About</span>
+        </div>
+
+        {/* Centered Site Title */}
+        <div className="header-center">
+          <Link href="/">
+            <span className="logo">NullShift</span>
           </Link>
+        </div>
+
+        {/* Dropdown Menu and Social Links */}
+        <div className="header-right">
+          <div className="dropdown-menu">
+            <button onClick={toggleDropdown} className="menu-button">
+              <FaBars size={20} />
+            </button>
+            {isDropdownOpen && (
+              <div className="dropdown-content">
+                <Link href="/about">About</Link>
+                <Link href="/resume">Resume</Link>
+                <Link href="/secret">Secret</Link>
+              </div>
+            )}
+          </div>
+          <div className="social-links">
+            <Link
+              href="https://x.com/itjeff"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter size={20} />
+            </Link>
+            <Link
+              href="https://discord.com/invite/nbnyfzqq"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaDiscord size={20} />
+            </Link>
+          </div>
           <Link href="/connect">
             <span className="connect-button">$J3ff3R</span>
           </Link>
@@ -66,7 +85,9 @@ const Header: React.FC = () => {
           position: sticky;
           top: 0;
           z-index: 1000;
-          overflow-x: hidden; /* Prevent horizontal scroll */
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         .header-content {
@@ -74,58 +95,12 @@ const Header: React.FC = () => {
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
+          width: 100%;
           max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 15px;
         }
 
-        .logo {
-          font-size: 1.5rem;
-          font-weight: bold;
-          color: white;
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-
-        .logo:hover {
-          color: #ff8037;
-        }
-
-        .header-right {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          flex-wrap: wrap; /* Wrap items on small screens */
-        }
-
-        .about-link,
-        .social-link {
-          color: white;
-          font-size: 1rem;
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-
-        .about-link:hover {
-          color: #ffa726;
-        }
-
-        .social-link:hover {
-          color: #5865f2; /* Discord color */
-        }
-
-        .connect-button {
-          background-color: #ffcc80;
-          color: black;
-          padding: 8px 16px;
-          border-radius: 4px;
-          font-weight: bold;
-          transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .connect-button:hover {
-          background-color: #ffa726;
-          transform: scale(1.05);
+        .header-left {
+          flex: 1;
         }
 
         .toggle-switch {
@@ -142,58 +117,107 @@ const Header: React.FC = () => {
         }
 
         .toggle-thumb {
-          position: absolute;
-          left: ${darkMode ? '20px' : '2px'};
-          width: 16px;
-          height: 16px;
-          background-color: ${darkMode ? '#ffa726' : '#ffcc80'};
-          border-radius: 50%;
           text-align: center;
-          line-height: 16px;
-          font-size: 12px;
-          transition: left 0.3s ease, background-color 0.3s ease;
+          font-size: 14px;
+        }
+
+        .header-center {
+          flex: 1;
+          text-align: center;
+        }
+
+        .logo {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: white;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+          color: #ff8037;
+        }
+
+        .header-right {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 15px;
+          position: relative;
+        }
+
+        .menu-button {
+          background: none;
+          border: none;
+          color: white;
+          cursor: pointer;
+          font-size: 1.2rem;
+          display: flex;
+          align-items: center;
+          transition: color 0.3s ease;
+        }
+
+        .menu-button:hover {
+          color: #ffa726;
+        }
+
+        .dropdown-content {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background-color: #333;
+          border: 1px solid #444;
+          border-radius: 4px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+          display: flex;
+          flex-direction: column;
+          z-index: 1001;
+          min-width: 150px;
+        }
+
+        .dropdown-content a {
+          color: white;
+          padding: 10px;
+          text-decoration: none;
+          transition: background 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+          background-color: #444;
+        }
+
+        .social-links {
+          display: flex;
+          gap: 10px;
+        }
+
+        .social-links a {
+          color: white;
+          transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+          color: #5865f2;
+        }
+
+        .connect-button {
+          background-color: #ffcc80;
+          color: black;
+          padding: 8px 16px;
+          border-radius: 4px;
+          font-weight: bold;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .connect-button:hover {
+          background-color: #ffa726;
+          transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
           .header-content {
-            flex-direction: column;
             gap: 10px;
-            text-align: center;
-          }
-
-          .header-right {
-            justify-content: center;
-            gap: 10px;
-          }
-
-          .logo {
-            font-size: 1.25rem;
-          }
-
-          .connect-button {
-            padding: 6px 12px;
-            font-size: 0.875rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .header-right {
-            flex-direction: column;
-            gap: 8px;
-          }
-
-          .about-link,
-          .social-link {
-            font-size: 0.875rem;
-          }
-
-          .connect-button {
-            font-size: 0.75rem;
-          }
-
-          .toggle-switch {
-            width: 35px;
-            height: 18px;
           }
         }
       `}</style>

@@ -77,7 +77,9 @@ const SecretFiles: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <h3 className="text-xl font-bold text-yellow-400">The Mt. Gox Hack</h3>
+                <h3 className="text-xl font-bold text-yellow-400">
+                  The Mt. Gox Hack
+                </h3>
                 <p className="text-white mb-4">
                   One of the biggest crypto hacks in history. Billions of
                   dollars worth of Bitcoin were lost.
@@ -93,7 +95,9 @@ const SecretFiles: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <h3 className="text-xl font-bold text-yellow-400">The Rise of NFTs</h3>
+                <h3 className="text-xl font-bold text-yellow-400">
+                  The Rise of NFTs
+                </h3>
                 <p className="text-white mb-4">
                   Explore how NFTs went from niche interest to global
                   phenomenon.
