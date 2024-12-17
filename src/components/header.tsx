@@ -26,7 +26,6 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header-content">
-        {/* Navigation Links and Dark Mode Toggle */}
         <div className="header-left">
           <div className="dropdown-menu">
             <button onClick={toggleDropdown} className="menu-button">
@@ -45,14 +44,12 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Centered Site Title */}
         <div className="header-center">
           <Link href="/">
             <span className="logo">NullShift</span>
           </Link>
         </div>
 
-        {/* Social Links and Connect Button */}
         <div className="header-right">
           <div className="social-links">
             <Link
