@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import config from '../../config.json';
-import { Input } from '../components/input';
-import { useHistory } from '../components/history/hook';
-import { History } from '../components/history/History';
 import { banner } from '../utils/bin';
+import * as commands from '../utils/bin/commands';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -30,30 +28,6 @@ const Index: React.FC = () => {
   ];
 
   const systemBanner = banner().split('\n');
-
-  const commands: {
-    [key: string]: (args?: string[]) => Promise<string> | string;
-  } = {
-    help: async () =>
-      'Available commands: help, about, dashboard, clear, contact, github, linkedin, date, echo [text]',
-    about: async () => await (await fetch('/about')).text(),
-    dashboard: async () =>
-      `Welcome ${
-        userName || 'visitor'
-      }! Use available tools for insights, tech exploration, and community updates.`,
-    clear: async () => {
-      setLines([]);
-      return '';
-    },
-    contact: async () => `Email: nullshiftxyz@gmail.com`,
-    github: async () =>
-      `GitHub: https://github.com/${config.social.github || ''}`,
-    linkedin: async () =>
-      `LinkedIn: https://linkedin.com/in/${config.social.linkedin || ''}`,
-    date: async () => new Date().toString(),
-    echo: async (args: string[]) =>
-      args.join(' ') || 'Echo requires some text.',
-  };
 
   const addToQueue = (line: string) => {
     setInputQueue((prev) => [...prev, line]);
