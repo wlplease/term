@@ -26,22 +26,8 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header-content">
-        {/* Dark Mode Toggle on the Far Left */}
+        {/* Navigation Links and Dark Mode Toggle */}
         <div className="header-left">
-          <div className="toggle-switch" onClick={toggleDarkMode}>
-            <span className="toggle-thumb">{darkMode ? '🌙' : '☀️'}</span>
-          </div>
-        </div>
-
-        {/* Centered Site Title */}
-        <div className="header-center">
-          <Link href="/">
-            <span className="logo">NullShift</span>
-          </Link>
-        </div>
-
-        {/* Dropdown Menu and Social Links */}
-        <div className="header-right">
           <div className="dropdown-menu">
             <button onClick={toggleDropdown} className="menu-button">
               <FaBars size={20} />
@@ -54,6 +40,20 @@ const Header: React.FC = () => {
               </div>
             )}
           </div>
+          <div className="toggle-switch" onClick={toggleDarkMode}>
+            <span className="toggle-thumb">{darkMode ? '🌙' : '☀️'}</span>
+          </div>
+        </div>
+
+        {/* Centered Site Title */}
+        <div className="header-center">
+          <Link href="/">
+            <span className="logo">NullShift</span>
+          </Link>
+        </div>
+
+        {/* Social Links and Connect Button */}
+        <div className="header-right">
           <div className="social-links">
             <Link
               href="https://x.com/itjeff"
@@ -100,7 +100,9 @@ const Header: React.FC = () => {
         }
 
         .header-left {
-          flex: 1;
+          display: flex;
+          align-items: center;
+          gap: 15px;
         }
 
         .toggle-switch {
@@ -139,12 +141,10 @@ const Header: React.FC = () => {
         }
 
         .header-right {
-          flex: 1;
           display: flex;
           justify-content: flex-end;
           align-items: center;
           gap: 15px;
-          position: relative;
         }
 
         .menu-button {
@@ -165,7 +165,7 @@ const Header: React.FC = () => {
         .dropdown-content {
           position: absolute;
           top: 100%;
-          right: 0;
+          left: 0;
           background-color: #333;
           border: 1px solid #444;
           border-radius: 4px;
