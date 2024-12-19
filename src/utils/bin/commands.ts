@@ -1,10 +1,8 @@
 import dashboard from './dashboard';
 import config from '../../../config.json';
-import { getProjects, getQuote, getReadme, getWeather } from '../api';
 
-const fetchPageContent = async (url: string): Promise<string> => {
-  const response = await fetch(url);
-  return response.ok ? await response.text() : 'Content unavailable';
+export const dashboardCmd = async (): Promise<string> => {
+  return await dashboard();
 };
 
 export const help = async (): Promise<string> => {
@@ -14,7 +12,6 @@ export const help = async (): Promise<string> => {
     'base',
     'bing',
     'cd',
-    'dashboard',
     'dashboardCmd',
     'date',
     'disclaimer',
@@ -28,18 +25,18 @@ export const help = async (): Promise<string> => {
     'help',
     'linkedin',
     'ls',
-    'nvim',
     'projects',
     'quote',
     'readme',
     'reddit',
     'repo',
     'resume',
+    'root',
     'sudo',
+    'sudo root',
     'twitter',
     'vi',
     'vim',
-    'weather',
     'whoami',
   ];
   const commandsPerRow = 7;
@@ -53,7 +50,8 @@ ${formattedCommands}
 
 [tab]: Autocomplete
 [ctrl+l] or clear: Clear the terminal
-Type dashboard for a system summary
+Type dashboardCmd for a system summary
+Type about for an introduction to NullShift
 `;
 };
 
@@ -76,7 +74,13 @@ Contact: nullshiftxyz@gmail.com
 };
 
 export const disclaimer = async (): Promise<string> => {
-  return await fetchPageContent('/disclaimer');
+  return `
+Welcome to NullShift
+
+This site is for fun and educational purposes only. 
+It is not financial advice or professional guidance. 
+Dive in, explore, and enjoy the journey of learning and discovery!
+`;
 };
 
 export const resume = async (): Promise<string> => {
@@ -139,6 +143,14 @@ export const base = async (): Promise<string> => {
   return 'Base chain is connected. Explore the possibilities';
 };
 
+export const projects = async (): Promise<string> => {
+  return `
+NullShift Projects:
+Exploring and building on blockchain technologies, 
+AI-driven agents, and NFT smart contracts. Dive into innovation and creativity.
+`;
+};
+
 export const echo = async (args: string[]): Promise<string> => {
   return args.join(' ');
 };
@@ -180,8 +192,11 @@ export const emacs = async (): Promise<string> => {
 };
 
 export const sudo = async (): Promise<string> => {
-  window.open('https://www.youtube.com/watch?v=V3iBBnApeZA', '_blank');
   return 'Permission denied';
+};
+
+export const root = async (): Promise<string> => {
+  return 'Access denied. You need elevated permissions to use root.';
 };
 
 export const banner = (): string => {
@@ -193,38 +208,9 @@ export const banner = (): string => {
 |_| \\_|\\___/|_____|_____|____/|_| |_|___|_|     |_|  
 
 Type help to see the list of available commands
+Type dashboardCmd for a system summary
+Type about for an introduction to NullShift
+Type repo to visit the GitHub repository
+Type projects to explore featured projects
 `;
-};
-
-export const dashboardCmd = async (): Promise<string> => {
-  return await dashboard();
-};
-
-export const projects = async (): Promise<string> => {
-  const projects = await getProjects();
-  return projects
-    .map(
-      (repo) =>
-        `${repo.name} - <a class="text-light-blue dark:text-dark-blue underline" href="${repo.html_url}" target="_blank">${repo.html_url}</a>`,
-    )
-    .join('\n');
-};
-
-export const quote = async (): Promise<string> => {
-  const data = await getQuote();
-  return data.quote;
-};
-
-export const readme = async (): Promise<string> => {
-  const readme = await getReadme();
-  return `Opening GitHub README...${readme}`;
-};
-
-export const weather = async (args: string[]): Promise<string> => {
-  const city = args.join('+');
-  if (!city) {
-    return 'Usage: weather [city]. Example: weather casablanca';
-  }
-  const weather = await getWeather(city);
-  return weather;
 };

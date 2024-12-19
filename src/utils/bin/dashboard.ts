@@ -42,7 +42,7 @@ const dashboard = async (): Promise<string> => {
    - about: Learn about NullShift.
    - dashboard: Display the dashboard summary.
    - repo: Visit the GitHub repository.
-   - resume: Open Jeff's latest resume.
+   - resume: Open Jeffs latest resume.
    - clear: Clear the terminal screen.
 
  CONTACT
