@@ -97,7 +97,7 @@ const Index: React.FC = () => {
       </Head>
       <Header />
       <div className="min-h-screen flex flex-col items-center justify-center px-4">
-        <div className="intro-message mb-4 text-green-400 font-mono text-center text-base sm:text-lg">
+        <div className="intro-message mb-4 text-green-400 font-mono text-center text-base sm:text-lg px-2 md:px-4">
           <p>
             Hi, I am Jeff—a creator, builder, and lifelong learner in the world
             of technology, finance, and innovation. My journey is all about
@@ -110,7 +110,7 @@ const Index: React.FC = () => {
         <div className="w-full max-w-3xl bg-black bg-opacity-80 text-green-400 font-mono p-4 sm:p-6 rounded-lg shadow-lg">
           <div
             ref={containerRef}
-            className="overflow-y-auto terminal border-2 border-gray-800 rounded-lg p-4"
+            className="terminal h-auto max-h-[60vh] md:max-h-[70vh] border-2 border-gray-800 rounded-lg p-4 overflow-y-auto"
           >
             {lines.map((line, index) => (
               <div key={index}>{line}</div>
