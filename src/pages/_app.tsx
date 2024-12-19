@@ -14,13 +14,16 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
       </Head>
       <div
-        className="text-light-foreground dark:text-dark-foreground min-w-max text-xs md:min-w-full md:text-base"
+        className="text-light-foreground dark:text-dark-foreground min-h-screen w-full"
         onClick={onClickAnywhere}
       >
-        <main className="bg-light-background dark:bg-dark-background w-full h-full p-2">
+        <main className="bg-light-background dark:bg-dark-background min-h-screen w-full flex flex-col">
           <Component {...pageProps} inputRef={inputRef} />
         </main>
       </div>
