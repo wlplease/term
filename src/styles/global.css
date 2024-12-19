@@ -50,10 +50,26 @@ header {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 2rem;
   overflow-y: auto;
+}
+
+/* Intro Message Styling */
+.intro-message {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #00ff00;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .intro-message {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
 }
 
 /* Terminal Styling */
@@ -64,7 +80,7 @@ header {
   background-color: rgba(0, 0, 0, 0.85);
   color: #0f0;
   border-radius: 8px;
-  height: 80vh;
+  height: 70vh;
   width: 100%;
   max-width: 800px;
   overflow-y: auto;
@@ -73,6 +89,14 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   padding: 1.5rem;
   position: relative;
+}
+
+@media (max-width: 480px) {
+  .terminal {
+    font-size: 12px;
+    height: 50vh;
+    padding: 10px;
+  }
 }
 
 /* Input Line Styling */
@@ -105,7 +129,19 @@ header {
   box-shadow: 0 0 6px #ff8037;
 }
 
-/* Typing Effect */
+@media (max-width: 480px) {
+  .input-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-field {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+/* Blinking Cursor */
 .blinking-cursor {
   display: inline-block;
   width: 8px;
@@ -145,52 +181,8 @@ footer a:hover {
   color: #ff8037;
 }
 
-/* Tablet Optimizations */
-@media (max-width: 768px) {
-  header {
-    padding: 10px;
-    font-size: 1.25rem;
-  }
-
-  .main-content {
-    padding: 1rem;
-  }
-
-  .terminal {
-    font-size: 14px;
-    height: 70vh;
-    padding: 10px;
-  }
-
-  footer {
-    font-size: 0.75rem;
-  }
-}
-
-/* Mobile Optimizations */
 @media (max-width: 480px) {
-  header {
-    font-size: 1rem;
-    padding: 8px;
-  }
-
-  .terminal {
-    font-size: 12px;
-    height: 60vh;
-    padding: 8px;
-  }
-
   footer {
     font-size: 0.75rem;
-  }
-
-  .input-line {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .input-field {
-    width: 100%;
-    margin-top: 8px;
   }
 }
