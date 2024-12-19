@@ -23,6 +23,7 @@ body {
   background-size: cover;
   color: #ffffff;
   overflow-x: hidden;
+  background-color: #acbefc; /* Doodles-NFT-2-hex */
 }
 
 #__next {
@@ -33,10 +34,10 @@ body {
 
 /* Header Styling */
 header {
-  background-color: rgba(30, 37, 46, 0.9);
+  background-color: rgba(145, 233, 235, 0.9); /* Doodles-NFT-3-rgba */
   color: #ffffff;
   padding: 15px 20px;
-  border-bottom: 2px solid #ff8037;
+  border-bottom: 3px solid #ffadde; /* Doodles-NFT-1-hex */
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
@@ -54,13 +55,16 @@ header {
   align-items: center;
   padding: 2rem;
   overflow-y: auto;
+  background-color: #95f0c5; /* Doodles-NFT-4-hex */
+  border-radius: 10px;
+  border: 2px solid #ffadde; /* Doodles-NFT-1-hex */
 }
 
 /* Intro Message Styling */
 .intro-message {
   margin-bottom: 1rem;
   text-align: center;
-  color: #00ff00;
+  color: #ffffff;
   font-size: 1.25rem;
   line-height: 1.5;
 }
@@ -77,8 +81,8 @@ header {
   font-family: 'Hack', monospace;
   font-size: 16px;
   line-height: 1.6;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: #0f0;
+  background-color: #acbefc; /* Doodles-NFT-2-hex */
+  color: #ffffff;
   border-radius: 8px;
   height: 70vh;
   width: 100%;
@@ -86,9 +90,9 @@ header {
   overflow-y: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
-  position: relative;
+  border: 3px solid #ffadde; /* Doodles-NFT-1-hex */
 }
 
 @media (max-width: 480px) {
@@ -107,26 +111,26 @@ header {
 }
 
 .prompt {
-  color: #00ff00;
+  color: #ffadde; /* Doodles-NFT-1-hex */
   margin-right: 10px;
 }
 
 .input-field {
-  background: transparent;
-  border: 2px solid #00ff00;
+  background: #95f0c5; /* Doodles-NFT-4-hex */
+  border: 2px solid #ffadde; /* Doodles-NFT-1-hex */
   border-radius: 6px;
   outline: none;
   padding: 6px 12px;
-  color: #00ff00;
+  color: #ffffff;
   font-family: 'Hack', monospace;
-  caret-color: #00ff00;
+  caret-color: #ffadde; /* Doodles-NFT-1-hex */
   flex-grow: 1;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .input-field:focus {
-  border-color: #ff8037;
-  box-shadow: 0 0 6px #ff8037;
+  border-color: #acbefc; /* Doodles-NFT-2-hex */
+  box-shadow: 0 0 6px #acbefc;
 }
 
 @media (max-width: 480px) {
@@ -141,44 +145,24 @@ header {
   }
 }
 
-/* Blinking Cursor */
-.blinking-cursor {
-  display: inline-block;
-  width: 8px;
-  height: 1em;
-  background-color: #0f0;
-  margin-left: 4px;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
 /* Footer Styling */
 footer {
-  background-color: rgba(30, 37, 46, 0.9);
+  background-color: rgba(145, 233, 235, 0.9); /* Doodles-NFT-3-rgba */
   color: #ffffff;
   padding: 15px 20px;
-  border-top: 2px solid #ff8037;
+  border-top: 3px solid #ffadde; /* Doodles-NFT-1-hex */
   text-align: center;
   font-size: 0.875rem;
 }
 
 footer a {
-  color: #80d0ff;
+  color: #ffadde; /* Doodles-NFT-1-hex */
   text-decoration: underline;
   transition: color 0.3s ease-in-out;
 }
 
 footer a:hover {
-  color: #ff8037;
+  color: #95f0c5; /* Doodles-NFT-4-hex */
 }
 
 @media (max-width: 480px) {

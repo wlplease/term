@@ -99,7 +99,7 @@ const Index: React.FC = () => {
       <div className="min-h-screen flex flex-col items-center justify-center px-4">
         <div className="intro-message mb-6 text-green-400 font-mono text-center text-lg">
           <p>
-            Hi, I’m Jeff—a creator, builder, and lifelong learner in the world
+            Hi, I am Jeff—a creator, builder, and lifelong learner in the world
             of technology, finance, and innovation. My journey is all about
             exploring new frontiers, from developing interactive software to
             diving deep into blockchain and crypto. NullShift.xyz is a

@@ -76,7 +76,7 @@ const Game: React.FC = () => {
         setCurrentLevel((prev) => prev + 1);
       }
     } else {
-      addOutput(`Command not recognized. Try 'help'.`);
+      addOutput("Command not recognized. Try 'help'.");
     }
   };
 
@@ -165,36 +165,6 @@ const Game: React.FC = () => {
       </div>
 
       <Footer />
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .text-lg {
-            font-size: 1rem;
-          }
-
-          .p-6 {
-            padding: 1rem;
-          }
-
-          .h-96 {
-            height: 75vh;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .text-lg {
-            font-size: 0.875rem;
-          }
-
-          .p-6 {
-            padding: 0.75rem;
-          }
-
-          .h-96 {
-            height: 60vh;
-          }
-        }
-      `}</style>
     </>
   );
 };

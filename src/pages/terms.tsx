@@ -44,10 +44,6 @@ const Terms: React.FC = () => {
           </p>
 
           <h2 className="text-2xl font-semibold mb-4">2. Prohibited Uses</h2>
-          <p className="mb-4">
-            You agree not to use our website for any unlawful or unauthorized
-            purposes, including but not limited to:
-          </p>
           <ul className="list-disc list-inside mb-4">
             <li>
               Engaging in activities that violate any applicable laws or
@@ -125,7 +121,7 @@ const Terms: React.FC = () => {
           </h2>
           <p className="mb-4">
             If you have any questions or concerns about these Terms and
-            Conditions, please contact us at:{' '}
+            Conditions, please contact us at:&nbsp;
             <Link href="mailto:nullshiftxyz@gmail.com">
               <span className="text-blue-500 underline hover:text-blue-700">
                 nullshiftxyz@gmail.com
@@ -137,28 +133,6 @@ const Terms: React.FC = () => {
       </div>
 
       <Footer />
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .text-3xl {
-            font-size: 1.75rem;
-          }
-
-          .p-6 {
-            padding: 1.5rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .text-3xl {
-            font-size: 1.5rem;
-          }
-
-          .p-6 {
-            padding: 1rem;
-          }
-        }
-      `}</style>
     </>
   );
 };

@@ -20,45 +20,14 @@ const NotFoundPage: React.FC = () => {
           Oops! The page you&apos;re looking for doesn&apos;t exist.
         </h2>
         <Link href="/">
-          <span className="bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-600 transition-all duration-300 cursor-pointer">
+          <a className="bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-600 transition-all duration-300">
             Go Back to Home
-          </span>
+          </a>
         </Link>
       </div>
 
       {/* Footer */}
       <Footer />
-
-      <style jsx>{`
-        .min-h-screen {
-          min-height: 100vh;
-        }
-
-        h1 {
-          font-size: 4rem;
-          line-height: 1.2;
-        }
-
-        @media (max-width: 768px) {
-          h1 {
-            font-size: 3rem;
-          }
-
-          h2 {
-            font-size: 1.5rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          h1 {
-            font-size: 2.5rem;
-          }
-
-          h2 {
-            font-size: 1.25rem;
-          }
-        }
-      `}</style>
     </>
   );
 };

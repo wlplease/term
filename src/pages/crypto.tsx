@@ -9,7 +9,6 @@ const Crypto: React.FC = () => {
     <>
       <Head>
         <title>Explore Cryptocurrencies - NullShift</title>
-        <link rel="icon" href="/assets/favicon.ico" />
       </Head>
 
       <Header />
@@ -122,23 +121,6 @@ const Crypto: React.FC = () => {
       </div>
 
       <Footer />
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .text-3xl {
-            font-size: 1.75rem;
-          }
-          .text-2xl {
-            font-size: 1.5rem;
-          }
-          .py-2 {
-            padding: 0.5rem 1rem;
-          }
-          .p-4 {
-            padding: 1rem;
-          }
-        }
-      `}</style>
     </>
   );
 };

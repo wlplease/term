@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import Link from 'next/link';
-import { motion } from 'framer-motion'; // For animation
+import { motion } from 'framer-motion';
 
 const SecretFiles: React.FC = () => {
   return (
@@ -17,7 +17,6 @@ const SecretFiles: React.FC = () => {
 
       <div className="min-h-screen flex flex-col bg-gray-900 text-white overflow-x-hidden">
         <main className="flex-grow container mx-auto p-4 md:p-8 bg-black text-green-400 font-mono shadow-lg rounded-md max-w-4xl">
-          {/* Welcome Section */}
           <motion.h1
             className="text-3xl md:text-4xl font-bold mb-6 text-yellow-400 text-center"
             initial={{ opacity: 0, y: -50 }}
@@ -36,7 +35,6 @@ const SecretFiles: React.FC = () => {
             tuned for more exciting updates, secret projects, and much more!
           </motion.p>
 
-          {/* Blockchain Mysteries Section */}
           <motion.section
             className="mb-8"
             initial={{ opacity: 0, x: -100 }}
@@ -53,7 +51,6 @@ const SecretFiles: React.FC = () => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Crypto Mystery 1 */}
               <motion.div
                 className="bg-black p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
@@ -71,7 +68,6 @@ const SecretFiles: React.FC = () => {
                 </Link>
               </motion.div>
 
-              {/* Crypto Mystery 2 */}
               <motion.div
                 className="bg-black p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
@@ -89,7 +85,6 @@ const SecretFiles: React.FC = () => {
                 </Link>
               </motion.div>
 
-              {/* Crypto Mystery 3 */}
               <motion.div
                 className="bg-black p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
@@ -109,7 +104,6 @@ const SecretFiles: React.FC = () => {
             </div>
           </motion.section>
 
-          {/* More Coming Soon */}
           <motion.section
             className="mb-8"
             initial={{ opacity: 0, x: 100 }}

@@ -35,21 +35,21 @@ const Solana: React.FC = () => {
             <li>
               <strong>Unmatched Speed:</strong> Solana can handle up to 65,000
               transactions per second (TPS), making it one of the fastest
-              blockchains in the world.
+              blockchains.
             </li>
             <li>
-              <strong>Low Fees:</strong> Transactions on Solana cost a fraction
-              of a cent, ensuring accessibility for everyone.
+              <strong>Low Fees:</strong> Transactions cost a fraction of a cent,
+              ensuring accessibility for everyone.
             </li>
             <li>
               <strong>Scalability:</strong> Solana&apos;s architecture is
-              designed to scale without compromising its decentralization or
+              designed to scale without compromising decentralization or
               security.
             </li>
             <li>
               <strong>Proof of History (PoH):</strong> Solana&apos;s innovative
-              consensus mechanism reduces latency and increases throughput by
-              timestamping transactions.
+              consensus mechanism timestamps transactions to reduce latency and
+              increase throughput.
             </li>
           </ul>
 
@@ -57,39 +57,32 @@ const Solana: React.FC = () => {
             Solana&apos;s Ecosystem
           </h2>
           <p className="mb-6 leading-relaxed">
-            Solana boasts a vibrant and rapidly growing ecosystem that includes
-            decentralized finance (DeFi) platforms, NFT marketplaces, gaming
-            projects, and much more. Projects like Serum, Magic Eden, and Audius
-            leverage Solana&apos;s speed and low costs to deliver seamless
-            experiences.
+            Solana boasts a vibrant and rapidly growing ecosystem including DeFi
+            platforms, NFT marketplaces, gaming projects, and more. Projects
+            like Serum, Magic Eden, and Audius leverage Solana&apos;s speed and
+            low costs for seamless experiences.
           </p>
 
           <h2 className="text-2xl font-semibold mb-4">
             Why Developers Choose Solana
           </h2>
           <p className="mb-6 leading-relaxed">
-            Developers are drawn to Solana for its:
+            Developers are drawn to Solana for its comprehensive tools,
+            high-speed transactions, support for multiple programming languages,
+            and active community programs.
           </p>
-          <ul className="list-disc list-inside mb-6">
-            <li>Comprehensive development tools and resources.</li>
-            <li>High-speed transactions for real-time applications.</li>
-            <li>Support for Rust, C, and C++ programming languages.</li>
-            <li>Active community and grant programs to support innovation.</li>
-          </ul>
 
           <h2 className="text-2xl font-semibold mb-4">The Solana Vision</h2>
           <p className="mb-6 leading-relaxed">
-            Solana aims to be the blockchain for mass adoption, empowering
-            developers and users alike with a platform that removes traditional
-            barriers in Web3. Its mission is to democratize access to blockchain
-            technology and provide the infrastructure for decentralized finance,
-            gaming, and beyond.
+            Solana aims to be the blockchain for mass adoption, democratizing
+            access to blockchain technology while empowering developers and
+            users alike.
           </p>
 
           <h2 className="text-2xl font-semibold mb-4">Learn More</h2>
           <p className="mb-4 leading-relaxed">
-            Ready to dive deeper into Solana? Check out the official Solana
-            documentation and resources:
+            Ready to dive deeper into Solana? Check out the official
+            documentation:
           </p>
           <div className="text-center mb-6">
             <Link
@@ -108,9 +101,7 @@ const Solana: React.FC = () => {
           </h2>
           <p className="mb-6 leading-relaxed">
             Solana is not just a blockchain; it&apos;s a movement towards a more
-            decentralized, scalable, and accessible Web3 future. Whether
-            you&apos;re a developer, an investor, or an enthusiast, Solana
-            offers endless opportunities to innovate and connect.
+            decentralized, scalable, and accessible Web3 future.
           </p>
 
           <div className="text-center">
@@ -128,23 +119,6 @@ const Solana: React.FC = () => {
       </div>
 
       <Footer />
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .text-3xl {
-            font-size: 1.75rem;
-          }
-          .text-2xl {
-            font-size: 1.5rem;
-          }
-          .py-3 {
-            padding: 0.5rem 1.5rem;
-          }
-          .p-4 {
-            padding: 1rem;
-          }
-        }
-      `}</style>
     </>
   );
 };
