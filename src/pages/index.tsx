@@ -96,15 +96,7 @@ const Index: React.FC = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
       <Header />
-      <div
-        className="min-h-screen flex flex-col items-center justify-center px-4"
-        style={{
-          backgroundImage: 'url(/cloudbackground.png)',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
+      <div className="min-h-screen flex flex-col items-center justify-center px-4">
         <div className="intro-message mb-6 text-green-400 font-mono text-center text-lg">
           <p>
             Hi, I’m Jeff—a creator, builder, and lifelong learner in the world
@@ -152,77 +144,6 @@ const Index: React.FC = () => {
         </div>
       </div>
       <Footer />
-      <style jsx>{`
-        .terminal {
-          font-family: 'Hack', monospace;
-          line-height: 1.4;
-          color: #0f0;
-        }
-
-        .blinking-cursor {
-          display: inline-block;
-          width: 8px;
-          height: 1em;
-          background-color: #0f0;
-          margin-left: 4px;
-          animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-          0%,
-          100% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0;
-          }
-        }
-
-        .input-line {
-          display: flex;
-          align-items: center;
-        }
-
-        .prompt {
-          color: #0f0;
-          margin-right: 4px;
-        }
-
-        .input-field {
-          background: transparent;
-          border: none;
-          outline: none;
-          color: #0f0;
-          font-family: 'Hack', monospace;
-          caret-color: #0f0;
-          flex-grow: 1;
-        }
-
-        .intro-message {
-          animation: drop-in 1s ease-out;
-        }
-
-        @keyframes drop-in {
-          0% {
-            transform: translateY(-50%);
-            opacity: 0;
-          }
-          100% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .intro-message p {
-            font-size: 0.9rem;
-          }
-        }
-
-        .h-80vh {
-          height: 80vh;
-        }
-      `}</style>
     </>
   );
 };

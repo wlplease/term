@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Head from 'next/head';
 
 const App = ({ Component, pageProps }) => {
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const inputRef = React.useRef(null);
 
   const onClickAnywhere = () => {
     if (inputRef.current) {
@@ -14,14 +14,8 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <meta
-          name="viewport"
-          content="initial-scale=1.0, width=device-width"
-          key="viewport"
-          maximum-scale="1"
-        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-
       <div
         className="text-light-foreground dark:text-dark-foreground min-w-max text-xs md:min-w-full md:text-base"
         onClick={onClickAnywhere}

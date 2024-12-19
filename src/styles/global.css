@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Hack';
-  src: url(/assets/fonts/Hack-NF.ttf);
+  src: url('/assets/fonts/Hack-NF.ttf');
   display: swap;
 }
 
@@ -19,9 +19,9 @@
 html,
 body {
   height: 100%;
-  background: url(/cloudbackground.png) no-repeat center center fixed;
+  background: url('/cloudbackground.png') no-repeat center center fixed;
   background-size: cover;
-  color: #eaeaea; /* Softer white for better contrast */
+  color: #ffffff;
   overflow-x: hidden;
 }
 
@@ -33,27 +33,16 @@ body {
 
 /* Header Styling */
 header {
-  background-color: rgba(
-    30,
-    37,
-    46,
-    0.9
-  ); /* Slightly darker for better readability */
+  background-color: rgba(30, 37, 46, 0.9);
   color: #ffffff;
   padding: 15px 20px;
   border-bottom: 2px solid #ff8037;
   text-align: center;
-  font-size: clamp(1.125rem, 2.5vw, 1.5rem); /* Scales font size */
+  font-size: 1.5rem;
   font-weight: bold;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background-color 0.3s ease, padding 0.3s ease;
-}
-
-header.scrolled {
-  background-color: rgba(30, 37, 46, 0.95);
-  padding: 10px 15px;
 }
 
 /* Main Content Layout */
@@ -63,53 +52,65 @@ header.scrolled {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   overflow-y: auto;
 }
 
 /* Terminal Styling */
 .terminal {
   font-family: 'Hack', monospace;
-  font-size: clamp(0.875rem, 1.5vw, 1rem); /* Scales font size */
+  font-size: 16px;
   line-height: 1.6;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #00ff00;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #0f0;
   border-radius: 8px;
-  height: calc(100vh - 150px); /* Dynamic height for header/footer space */
-  max-height: 80vh; /* Prevents overflow on larger screens */
+  height: 80vh;
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   overflow-y: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  padding: 1.5rem;
   position: relative;
-  transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+/* Input Line Styling */
+.input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.prompt {
+  color: #00ff00;
+  margin-right: 10px;
+}
+
+.input-field {
+  background: transparent;
+  border: 2px solid #00ff00;
+  border-radius: 6px;
+  outline: none;
+  padding: 6px 12px;
+  color: #00ff00;
+  font-family: 'Hack', monospace;
+  caret-color: #00ff00;
+  flex-grow: 1;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #ff8037;
+  box-shadow: 0 0 6px #ff8037;
 }
 
 /* Typing Effect */
-.typing-line {
-  opacity: 0;
-  animation: fadeIn 0.3s forwards;
-  animation-delay: var(--delay, 0s);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Blinking Cursor */
 .blinking-cursor {
   display: inline-block;
   width: 8px;
   height: 1em;
-  background-color: #00ff00;
+  background-color: #0f0;
   margin-left: 4px;
   animation: blink 1s infinite;
 }
@@ -131,65 +132,34 @@ footer {
   padding: 15px 20px;
   border-top: 2px solid #ff8037;
   text-align: center;
-  font-size: clamp(0.75rem, 1.2vw, 1rem); /* Scales font size */
+  font-size: 0.875rem;
 }
 
 footer a {
   color: #80d0ff;
   text-decoration: underline;
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 footer a:hover {
   color: #ff8037;
-  transform: scale(1.05);
 }
 
-/* Accessibility Enhancements */
-a,
-button,
-input {
-  outline: none;
-}
-
-a:focus,
-button:focus,
-input:focus {
-  outline: 2px dashed #ff8037;
-  outline-offset: 2px;
-}
-
-/* Mobile Optimizations */
+/* Tablet Optimizations */
 @media (max-width: 768px) {
   header {
-    font-size: 1.125rem;
-    padding: 12px 15px;
+    padding: 10px;
+    font-size: 1.25rem;
   }
 
   .main-content {
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   .terminal {
+    font-size: 14px;
     height: 70vh;
-    font-size: 0.875rem;
     padding: 10px;
-  }
-
-  footer {
-    font-size: 0.875rem;
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    font-size: 1rem;
-    padding: 10px;
-  }
-
-  .terminal {
-    height: 60vh;
-    padding: 8px;
   }
 
   footer {
@@ -197,16 +167,30 @@ input:focus {
   }
 }
 
-/* Error or Notice Banner */
-.error-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(255, 0, 0, 0.9);
-  color: #ffffff;
-  padding: 10px;
-  font-size: 0.875rem;
-  text-align: center;
-  z-index: 2000;
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+  header {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .terminal {
+    font-size: 12px;
+    height: 60vh;
+    padding: 8px;
+  }
+
+  footer {
+    font-size: 0.75rem;
+  }
+
+  .input-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-field {
+    width: 100%;
+    margin-top: 8px;
+  }
 }
