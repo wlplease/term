@@ -19,7 +19,8 @@
 html,
 body {
   height: 100%;
-  background-color: #1e252e;
+  background: url(/cloudbackground.png) no-repeat center center fixed;
+  background-size: cover;
   color: #ffffff;
   overflow-x: hidden;
 }
@@ -32,7 +33,7 @@ body {
 
 /* Header Styling */
 header {
-  background-color: #1e252e;
+  background-color: rgba(30, 37, 46, 0.8);
   color: #ffffff;
   padding: 10px 20px;
   border-bottom: 2px solid #ff8037;
@@ -60,7 +61,7 @@ header {
   font-family: 'Hack', monospace;
   font-size: 16px;
   line-height: 1.6;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.85);
   color: #0f0;
   border-radius: 8px;
   height: 80vh; /* Increase height to use more screen space */
@@ -112,7 +113,7 @@ header {
 
 /* Footer Styling */
 footer {
-  background-color: #1e252e;
+  background-color: rgba(30, 37, 46, 0.8);
   color: #ffffff;
   padding: 10px 20px;
   border-top: 2px solid #ff8037;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -148,10 +149,12 @@ const Game: React.FC = () => {
                     ENTER FOR OUR $J3FF3R EGG TEAM ACCESS
                   </h3>
                   <Link href="/egg">
-                    <img
+                    <Image
                       src="https://img.freepik.com/premium-vector/cute-angry-half-boiled-egg-character-funny-furious-egg-cartoon-emoticon-flat-style_841552-330.jpg?semt=ais_hybrid"
                       alt="Easter Egg"
-                      className="w-40 mx-auto hover:scale-105 transition-transform cursor-pointer"
+                      width={160}
+                      height={160}
+                      className="mx-auto hover:scale-105 transition-transform cursor-pointer"
                     />
                   </Link>
                 </div>

@@ -53,7 +53,7 @@ const Index: React.FC = () => {
     if (introState === 'waitingForName') {
       setUserName(input.trim());
       addToQueue(`Hello, ${input.trim()}!`);
-      addToQueue(`Loading your personalized terminal...`);
+      addToQueue('Loading your personalized terminal...');
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setInputQueue([...systemBanner, 'Type "help" to get started.']);
       setIntroState('completed');
@@ -96,11 +96,29 @@ const Index: React.FC = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
       <Header />
-      <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center px-4">
-        <div className="w-full max-w-3xl bg-black text-green-400 font-mono p-6 rounded-lg shadow-lg">
+      <div
+        className="min-h-screen flex flex-col items-center justify-center px-4"
+        style={{
+          backgroundImage: 'url(/cloudbackground.png)',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div className="intro-message mb-6 text-green-400 font-mono text-center text-lg">
+          <p>
+            Hi, I’m Jeff—a creator, builder, and lifelong learner in the world
+            of technology, finance, and innovation. My journey is all about
+            exploring new frontiers, from developing interactive software to
+            diving deep into blockchain and crypto. NullShift.xyz is a
+            reflection of my passions and a space to connect with like-minded
+            enthusiasts.
+          </p>
+        </div>
+        <div className="w-full max-w-3xl bg-black bg-opacity-80 text-green-400 font-mono p-6 rounded-lg shadow-lg">
           <div
             ref={containerRef}
-            className="overflow-y-auto h-96 border-2 border-gray-800 rounded-lg p-4 terminal"
+            className="overflow-y-auto h-80vh border-2 border-gray-800 rounded-lg p-4 terminal"
           >
             {lines.map((line, index) => (
               <div key={index}>{line}</div>
@@ -139,7 +157,6 @@ const Index: React.FC = () => {
           font-family: 'Hack', monospace;
           line-height: 1.4;
           color: #0f0;
-          background-color: #000;
         }
 
         .blinking-cursor {
@@ -181,8 +198,29 @@ const Index: React.FC = () => {
           flex-grow: 1;
         }
 
-        .h-96 {
-          height: 24rem;
+        .intro-message {
+          animation: drop-in 1s ease-out;
+        }
+
+        @keyframes drop-in {
+          0% {
+            transform: translateY(-50%);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .intro-message p {
+            font-size: 0.9rem;
+          }
+        }
+
+        .h-80vh {
+          height: 80vh;
         }
       `}</style>
     </>
