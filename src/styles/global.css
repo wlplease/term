@@ -18,24 +18,28 @@
 html,
 body {
   height: 100%;
+  padding: 0; /* Ensure no accidental padding */
+  margin: 0; /* Ensure no accidental margin */
   background: url('/cloudbackground.png') no-repeat center center fixed;
   background-size: cover;
   color: #ffffff;
   overflow-x: hidden;
   background-color: #acbefc; /* Doodles-NFT-2-hex */
+  line-height: 1.4; /* Tighter line spacing */
 }
 
 #__next {
   display: flex;
   flex-direction: column;
   height: 100%;
+  justify-content: space-between; /* Footer sticks at the bottom */
 }
 
 /* Header Styling */
 header {
   background-color: rgba(145, 233, 235, 0.9); /* Doodles-NFT-3-rgba */
   color: #ffffff;
-  padding: 10px 15px;
+  padding: 4px 8px; /* Further reduced padding */
   border-bottom: 3px solid #ffadde; /* Doodles-NFT-1-hex */
   display: flex;
   justify-content: space-between;
@@ -51,31 +55,31 @@ header {
   border: none;
   cursor: pointer;
   color: #ffffff;
-  padding: 8px; /* Added padding for better touch targets */
-  border-radius: 4px; /* Consistent styling */
+  padding: 4px; /* Compact button size */
+  border-radius: 4px;
 }
 
 .dropdown-content {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 2px); /* Minimal gap */
   left: 0;
   background-color: rgba(145, 233, 235, 1);
   border: 2px solid #ffadde;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly reduced shadow */
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 10px;
+  gap: 4px; /* Minimal gap between items */
+  padding: 6px;
   z-index: 1001;
-  max-width: 300px; /* Added for responsiveness */
+  max-width: 280px; /* Adjusted for compact dropdowns */
   overflow: hidden;
 }
 
 .dropdown-item {
   color: #ffffff;
-  font-size: 1rem;
-  padding: 5px 10px;
+  font-size: 0.9rem; /* Compact font size */
+  padding: 4px 6px;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
@@ -87,7 +91,7 @@ header {
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.4rem; /* Reduced size */
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
@@ -105,7 +109,7 @@ header {
 .connect-button {
   background-color: #ffadde;
   color: #000000;
-  padding: 8px 16px;
+  padding: 4px 10px; /* Compact button padding */
   border-radius: 4px;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -118,38 +122,38 @@ header {
 
 /* Footer Styling */
 footer {
-  background-color: rgba(145, 233, 235, 0.9); /* Doodles-NFT-3-rgba */
+  background-color: rgba(145, 233, 235, 0.9);
   color: #ffffff;
-  padding: 10px 15px;
-  border-top: 3px solid #ffadde; /* Doodles-NFT-1-hex */
+  padding: 6px 8px; /* Reduced padding */
+  border-top: 3px solid #ffadde;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.75rem; /* Slightly smaller font */
 }
 
 footer a {
-  color: #ffadde; /* Doodles-NFT-1-hex */
+  color: #ffadde;
   text-decoration: underline;
   transition: color 0.3s ease-in-out;
 }
 
 footer a:hover {
-  color: #95f0c5; /* Doodles-NFT-4-hex */
+  color: #95f0c5;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 12px; /* Reduced gap */
   flex-wrap: wrap;
-  padding-top: 10px;
+  padding-top: 4px;
 }
 
 .footer-link {
   color: #ffffff;
-  font-size: 0.875rem;
+  font-size: 0.75rem; /* Compact font size */
   text-decoration: none;
   transition: color 0.3s ease;
-  padding: 5px 10px;
+  padding: 4px 6px; /* Compact padding */
   border-radius: 4px;
 }
 
@@ -163,20 +167,20 @@ footer a:hover {
   width: 100%;
   max-width: 800px;
   height: auto;
-  max-height: 55vh;
+  max-height: 50vh; /* Further reduced max height */
   border: 2px solid #4a5568;
   border-radius: 8px;
-  padding: 16px;
+  padding: 10px; /* Compact padding */
   overflow-y: auto;
 
   @media (min-width: 768px) {
     max-width: 90%;
-    max-height: 65vh;
+    max-height: 60vh;
   }
 
   @media (min-width: 1024px) {
     max-width: 95%;
-    max-height: 70vh;
+    max-height: 65vh;
   }
 }
 
@@ -196,32 +200,27 @@ footer a:hover {
 /* Media Queries for Responsive Design */
 @media (max-height: 700px) {
   header {
-    padding: 8px 10px;
-  }
-
-  .header-content {
-    flex-direction: row;
-    justify-content: space-between;
+    padding: 4px 6px;
   }
 
   footer {
-    font-size: 0.7rem;
-    padding: 8px 10px;
+    font-size: 0.65rem;
+    padding: 4px 6px;
   }
 }
 
 @media (max-width: 480px) {
   header {
-    font-size: 0.9rem;
-    padding: 5px 8px;
+    font-size: 0.8rem;
+    padding: 4px 6px;
   }
 
   footer {
-    font-size: 0.65rem;
-    padding: 5px 8px;
+    font-size: 0.6rem;
+    padding: 4px 6px;
   }
 
   .footer-links {
-    gap: 10px;
+    gap: 6px;
   }
 }
