@@ -45,39 +45,14 @@ header {
   z-index: 1000;
 }
 
-.header-content {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-left,
-.header-center,
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-.header-left {
-  gap: 10px;
-}
-
-.header-center {
-  flex: 1;
-  justify-content: center;
-  text-align: center;
-}
-
-.header-right {
-  gap: 10px;
-}
-
-.menu-button {
+.menu-button,
+.toggle-switch {
   background: none;
   border: none;
   cursor: pointer;
   color: #ffffff;
+  padding: 8px; /* Added padding for better touch targets */
+  border-radius: 4px; /* Consistent styling */
 }
 
 .dropdown-content {
@@ -93,6 +68,8 @@ header {
   gap: 10px;
   padding: 10px;
   z-index: 1001;
+  max-width: 300px; /* Added for responsiveness */
+  overflow: hidden;
 }
 
 .dropdown-item {
@@ -107,13 +84,6 @@ header {
 .dropdown-item:hover {
   background-color: #ffadde;
   color: #000000;
-}
-
-.toggle-switch {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #ffffff;
 }
 
 .logo {
@@ -188,6 +158,42 @@ footer a:hover {
   color: #000000;
 }
 
+/* Terminal Styling */
+.terminal {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  max-height: 55vh;
+  border: 2px solid #4a5568;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-y: auto;
+
+  @media (min-width: 768px) {
+    max-width: 90%;
+    max-height: 65vh;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 95%;
+    max-height: 70vh;
+  }
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+}
+
+.input-field {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  width: 100%;
+}
+
+/* Media Queries for Responsive Design */
 @media (max-height: 700px) {
   header {
     padding: 8px 10px;

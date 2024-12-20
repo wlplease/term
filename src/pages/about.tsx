@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Header from '../components/header';
 import Footer from '../components/footer';
 
 const About: React.FC = () => {
@@ -33,8 +32,6 @@ const About: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <Header />
-
       <div className="min-h-screen flex flex-col bg-gray-900 text-white">
         <main className="flex-grow container mx-auto px-4 py-6 md:px-8 md:py-12 bg-black text-green-400 font-mono shadow-lg rounded-md max-w-4xl">
           {!accessGranted ? (
@@ -58,19 +55,21 @@ const About: React.FC = () => {
                 </h2>
                 <ul className="list-disc list-inside space-y-2 pl-4">
                   <li>
-                    **Coding and Development**: Building web applications and
-                    interactive tools.
+                    <strong>Coding and Development:</strong> Building web
+                    applications and interactive tools.
                   </li>
                   <li>
-                    **Blockchain & Crypto**: Developing decentralized tools,
-                    minting NFTs, and analyzing on-chain data.
+                    <strong>Blockchain & Crypto:</strong> Developing
+                    decentralized tools, minting NFTs, and analyzing on-chain
+                    data.
                   </li>
                   <li>
-                    **3D Printing and DIY Projects**: Creating physical
-                    innovations.
+                    <strong>3D Printing and DIY Projects:</strong> Creating
+                    physical innovations.
                   </li>
                   <li>
-                    **Drones and Gadgets**: Making tech fun and experiential.
+                    <strong>Drones and Gadgets:</strong> Making tech fun and
+                    experiential.
                   </li>
                 </ul>
               </section>

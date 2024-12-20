@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Header from '../components/header';
 import Footer from '../components/footer';
 
 const Base: React.FC = () => {
@@ -10,8 +9,6 @@ const Base: React.FC = () => {
       <Head>
         <title>Base Blockchain - NullShift</title>
       </Head>
-
-      <Header />
 
       <div className="min-h-screen flex flex-col bg-gray-900 text-white overflow-x-hidden">
         <main className="flex-grow container mx-auto p-4 md:p-8 bg-black text-green-400 font-mono shadow-lg rounded-md max-w-4xl">

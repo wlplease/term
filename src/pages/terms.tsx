@@ -12,8 +12,6 @@ const Terms: React.FC = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
 
-      <Header />
-
       <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center text-white">
         <main className="w-full max-w-4xl bg-black text-green-400 font-mono p-6 md:p-8 rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold mb-6 text-center">
@@ -131,8 +129,6 @@ const Terms: React.FC = () => {
           </p>
         </main>
       </div>
-
-      <Footer />
     </>
   );
 };

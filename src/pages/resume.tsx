@@ -1,14 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Header from '../components/header';
 import Footer from '../components/footer';
 
 const Resume: React.FC = () => {
   return (
     <>
-      <Header />
-
       <Head>
         <title>Hacker Talent Not Found - NullShift</title>
         <link rel="icon" href="/assets/favicon.ico" />

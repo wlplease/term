@@ -3,7 +3,6 @@ import Head from 'next/head';
 import config from '../../config.json';
 import { banner } from '../utils/bin';
 import * as commands from '../utils/bin/commands';
-import Header from '../components/header';
 import Footer from '../components/footer';
 
 const Index: React.FC = () => {
@@ -95,7 +94,6 @@ const Index: React.FC = () => {
         <title>{config.title}</title>
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
-      <Header />
       <div className="min-h-screen flex flex-col items-center justify-center px-4">
         <div className="intro-message mb-4 text-green-400 font-mono text-center text-sm sm:text-base md:text-lg px-2 md:px-4">
           <p>
@@ -107,11 +105,8 @@ const Index: React.FC = () => {
             enthusiasts.
           </p>
         </div>
-        <div className="w-full max-w-3xl bg-black bg-opacity-80 text-green-400 font-mono p-4 sm:p-6 rounded-lg shadow-lg">
-          <div
-            ref={containerRef}
-            className="terminal h-auto max-h-[55vh] md:max-h-[65vh] lg:max-h-[70vh] border-2 border-gray-800 rounded-lg p-4 overflow-y-auto"
-          >
+        <div className="w-full bg-black bg-opacity-80 text-green-400 font-mono p-4 sm:p-6 rounded-lg shadow-lg">
+          <div ref={containerRef} className="terminal">
             {lines.map((line, index) => (
               <div key={index}>{line}</div>
             ))}

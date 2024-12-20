@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '../components/header';
 import Footer from '../components/footer';
 
 const Game: React.FC = () => {
@@ -101,8 +100,6 @@ const Game: React.FC = () => {
 
   return (
     <>
-      <Header />
-
       <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-x-hidden px-4">
         <div className="w-full max-w-2xl bg-black text-green-400 font-mono p-6 md:p-8 rounded-lg shadow-lg">
           <div className="bg-gray-800 text-white p-4 rounded-t-lg">

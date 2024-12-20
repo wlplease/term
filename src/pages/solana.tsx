@@ -12,8 +12,6 @@ const Solana: React.FC = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
 
-      <Header />
-
       <div className="min-h-screen flex flex-col bg-gray-900 text-white overflow-x-hidden">
         <main className="flex-grow container mx-auto p-4 md:p-8 bg-black text-green-400 font-mono shadow-lg rounded-md max-w-4xl">
           <h1 className="text-3xl font-bold mb-6 text-center">
@@ -90,7 +88,7 @@ const Solana: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="bg-blue-500 text-black font-bold py-3 px-6 rounded-full inline-block hover:bg-blue-700 transition-all duration-300 cursor-pointer">
+              <span className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-3 px-6 rounded-full inline-block transition-all duration-300 cursor-pointer">
                 Visit Solana Official Site
               </span>
             </Link>
@@ -117,8 +115,6 @@ const Solana: React.FC = () => {
           </div>
         </main>
       </div>
-
-      <Footer />
     </>
   );
 };

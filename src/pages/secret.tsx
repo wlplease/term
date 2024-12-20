@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Header from '../components/header';
 import Footer from '../components/footer';
 import { useRouter } from 'next/router';
 
@@ -60,7 +59,6 @@ const Secret: React.FC = () => {
         <title>Secret - NullShift.xyz</title>
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
-      <Header />
       <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-4">
         <div className="w-full max-w-3xl bg-black text-green-400 font-mono p-6 rounded-lg shadow-lg">
           {!accessGranted ? (
