@@ -11,7 +11,6 @@ const NotFoundPage: React.FC = () => {
         <title>404 - Page Not Found | NullShift</title>
       </Head>
 
-      {/* Header */}
       <Header />
 
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white px-4">
@@ -20,13 +19,12 @@ const NotFoundPage: React.FC = () => {
           Oops! The page you&apos;re looking for doesn&apos;t exist.
         </h2>
         <Link href="/">
-          <a className="bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-600 transition-all duration-300">
+          <span className="bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-600 transition-all duration-300 cursor-pointer">
             Go Back to Home
-          </a>
+          </span>
         </Link>
       </div>
 
-      {/* Footer */}
       <Footer />
     </>
   );
